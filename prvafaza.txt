@@ -1,0 +1,231 @@
+CREATE TABLE OTVORENI_TIP(
+Sifra         varchar(15)
+);
+
+ALTER TABLE OTVORENI_TIP ADD PRIMARY KEY(Sifra);
+
+ALTER TABLE OTVORENI_TIP ADD CONSTRAINT Sifra_FK FOREIGN KEY(Sifra) REFERENCES NESTROGI_TIP(Sifra);
+
+CREATE TABLE POLUOTVORENI_TIP(
+Sifra         varchar(15)
+);
+
+ALTER TABLE POLUOTVORENI_TIP ADD PRIMARY KEY(Sifra);
+
+ALTER TABLE POLUOTVORENI_TIP ADD CONSTRAINT Sifra_FK FOREIGN KEY(Sifra) REFERENCES NESTROGI_TIP(Sifra);
+
+CREATE TABLE STROGI_TIP(
+Dani_posete         varchar(15),
+Period_dana         varchar(15),
+Sifra         varchar(15)
+);
+
+ALTER TABLE STROGI_TIP ADD PRIMARY KEY(Sifra);
+
+ALTER TABLE STROGI_TIP ADD CONSTRAINT Sifra_FK FOREIGN KEY(Sifra) REFERENCES ZATVORSKA_JEDINICA(Sifra);
+
+CREATE TABLE NESTROGI_TIP(
+Celijski_period         varchar(15),
+Sifra         varchar(15)
+);
+
+ALTER TABLE NESTROGI_TIP ADD PRIMARY KEY(Sifra);
+
+ALTER TABLE NESTROGI_TIP ADD CONSTRAINT Sifra_FK FOREIGN KEY(Sifra) REFERENCES ZATVORSKA_JEDINICA(Sifra);
+
+CREATE TABLE FIRMA(
+Adresa         varchar(15),
+Ime         varchar(15),
+PIB         varchar(15),
+Kontakt_telefon         varchar(15)
+);
+
+ALTER TABLE FIRMA ADD PRIMARY KEY(PIB);
+
+CREATE TABLE ZATVORSKA_JEDINICA(
+Upravnik         varchar(15),
+Kapacitet         number,
+Sifra         varchar(15),
+Naziv         varchar(15),
+Adresa         varchar(15)
+);
+
+ALTER TABLE ZATVORSKA_JEDINICA ADD PRIMARY KEY(Sifra);
+
+CREATE TABLE ZAPOSLENI(
+Radno_mesto         varchar(15),
+Datum_obuke_o_protivpozaroj_zastiti         date,
+Pol         varchar(15),
+JMBG         varchar(15)
+);
+
+ALTER TABLE ZAPOSLENI ADD PRIMARY KEY(JMBG);
+
+ALTER TABLE ZAPOSLENI ADD CONSTRAINT JMBG_FK FOREIGN KEY(JMBG) REFERENCES OSOBA(JMBG);
+
+CREATE TABLE ADMINISTRACIJA(
+Strucna_sprema         varchar(15),
+Pozicija         varchar(15),
+Zanimanje         varchar(15),
+JMBG         varchar(15)
+);
+
+ALTER TABLE ADMINISTRACIJA ADD PRIMARY KEY(JMBG);
+
+ALTER TABLE ADMINISTRACIJA ADD CONSTRAINT JMBG_FK FOREIGN KEY(JMBG) REFERENCES ZAPOSLENI(JMBG);
+
+CREATE TABLE IMAJU_KONTAKT_SA_ZATVORENICIMA(
+Lekar         varchar(15),
+Datum         date,
+Naziv_ustanove         varchar(15),
+Adresa_ustanove         varchar(15),
+JMBG         varchar(15)
+);
+
+ALTER TABLE IMAJU_KONTAKT_SA_ZATVORENICIMA ADD PRIMARY KEY(JMBG);
+
+ALTER TABLE IMAJU_KONTAKT_SA_ZATVORENICIMA ADD CONSTRAINT JMBG_FK FOREIGN KEY(JMBG) REFERENCES ZAPOSLENI(JMBG);
+
+CREATE TABLE PSIHOLOZI(
+JMBG         varchar(15)
+);
+
+ALTER TABLE PSIHOLOZI ADD PRIMARY KEY(JMBG);
+
+ALTER TABLE PSIHOLOZI ADD CONSTRAINT JMBG_FK FOREIGN KEY(JMBG) REFERENCES IMAJU_KONTAKT_SA_ZATVORENICIMA(JMBG);
+
+CREATE TABLE RADNICI_OBEZBEDJENJA(
+Datum_izdavanja         date,
+Policijska_uprava         varchar(15),
+Sifra         varchar(15),
+JMBG         varchar(15)
+);
+
+ALTER TABLE RADNICI_OBEZBEDJENJA ADD PRIMARY KEY(JMBG);
+
+ALTER TABLE RADNICI_OBEZBEDJENJA ADD CONSTRAINT JMBG_FK FOREIGN KEY(JMBG) REFERENCES IMAJU_KONTAKT_SA_ZATVORENICIMA(JMBG);
+
+CREATE TABLE ZATVORENIK(
+Status_uslovnog_otpustanja         varchar(15),
+Broj         number,
+Adresa         varchar(15),
+Pol         varchar(15),
+Datum_sledeceg_saslusanja         date,
+JMBG         varchar(15),
+Sifra6         varchar(15)
+);
+
+ALTER TABLE ZATVORENIK ADD PRIMARY KEY(Broj , JMBG);
+
+ALTER TABLE ZATVORENIK ADD CONSTRAINT JMBG_FK FOREIGN KEY(JMBG) REFERENCES OSOBA(JMBG);
+
+ALTER TABLE ZATVORENIK ADD CONSTRAINT Sifra6_FK FOREIGN KEY(Sifra6) REFERENCES ZATVORSKA_JEDINICA(Sifra);
+
+CREATE TABLE ADVOKAT(
+JMBG         varchar(15)
+);
+
+ALTER TABLE ADVOKAT ADD PRIMARY KEY(JMBG);
+
+ALTER TABLE ADVOKAT ADD CONSTRAINT JMBG_FK FOREIGN KEY(JMBG) REFERENCES OSOBA(JMBG);
+
+CREATE TABLE OSOBA(
+Ime         varchar(15),
+Prezime         varchar(15),
+JMBG         varchar(15)
+);
+
+ALTER TABLE OSOBA ADD PRIMARY KEY(JMBG);
+
+CREATE TABLE PRESTUP(
+Pun_naziv         varchar(15),
+Kategorija         varchar(15),
+Opis         varchar(15),
+Maksimalna_kazna         varchar(15),
+Minimalna_kazna         varchar(15),
+Sifra         varchar(15)
+);
+
+ALTER TABLE PRESTUP ADD PRIMARY KEY(Sifra);
+
+ALTER TABLE PRESTUP ADD CONSTRAINT Sifra_FK FOREIGN KEY(Sifra) REFERENCES OTVORENI_TIP(Sifra);
+
+CREATE TABLE Moze_da_angazuje(
+Sifra0         varchar(15),
+PIB1         varchar(15)
+);
+
+ALTER TABLE Moze_da_angazuje ADD PRIMARY KEY(Sifra0 , PIB1);
+
+ALTER TABLE Moze_da_angazuje ADD CONSTRAINT Sifra0_FK FOREIGN KEY(Sifra0) REFERENCES OTVORENI_TIP(Sifra);
+
+ALTER TABLE Moze_da_angazuje ADD CONSTRAINT PIB1_FK FOREIGN KEY(PIB1) REFERENCES FIRMA(PIB);
+
+CREATE TABLE RADI_U(
+Sifra0         varchar(15),
+JMBG1         varchar(15),
+Datum_pocetka_rada         varchar(15)
+);
+
+ALTER TABLE RADI_U ADD PRIMARY KEY(Sifra0 , JMBG1);
+
+ALTER TABLE RADI_U ADD CONSTRAINT Sifra0_FK FOREIGN KEY(Sifra0) REFERENCES ZATVORSKA_JEDINICA(Sifra);
+
+ALTER TABLE RADI_U ADD CONSTRAINT JMBG1_FK FOREIGN KEY(JMBG1) REFERENCES ZAPOSLENI(JMBG);
+
+CREATE TABLE Posecuje(
+Broj0         number,
+JMBG1         varchar(15),
+JMBG2         varchar(15),
+Datum_i_vreme_pocetka_posete         date,
+Datum_i_vreme_kraja_posete         date
+);
+
+ALTER TABLE Posecuje ADD PRIMARY KEY(Broj0 , JMBG1 , JMBG2);
+
+ALTER TABLE Posecuje ADD CONSTRAINT Broj0_FK FOREIGN KEY(Broj0,JMBG1) REFERENCES ZATVORENIK(Broj,JMBG);
+
+ALTER TABLE Posecuje ADD CONSTRAINT JMBG2_FK FOREIGN KEY(JMBG2) REFERENCES ADVOKAT(JMBG);
+
+CREATE TABLE Zastupa(
+Broj0         number,
+JMBG1         varchar(15),
+JMBG2         varchar(15),
+Datum_poslednjeg_kontakta         date,
+Datum_pocetka_saradnje         varchar(15)
+);
+
+ALTER TABLE Zastupa ADD PRIMARY KEY(Broj0 , JMBG1 , JMBG2);
+
+ALTER TABLE Zastupa ADD CONSTRAINT Broj0_FK FOREIGN KEY(Broj0,JMBG1) REFERENCES ZATVORENIK(Broj,JMBG);
+
+ALTER TABLE Zastupa ADD CONSTRAINT JMBG2_FK FOREIGN KEY(JMBG2) REFERENCES ADVOKAT(JMBG);
+
+CREATE TABLE Dani_posete(
+Dani_posete         varchar(15),
+Sifra         varchar(15)
+);
+
+ALTER TABLE Dani_posete ADD PRIMARY KEY(Dani_posete , Sifra);
+
+CREATE TABLE Period_dana(
+Period_dana         varchar(15),
+Sifra         varchar(15)
+);
+
+ALTER TABLE Period_dana ADD PRIMARY KEY(Period_dana , Sifra);
+
+CREATE TABLE Odgovorna_lica(
+Odgovorna_lica         varchar(15),
+PIB         varchar(15)
+);
+
+ALTER TABLE Odgovorna_lica ADD PRIMARY KEY(Odgovorna_lica , PIB);
+
+CREATE TABLE Termini_setnja(
+Termini_setnja         varchar(15),
+Sifra         varchar(15)
+);
+
+ALTER TABLE Termini_setnja ADD PRIMARY KEY(Termini_setnja , Sifra);
+
