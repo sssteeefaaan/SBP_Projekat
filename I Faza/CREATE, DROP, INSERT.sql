@@ -111,11 +111,11 @@ ON DELETE CASCADE
 
 CREATE TABLE PRESTUP(
 JMBG_ZAT VARCHAR(13) NOT NULL,
-PUN_NAZIV VARCHAR(60) NOT NULL,
+PUN_NAZIV VARCHAR(100) NOT NULL,
 DATUM_PRESTUPA DATE NOT NULL,
 MESTO_PRESTUPA VARCHAR(60) NOT NULL,
-KATEGORIJA VARCHAR(30) NOT NULL,
-OPIS VARCHAR(1024),
+KATEGORIJA VARCHAR(128) NOT NULL,
+OPIS VARCHAR(2048),
 MIN_KAZNA_DANI INTEGER NOT NULL CHECK (MIN_KAZNA_DANI >= 0),
 MAKS_KAZNA_DANI INTEGER NOT NULL CHECK (MAKS_KAZNA_DANI > 0),
 CONSTRAINT PRESTUP_GRANICE CHECK (MIN_KAZNA_DANI <= MAKS_KAZNA_DANI),
@@ -294,10 +294,10 @@ INSERT INTO RADNIK_OBEZBEDJENJA VALUES ('0808978432562', '8912UD82H1', 'Policijs
 
 -------------------------------------------------------------------------------------ZATVORENIK------------------------------------------------------------------------------------
 --AAA21
-INSERT INTO ZATVORENIK VALUES ('0203995750023', 'Stojan', 'Džehverović', 'M', 'Skadarska 40c1, 11000 Beograd', '16989', '12-MAY-18', 'RAZMATRA SE', '06-JUN-21', 'AAA21');
-INSERT INTO ZATVORENIK VALUES ('1407988752119', 'Sloba', 'Radanović', 'M', 'Ulica Narodne omladine, Zrenjanin, 11000 Beograd', '15989', '15-DEC-15', 'RAZMATRA SE', '12-FEB-22', 'AAA21');
-INSERT INTO ZATVORENIK VALUES ('1302000750023', 'Vuk', 'Bibić', 'M', 'Nikole Pašića 13, 18000 Niš', '17015', '12-APR-10', 'RAZMATRA SE', '06-JUN-21', 'AAA21');
-INSERT INTO ZATVORENIK VALUES ('1107999759131', 'Strahinja', 'Stamenković', 'M', 'Gavrila Principa 31, 16210 Vlasotince', '17413', '15-MAR-19', 'PRIHVAĆEN', '16-JUN-21', 'AAA21');
+INSERT INTO ZATVORENIK VALUES ('0203995750023', 'Stojan', 'Džehverović', 'M', 'Skadarska 40c1, 11000 Beograd', '16989', '12-MAY-20', 'RAZMATRA SE', '06-JUN-21', 'AAA21');
+INSERT INTO ZATVORENIK VALUES ('1407988752119', 'Sloba', 'Radanović', 'M', 'Ulica Narodne omladine, Zrenjanin, 11000 Beograd', '15989', '15-DEC-19', 'RAZMATRA SE', '12-FEB-22', 'AAA21');
+INSERT INTO ZATVORENIK VALUES ('1302000750023', 'Vuk', 'Bibić', 'M', 'Nikole Pašića 13, 18000 Niš', '17015', '12-APR-19', 'RAZMATRA SE', '06-JUN-21', 'AAA21');
+INSERT INTO ZATVORENIK VALUES ('1107999759131', 'Strahinja', 'Stamenković', 'M', 'Gavrila Principa 31, 16210 Vlasotince', '17413', '15-MAR-21', 'PRIHVAĆEN', '16-JUN-21', 'AAA21');
 --AAB21
 INSERT INTO ZATVORENIK VALUES ('2011956748912', 'Aneta', 'Simić', 'Ž', 'Besna kobila bb, 17500 Vranje', 'UZ789', '02-JUL-19', 'RAZMATRA SE', '15-DEC-25', 'AAB21');
 INSERT INTO ZATVORENIK VALUES ('1208999759118', 'Kristina', 'Stanojević', 'Ž', 'Džervinska 36, 19350 Knjaževac', 'A37HZ', '05-MAY-17', 'RAZMATRA SE', '12-AUG-21', 'AAB21');
@@ -305,17 +305,17 @@ INSERT INTO ZATVORENIK VALUES ('1305993741118', 'Petra', 'Marković', 'Ž', 'Viz
 INSERT INTO ZATVORENIK VALUES ('0209997591541', 'Sofija', 'Stojanović', 'Ž', 'Karađorđeva 109, 17510 Vladičin Han',  'I38MZ', '12-JUN-12','RAZMATRA SE', '10-OCT-21', 'AAB21');
 INSERT INTO ZATVORENIK VALUES ('1708978732323', 'Jelena', 'Karleuša', 'Ž', 'Oračka - Zemun, 11000 Beograd',  'JK8JK', '13-SEP-13','ODBIJEN', '17-DEC-24', 'AAB21');
 --AAC21
-INSERT INTO ZATVORENIK VALUES ('1607997742023', 'Darko', 'Stošić', 'M', 'Rasadnik 2/5, 18000 Niš', 'T1NA3', '05-MAY-17', 'PRIHVAĆEN', '23-JAN-21', 'AAC21');
-INSERT INTO ZATVORENIK VALUES ('2302983773221', 'Milan', 'Ranković', 'M', 'Miroslava Antića, 24000 Subotica', 'K01H2', '02-APR-20', 'RAZMATRA SE', '18-SEP-22', 'AAC21');
-INSERT INTO ZATVORENIK VALUES ('1809987654126', 'Dušan', 'Nikolić', 'M', 'Anke Frank - Palilula, 11000 Beograd',  'TH98L', '03-OCT-14', 'PRIHVAĆEN', '01-JUN-23', 'AAC21');
-INSERT INTO ZATVORENIK VALUES ('0101967554919', 'Osman', 'Agić', 'M', NULL,  'OA20G', '15-MAY-15', 'ODBIJEN', NULL, 'AAC21');
-INSERT INTO ZATVORENIK VALUES ('0903966759113', 'Jovan', 'Popović', 'M', 'Nikole Tesle 9, 26000 Pančevo', 'TP27L', '12-JUN-16','RAZMATRA SE', '09-AUG-23', 'AAC21');
+INSERT INTO ZATVORENIK VALUES ('1607997742023', 'Darko', 'Stošić', 'M', 'Rasadnik 2/5, 18000 Niš', 'T1NA3', '05-MAY-20', 'PRIHVAĆEN', '23-JAN-21', 'AAC21');
+INSERT INTO ZATVORENIK VALUES ('2302983773221', 'Milan', 'Ranković', 'M', 'Miroslava Antića, 24000 Subotica', 'K01H2', '02-APR-21', 'RAZMATRA SE', '18-SEP-22', 'AAC21');
+INSERT INTO ZATVORENIK VALUES ('1809987654126', 'Dušan', 'Nikolić', 'M', 'Anke Frank - Palilula, 11000 Beograd',  'TH98L', '03-OCT-20', 'PRIHVAĆEN', '01-JUN-23', 'AAC21');
+INSERT INTO ZATVORENIK VALUES ('0101967554919', 'Osman', 'Agić', 'M', NULL,  'OA20G', '15-MAY-20', 'ODBIJEN', NULL, 'AAC21');
+INSERT INTO ZATVORENIK VALUES ('0903966759113', 'Jovan', 'Popović', 'M', 'Nikole Tesle 9, 26000 Pančevo', 'TP27L', '12-JUN-20','RAZMATRA SE', '09-AUG-23', 'AAC21');
 --AAD21
 INSERT INTO ZATVORENIK VALUES ('0203000768799', 'Stefan', 'Aleksić', 'M', 'Gornje Zuniče bb, 19350 Knjaževac', '16995', '06-SEP-20', 'PRIHVAĆEN', '02-MAR-22', 'AAD21');
-INSERT INTO ZATVORENIK VALUES ('2406999755433', 'Kosta', 'Rakić', 'M', '9. Avgust 12, 19350 Knjaževac', '18666', '12-MAR-17', 'ODBIJEN', '24-JUN-21', 'AAD21'); 
+INSERT INTO ZATVORENIK VALUES ('2406999755433', 'Kosta', 'Rakić', 'M', '9. Avgust 12, 19350 Knjaževac', '18666', '12-MAR-21', 'ODBIJEN', '24-JUN-21', 'AAD21'); 
 INSERT INTO ZATVORENIK VALUES ('0606999728012', 'Luka', 'Obradović', 'M', 'Romanijska 23, 18000 Niš', '95669', '06-SEP-20', 'ODBIJEN', '06-JUN-21', 'AAD21'); 
-INSERT INTO ZATVORENIK VALUES ('0505945748024', 'Dobrivoje', 'Pasulj', 'M', 'Kromanjonska 14, 11000 Beograd', '76432', '13-NOV-13','RAZMATRA SE', '22-OCT-21', 'AAD21'); 
-INSERT INTO ZATVORENIK VALUES ('1909999738712', 'Nikola', 'Petrović', 'M', 'Grdelica bb, 16220 Leskovac', '17344', '15-AUG-18', 'PRIHVAĆEN', '05-SEP-21', 'AAD21');
+INSERT INTO ZATVORENIK VALUES ('0505945748024', 'Dobrivoje', 'Pasulj', 'M', 'Kromanjonska 14, 11000 Beograd', '76432', '13-NOV-20','RAZMATRA SE', '22-OCT-21', 'AAD21'); 
+INSERT INTO ZATVORENIK VALUES ('1909999738712', 'Nikola', 'Petrović', 'M', 'Grdelica bb, 16220 Leskovac', '17344', '15-AUG-20', 'PRIHVAĆEN', '05-SEP-21', 'AAD21');
 
 
 ---------------------------------------------------------------------------------------FIRME---------------------------------------------------------------------------------------
@@ -333,22 +333,30 @@ INSERT INTO ADVOKAT VALUES ('2103131432452', 'Istok', 'Nikić', 'M');
 INSERT INTO ADVOKAT VALUES ('1209972431232', 'Kristijan', 'Antonijević', 'M');
 INSERT INTO ADVOKAT VALUES ('0906967212124', 'Ognjenka', 'Lilić', 'Ž');
 INSERT INTO ADVOKAT VALUES ('1911988765213', 'Dragutin', 'Simov', 'M');
+-------------------------------------------------------------------------------------PRESTUP--------------------------------------------------------------------------------------
+INSERT INTO PRESTUP VALUES ('0203995750023', 'Nehatno lišenje života', '10-May-20', 'Nikole Vujačića 15, 214422 Lazarevac', 'Krivična dela protiv života i tela', 'Ko drugog liši života iz nehata', 182, 1825);
+INSERT INTO PRESTUP VALUES ('1407988752119', 'Odavanje poslovne tajne iz nehata', '30-Jun-18', 'Bulevar Oslobođenja 10a, 400112 Novi Sad', 'Krivično delo protiv privrede', 'Ko neovlašćeno drugom saopšti, preda ili na drugi način učini dostupnim podatke koji predstavljaju poslovnu tajnu ili ko pribavlja takve podatke u nameri da ih preda nepozvanom licu', 182, 1825);
+INSERT INTO PRESTUP VALUES ('1302000750023', 'Izazivanje opasnosti neobezbedjenjem mera zaštite na radu', '21-Apr-18', 'Moše Pijade 12, 19210 Bor', 'Krivična dela protiv opšte sigurnosti čjudi i imovine', 'Ko u rudnicima, fabrikama, radionicama, na gradilištima ili na drugom mestu rada ošteti ili ukloni zaštitne uređaje i time izazove opasnost za život ili telo ljudi ili za imovinu većeg obima', 182, 1095);
+INSERT INTO PRESTUP VALUES ('1107999759131', 'Nesavesno pružanje lekarske pomoći', '30-Mar-19', 'Kneza Mihaila 22c, 104102 Beograd', 'Krivično delo protiv zdravlja ljudi', 'Lekar koji pri pružanju lekarske pomoći primeni očigledno nepodobno sredstvo ili očigledno nepodoban način lečenja ili ne primeni odgovarajuće higijenske mere ili uopšte očigledno nesavesno postupa i time prouzrokuje pogoršanje zdravstvenog stanja nekog lica', 91, 1095);
 
---PRESTUP
--- CREATE TABLE PRESTUP(
--- JMBG_ZAT VARCHAR(13) NOT NULL,
--- PUN_NAZIV VARCHAR(60) NOT NULL,
--- DATUM_PRESTUPA DATE NOT NULL,
--- MESTO_PRESTUPA VARCHAR(60) NOT NULL,
--- KATEGORIJA VARCHAR(30) NOT NULL,
--- OPIS VARCHAR(1024),
--- MIN_KAZNA_DANI INTEGER NOT NULL CHECK (MIN_KAZNA_DANI >= 0),
--- MAKS_KAZNA_DANI INTEGER NOT NULL CHECK (MAKS_KAZNA_DANI > 0),
--- CONSTRAINT PRESTUP_GRANICE CHECK (MIN_KAZNA_DANI <= MAKS_KAZNA_DANI),
--- CONSTRAINT PRESTUP_PK PRIMARY KEY (JMBG_ZAT, PUN_NAZIV, DATUM_PRESTUPA),
--- CONSTRAINT PRESTUP_ZAT_FK FOREIGN KEY (JMBG_ZAT) REFERENCES ZATVORENIK(JMBG)
--- ON DELETE CASCADE
--- );
+INSERT INTO PRESTUP VALUES ('2011956748912', 'Odavanje državne tajne', '12-Dec-18', 'Nemanjina 15, 32000 Čačak', 'Krivična dela protiv ustavnog uređenja i beybednosti republike srbije', ' Ko neovlašćeno nepozvanom licu saopšti, preda ili učini dostupnim podatke ili dokumente koji su mu povereni ili do kojih je na drugi način došao, a koji predstavljaju državnu tajnu', 365, 3650);
+INSERT INTO PRESTUP VALUES ('1208999759118', 'Napad naslužbeno lice u vršenju službene dužnosti', '25-Jun-16', 'Zmaj Jove Jovanovića 5, 19350 Knjaževac', 'Krivična dela protiv državnih organa', 'Ko napadne ili preti da će napasti službeno lice u vršenju službene dužnosti, prilikom izvršenja dela učinilac je  službenom licu nano tešku telesnu povredu', 1095, 4380);
+INSERT INTO PRESTUP VALUES ('1305993741118', 'Nedozvoljen prelaz državne granice i krijumčarenje ljudi', '10-Sep-14', 'Vovjode Stepe 13, 32000 Čačak', 'Krivična dela protiv javnog reda i mira', ' Ko u nameri da sebi ili drugom pribavi kakvu korist, omogućava drugom nedozvoljeni prelaz granice Srbije ili nedozvoljeni boravak ili tranzit kroz Srbiju', 365, 2920);
+INSERT INTO PRESTUP VALUES ('0209997591541', 'Teške telesne povrede', '02-Mar-11', 'Knežopoljska 13, 101801 Palilula', 'Krivična dela protiv života i tela', 'Ko drugog teško telesno povredi ili mu zdravlje naruši tako teško da je usled toga doveden u opasnost život povređenog ili je uništen ili trajno i u znatnoj meri oštećen ili oslabljen neki važan deo njegovog tela ili važan organ ili je prouzrokovana trajna nesposobnost za rad povređenog ili trajno i teško narušenje njegovog zdravlja ili unakaženost, usled dela je nastupila smrt povređenog lica', 730, 4380);
+INSERT INTO PRESTUP VALUES ('1708978732323', 'Prinuda', '10-Sep-19', 'Neznanog Junaka 22, 11040 Beograd', 'Krivična dela protiv slobode i prava čoveka', 'Ko drugog silom ili pretnjom prinudi da nešto učini ili ne učini ili trpi, delo je iyvrseno odo strane kriminalne grupe', 1825, 5475);
+
+INSERT INTO PRESTUP VALUES ('1607997742023', 'Zlostavljanje i mučenje', '03-May-17', 'Sterijina 15, 26000 Pančevo', 'Krivična dela protiv sloboda i prava čoveka i građanina', 'Ko zlostavlja drugog ili prema njemu postupa na način kojim se vređa ljudsko dostojanstvo', 0, 365);
+INSERT INTO PRESTUP VALUES ('2302983773221', 'Krivična dela protiv izbornih prava', '01-Apr-20', 'Vojska Jugoslavije 13, 290802 Požarevac', 'Davanje i primanje mita u vezi sa glasanjem', 'Ko drugome nudi, daje, obeća nagradu, poklon ili kakvu drugu korist da na izborima ili referendumu glasa ili ne glasa ili da glasa u korist ili protiv određenog lica odnosno predloga', 30, 1095);
+INSERT INTO PRESTUP VALUES ('1809987654126', 'Neovlašćeno otkrivanje tajne', '01-Oct-14', 'Cara Lazara 4, 31210 Požega', 'Krivična dela protiv sloboda i prava čoveka i građanina', 'Advokat, lekar ili drugo lice koje neovlašćeno otkrije tajnu koju je saznalo u vršenju svog poziva', 0, 365);
+INSERT INTO PRESTUP VALUES ('0101967554919', 'Povreda prava pri zapošljavanju i za vreme nezaposlenosti', '10-Mar-15', '7. Septembar, 19000 Zaječar', 'Krivična dela protiv prava po osnovu rada', ' Ko svesnim kršenjem propisa ili na drugi protivpravan način uskrati ili ograniči pravo građana na slobodno zapošljavanje na teritoriji Srbije pod jednakim uslovima', 30, 356);
+INSERT INTO PRESTUP VALUES ('0903966759113', 'Povreda ugleda strane države ili međunarodne organizacije', '09-Jun-16', 'Fadil Franca 15, 40000 Kosovska Mitrovica', 'KRIVIČNA DELA PROTIV ČASTI I UGLEDA', ' Ko javno izloži poruzi stranu državu, njenu zastavu, grb ili himnu', 0, 365);
+
+INSERT INTO PRESTUP VALUES ('0203000768799', 'Falsifikovanje novca', '04-Sep-20', 'Jug Bogdanova 1, 19350 Knjaževac', 'KRIVIČNA DELA PROTIV PRIVREDE', 'Ko napravi lažan novac u nameri da ga stavi u opticaj kao pravi ili ko u istoj nameri preinači pravi novac', 365, 4380);
+INSERT INTO PRESTUP VALUES ('2406999755433', 'Posredovanje u vršenju prostitucije', '10-Mar-17', 'Četvrtog Jula 2, 19350 Knjaževac', 'KRIVIČNA DELA PROTIV POLNE SLOBODE', 'Ko navodi ili podstiče drugog na prostituciju ili učestvuje u predaji nekog lica drugome radi vršenja prostitucije ili ko putem sredstava javnog informisanja i drugih sličnih sredstava propagira ili reklamira prostituciju', 182, 1825);
+INSERT INTO PRESTUP VALUES ('0606999728012', 'Zlostavljanje i mučenje', '04-Sep-20', 'KretenVille 15, 66666 Satanarevo', 'Krivična dela protiv sloboda i prava čoveka i građanina', 'Ko zlostavlja drugog ili prema njemu postupa na način kojim se vređa ljudsko dostojanstvo', 0, 365);
+INSERT INTO PRESTUP VALUES ('0505945748024', 'Neovlašćeni pristup zaštićenom računaru, računarskoj mreži i elektronskoj obradi podataka', '10-Nov-30', 'Sedmog Jula 15, 18000 Niš', 'KRIVIČNA DELA PROTIV BEZBEDNOSTI RAČUNARSKIH PODATAKA', 'Ko se, kršeći mere zaštite, neovlašćeno uključi u računar ili računarsku mrežu, ili neovlašćeno pristupi elektronskoj obradi podataka', 0, 182);
+INSERT INTO PRESTUP VALUES ('1909999738712', 'Povreda slobode kretanja i nastanjivanja', '19-Aug-18', 'Đure Daničića 13, 16000 Leskovac', 'Krivična dela protiv sloboda i prava čoveka i građanina', 'Ko protivpravno uskrati ili ograniči građaninu Srbije slobodu kretanja ili nastanjivanja na teritoriji Srbije', 0, 365);
+
 
 
 ---------------------------------------------------------------------------------------RADI_U--------------------------------------------------------------------------------------
