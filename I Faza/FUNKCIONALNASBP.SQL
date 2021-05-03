@@ -20,6 +20,9 @@ DROP TABLE ZATVORSKA_JEDINICA;
 DROP TABLE ADMINISTRACIJA;
 DROP TABLE ZAPOSLENI;
 
+DROP SEQUENCE "RADI_U_ID_SEQ";
+DROP TRIGGER "RADI_U_PK";
+
 
 ---------------------------------------------------------------------------------------CREATE--------------------------------------------------------------------------------------
 CREATE TABLE ZAPOSLENI( 
@@ -110,6 +113,7 @@ ON DELETE CASCADE
 );
 
 CREATE TABLE PRESTUP(
+ID INTEGER NOT NULL,
 JMBG_ZAT VARCHAR(13) NOT NULL,
 PUN_NAZIV VARCHAR(100) NOT NULL,
 DATUM_PRESTUPA DATE NOT NULL,
@@ -119,27 +123,32 @@ OPIS VARCHAR(2048),
 MIN_KAZNA_DANI INTEGER NOT NULL CHECK (MIN_KAZNA_DANI >= 0),
 MAKS_KAZNA_DANI INTEGER NOT NULL CHECK (MAKS_KAZNA_DANI > 0),
 CONSTRAINT PRESTUP_GRANICE CHECK (MIN_KAZNA_DANI <= MAKS_KAZNA_DANI),
-CONSTRAINT PRESTUP_PK PRIMARY KEY (JMBG_ZAT, PUN_NAZIV, DATUM_PRESTUPA),
+CONSTRAINT PRESTUP_PK PRIMARY KEY (ID),
+CONSTRAINT PRESTUP_UNQIUE UNIQUE (JMBG_ZAT, PUN_NAZIV, DATUM_PRESTUPA),
 CONSTRAINT PRESTUP_ZAT_FK FOREIGN KEY (JMBG_ZAT) REFERENCES ZATVORENIK(JMBG)
 ON DELETE CASCADE
 );
 
-CREATE TABLE RADI_U( 
+CREATE TABLE RADI_U(
+ID INTEGER NOT NULL,
 SIFRA_ZJ VARCHAR(5) NOT NULL,
 JMBG_ZAP VARCHAR(13) NOT NULL,
 DATUM_POCETKA_RADA DATE NOT NULL,
-CONSTRAINT RADI_U_PK PRIMARY KEY (SIFRA_ZJ, JMBG_ZAP),
+CONSTRAINT RADI_U_PK PRIMARY KEY (ID),
+CONSTRAINT RADI_U_UNIQUE UNIQUE (SIFRA_ZJ, JMBG_ZAP),
 CONSTRAINT  RADI_U_ZJ_FK FOREIGN KEY (SIFRA_ZJ) REFERENCES ZATVORSKA_JEDINICA(SIFRA)
 ON DELETE CASCADE,
 CONSTRAINT  RADI_U_ZAP_FK FOREIGN KEY (JMBG_ZAP) REFERENCES ZAPOSLENI(JMBG)
 );
 
 CREATE TABLE ZASTUPA(
+ID INTEGER NOT NULL,
 JMBG_ZAT VARCHAR(13) NOT NULL,
 JMBG_ADV VARCHAR(13) NOT NULL,
 DATUM_POCETKA_SARADNJE DATE NOT NULL,
 DATUM_POSLEDNJEG_KONTAKTA DATE,
-CONSTRAINT ZASTUPA_PK PRIMARY KEY (JMBG_ZAT, JMBG_ADV),
+CONSTRAINT ZASTUPA_PK PRIMARY KEY (ID),
+CONSTRAINT ZASTUPA_UNIQUE UNIQUE (JMBG_ZAT, JMBG_ADV),
 CONSTRAINT ZASTUPA_ZAT_FK FOREIGN KEY (JMBG_ZAT) REFERENCES ZATVORENIK(JMBG)
 ON DELETE CASCADE,
 CONSTRAINT ZASTUPA_ADV_FK FOREIGN KEY (JMBG_ADV) REFERENCES ADVOKAT(JMBG)
@@ -147,12 +156,14 @@ ON DELETE CASCADE
 );
 
 CREATE TABLE POSECUJE(
+ID INTEGER NOT NULL,
 JMBG_ZAT VARCHAR(13) NOT NULL,
 JMBG_ADV VARCHAR(13) NOT NULL,
 DT_POCETKA DATE NOT NULL,
 DT_KRAJA DATE NOT NULL,
+CONSTRAINT POSECUJE_PK PRIMARY KEY (ID),
 CONSTRAINT POSECUJE_DATUM CHECK (DT_POCETKA <= DT_KRAJA),
-CONSTRAINT POSECUJE_PK PRIMARY KEY (JMBG_ZAT, JMBG_ADV),
+CONSTRAINT POSECUJE_UNIQUE UNIQUE (JMBG_ZAT, JMBG_ADV),
 CONSTRAINT POS_ZATV_FK FOREIGN KEY (JMBG_ZAT) REFERENCES ZATVORENIK(JMBG)
 ON DELETE CASCADE,
 CONSTRAINT POS_ADV_FK FOREIGN KEY (JMBG_ADV) REFERENCES ADVOKAT(JMBG)
@@ -169,38 +180,137 @@ ON DELETE CASCADE
 );
 
 CREATE TABLE TERMIN_SETNJE(
+ID INTEGER NOT NULL,
 SIFRA_ZJ VARCHAR(5) NOT NULL,
 TERMIN VARCHAR(15) NOT NULL,
-CONSTRAINT TERMIN_SETNJE_PK PRIMARY KEY (SIFRA_ZJ, TERMIN),
+CONSTRAINT TERMIN_SETNJE_PK PRIMARY KEY (ID),
+CONSTRAINT TERMIN_SETNJE_UNIQUE UNIQUE (SIFRA_ZJ, TERMIN),
 CONSTRAINT TS_ZJ_FK FOREIGN KEY (SIFRA_ZJ) REFERENCES ZATVORSKA_JEDINICA(SIFRA)
 ON DELETE CASCADE 
 );
 
 CREATE TABLE TERMIN_POSETE(
+ID INTEGER NOT NULL,
 SIFRA_ZJ VARCHAR(5) NOT NULL,
 DAN VARCHAR(10) CHECK (DAN IN ('PONEDELJAK', 'UTORAK','SREDA','ČETVRTAK','PETAK','SUBOTA','NEDELJA')) NOT NULL,
 PERIOD VARCHAR(15) NOT NULL,
-CONSTRAINT TERMIN_POSETE_PK PRIMARY KEY (SIFRA_ZJ, DAN, PERIOD),
+CONSTRAINT TERMIN_POSETE_PK PRIMARY KEY (ID),
+CONSTRAINT TERMIN_POSETE_UNIQUE UNIQUE (SIFRA_ZJ, DAN, PERIOD),
 CONSTRAINT TERMIN_POSETE_ZJ_FK FOREIGN KEY (SIFRA_ZJ) REFERENCES ZATVORSKA_JEDINICA(SIFRA)
 ON DELETE CASCADE
 );
 
 CREATE TABLE CELIJSKI_PERIOD(
+ID INTEGER NOT NULL,
 SIFRA_ZJ VARCHAR(5) NOT NULL,
 PERIOD VARCHAR(15) NOT NULL,
-CONSTRAINT CELIJSKI_PERIOD_PK PRIMARY KEY (SIFRA_ZJ, PERIOD),
+CONSTRAINT CELIJSKI_PERIOD_PK PRIMARY KEY (ID),
+CONSTRAINT CELIJSKI_PERIOD_UNIQUE UNIQUE (SIFRA_ZJ, PERIOD),
 CONSTRAINT CELIJSKI_PERIOD_ZJ_FK FOREIGN KEY (SIFRA_ZJ) REFERENCES ZATVORSKA_JEDINICA(SIFRA)
 ON DELETE CASCADE
 );
 
 CREATE TABLE ODGOVORNO_LICE (
+ID INTEGER NOT NULL,
 PIB_FIRME VARCHAR(9) NOT NULL,
 JMBG VARCHAR(13) NOT NULL,
 IME VARCHAR(25) NOT NULL,
 PREZIME VARCHAR(25) NOT NULL,
-CONSTRAINT ODG_LICE_PK PRIMARY KEY (PIB_FIRME, JMBG),
+CONSTRAINT ODG_LICE_PK PRIMARY KEY (ID),
+CONSTRAINT ODG_LICE_UNIQUE UNIQUE (PIB_FIRME, JMBG),
 CONSTRAINT ODG_LICE_FIRMA_FK FOREIGN KEY (PIB_FIRME) REFERENCES FIRMA(PIB)
 );
+
+
+---------trigeri
+
+CREATE SEQUENCE PRESTUP_ID_SEQ MINVALUE 1 MAXVALUE 999999 INCREMENT BY 1 START WITH 1 CACHE 20 ORDER NOCYCLE;
+
+CREATE OR REPLACE TRIGGER "PRESTUP_PK"
+    BEFORE INSERT
+    ON PRESTUP
+    REFERENCING NEW AS NEW_VAR
+    FOR EACH ROW
+BEGIN
+    SELECT PRESTUP_ID_SEQ.NEXTVAL INTO :NEW_VAR.ID FROM DUAL;
+END;
+
+CREATE SEQUENCE RADI_U_ID_SEQ MINVALUE 1 MAXVALUE 999999 INCREMENT BY 1 START WITH 1 CACHE 20 ORDER NOCYCLE;
+
+CREATE OR REPLACE TRIGGER "RADI_U_PK"
+    BEFORE INSERT
+    ON RADI_U
+    REFERENCING NEW AS NEW_VAR
+    FOR EACH ROW
+BEGIN
+    SELECT RADI_U_ID_SEQ.NEXTVAL INTO :NEW_VAR.ID FROM DUAL;
+END;
+
+CREATE SEQUENCE ZASTUPA_ID_SEQ MINVALUE 1 MAXVALUE 999999 INCREMENT BY 1 START WITH 1 CACHE 20 ORDER NOCYCLE;
+
+CREATE OR REPLACE TRIGGER "ZASTUPA_PK"
+    BEFORE INSERT
+    ON ZASTUPA
+    REFERENCING NEW AS NEW_VAR
+    FOR EACH ROW
+BEGIN
+    SELECT ZASTUPA_ID_SEQ.NEXTVAL INTO :NEW_VAR.ID FROM DUAL;
+END;
+
+CREATE SEQUENCE POSECUJE_ID_SEQ MINVALUE 1 MAXVALUE 999999 INCREMENT BY 1 START WITH 1 CACHE 20 ORDER NOCYCLE;
+
+CREATE OR REPLACE TRIGGER "POSECUJE_PK"
+    BEFORE INSERT
+    ON POSECUJE
+    REFERENCING NEW AS NEW_VAR
+    FOR EACH ROW
+BEGIN
+    SELECT POSECUJE_ID_SEQ.NEXTVAL INTO :NEW_VAR.ID FROM DUAL;
+END;
+
+CREATE SEQUENCE TERMIN_SETNJE_ID_SEQ MINVALUE 1 MAXVALUE 999999 INCREMENT BY 1 START WITH 1 CACHE 20 ORDER NOCYCLE;
+
+CREATE OR REPLACE TRIGGER "TERMIN_SETNJE_PK"
+    BEFORE INSERT
+    ON TERMIN_SETNJE
+    REFERENCING NEW AS NEW_VAR
+    FOR EACH ROW
+BEGIN
+    SELECT TERMIN_SETNJE_ID_SEQ.NEXTVAL INTO :NEW_VAR.ID FROM DUAL;
+END;
+
+CREATE SEQUENCE TERMIN_POSETE_ID_SEQ MINVALUE 1 MAXVALUE 999999 INCREMENT BY 1 START WITH 1 CACHE 20 ORDER NOCYCLE;
+
+CREATE OR REPLACE TRIGGER "TERMIN_POSETE_PK"
+    BEFORE INSERT
+    ON TERMIN_POSETE
+    REFERENCING NEW AS NEW_VAR
+    FOR EACH ROW
+BEGIN
+    SELECT TERMIN_POSETE_ID_SEQ.NEXTVAL INTO :NEW_VAR.ID FROM DUAL;
+END;
+
+CREATE SEQUENCE CELIJSKI_PERIOD_ID_SEQ MINVALUE 1 MAXVALUE 999999 INCREMENT BY 1 START WITH 1 CACHE 20 ORDER NOCYCLE;
+
+CREATE OR REPLACE TRIGGER "CELIJSKI_PERIOD_PK"
+    BEFORE INSERT
+    ON CELIJSKI_PERIOD
+    REFERENCING NEW AS NEW_VAR
+    FOR EACH ROW
+BEGIN
+    SELECT CELIJSKI_PERIOD_ID_SEQ.NEXTVAL INTO :NEW_VAR.ID FROM DUAL;
+END;
+
+CREATE SEQUENCE ODG_LICE_ID_SEQ MINVALUE 1 MAXVALUE 999999 INCREMENT BY 1 START WITH 1 CACHE 20 ORDER NOCYCLE;
+
+CREATE OR REPLACE TRIGGER "ODG_LICE_PK"
+    BEFORE INSERT
+    ON ODGOVORNO_LICE
+    REFERENCING NEW AS NEW_VAR
+    FOR EACH ROW
+BEGIN
+    SELECT ODG_LICE_ID_SEQ.NEXTVAL INTO :NEW_VAR.ID FROM DUAL;
+END;
 
 ------------------------------------------------------------------------------------INSERT INTO------------------------------------------------------------------------------------
 
@@ -260,6 +370,10 @@ INSERT INTO ADMINISTRACIJA VALUES ('1302988765432', 'Pravna služba', 'Pravnik',
 INSERT INTO ADMINISTRACIJA VALUES ('0101997764321', 'Pravna služba', 'Pravnik', 'VISOKA');
 INSERT INTO ADMINISTRACIJA VALUES ('1209977237898', 'Pravna služba', 'Pravnik', 'VIŠA');
 
+UPDATE ZATVORSKA_JEDINICA SET JMBG_UPRAVNIK='2809965327690' WHERE SIFRA='AAA21';
+UPDATE ZATVORSKA_JEDINICA SET JMBG_UPRAVNIK='2802987679065' WHERE SIFRA='AAB21';
+UPDATE ZATVORSKA_JEDINICA SET JMBG_UPRAVNIK='3001978775698' WHERE SIFRA='AAC21';
+UPDATE ZATVORSKA_JEDINICA SET JMBG_UPRAVNIK='2209999759711' WHERE SIFRA='AAD21';
 
 -----------------------------------------------------------------------------------IMAJU_KONTAKT-----------------------------------------------------------------------------------
 --PSIHOLOZI
@@ -334,28 +448,28 @@ INSERT INTO ADVOKAT VALUES ('1209972431232', 'Kristijan', 'Antonijević', 'M');
 INSERT INTO ADVOKAT VALUES ('0906967212124', 'Ognjenka', 'Lilić', 'Ž');
 INSERT INTO ADVOKAT VALUES ('1911988765213', 'Dragutin', 'Simov', 'M');
 -------------------------------------------------------------------------------------PRESTUP--------------------------------------------------------------------------------------
-INSERT INTO PRESTUP VALUES ('0203995750023', 'Nehatno lišenje života', '10-May-20', 'Nikole Vujačića 15, 214422 Lazarevac', 'Krivična dela protiv života i tela', 'Ko drugog liši života iz nehata', 182, 1825);
-INSERT INTO PRESTUP VALUES ('1407988752119', 'Odavanje poslovne tajne iz nehata', '30-Jun-18', 'Bulevar Oslobođenja 10a, 400112 Novi Sad', 'Krivično delo protiv privrede', 'Ko neovlašćeno drugom saopšti, preda ili na drugi način učini dostupnim podatke koji predstavljaju poslovnu tajnu ili ko pribavlja takve podatke u nameri da ih preda nepozvanom licu', 182, 1825);
-INSERT INTO PRESTUP VALUES ('1302000750023', 'Izazivanje opasnosti neobezbedjenjem mera zaštite na radu', '21-Apr-18', 'Moše Pijade 12, 19210 Bor', 'Krivična dela protiv opšte sigurnosti čjudi i imovine', 'Ko u rudnicima, fabrikama, radionicama, na gradilištima ili na drugom mestu rada ošteti ili ukloni zaštitne uređaje i time izazove opasnost za život ili telo ljudi ili za imovinu većeg obima', 182, 1095);
-INSERT INTO PRESTUP VALUES ('1107999759131', 'Nesavesno pružanje lekarske pomoći', '30-Mar-19', 'Kneza Mihaila 22c, 104102 Beograd', 'Krivično delo protiv zdravlja ljudi', 'Lekar koji pri pružanju lekarske pomoći primeni očigledno nepodobno sredstvo ili očigledno nepodoban način lečenja ili ne primeni odgovarajuće higijenske mere ili uopšte očigledno nesavesno postupa i time prouzrokuje pogoršanje zdravstvenog stanja nekog lica', 91, 1095);
+INSERT INTO PRESTUP VALUES (NULL, '0203995750023', 'Nehatno lišenje života', '10-May-20', 'Nikole Vujačića 15, 214422 Lazarevac', 'Krivična dela protiv života i tela', 'Ko drugog liši života iz nehata', 182, 1825);
+INSERT INTO PRESTUP VALUES (NULL, '1407988752119', 'Odavanje poslovne tajne iz nehata', '30-Jun-18', 'Bulevar Oslobođenja 10a, 400112 Novi Sad', 'Krivično delo protiv privrede', 'Ko neovlašćeno drugom saopšti, preda ili na drugi način učini dostupnim podatke koji predstavljaju poslovnu tajnu ili ko pribavlja takve podatke u nameri da ih preda nepozvanom licu', 182, 1825);
+INSERT INTO PRESTUP VALUES (NULL, '1302000750023', 'Izazivanje opasnosti neobezbedjenjem mera zaštite na radu', '21-Apr-18', 'Moše Pijade 12, 19210 Bor', 'Krivična dela protiv opšte sigurnosti čjudi i imovine', 'Ko u rudnicima, fabrikama, radionicama, na gradilištima ili na drugom mestu rada ošteti ili ukloni zaštitne uređaje i time izazove opasnost za život ili telo ljudi ili za imovinu većeg obima', 182, 1095);
+INSERT INTO PRESTUP VALUES (NULL, '1107999759131', 'Nesavesno pružanje lekarske pomoći', '30-Mar-19', 'Kneza Mihaila 22c, 104102 Beograd', 'Krivično delo protiv zdravlja ljudi', 'Lekar koji pri pružanju lekarske pomoći primeni očigledno nepodobno sredstvo ili očigledno nepodoban način lečenja ili ne primeni odgovarajuće higijenske mere ili uopšte očigledno nesavesno postupa i time prouzrokuje pogoršanje zdravstvenog stanja nekog lica', 91, 1095);
 
-INSERT INTO PRESTUP VALUES ('2011956748912', 'Odavanje državne tajne', '12-Dec-18', 'Nemanjina 15, 32000 Čačak', 'Krivična dela protiv ustavnog uređenja i beybednosti republike srbije', ' Ko neovlašćeno nepozvanom licu saopšti, preda ili učini dostupnim podatke ili dokumente koji su mu povereni ili do kojih je na drugi način došao, a koji predstavljaju državnu tajnu', 365, 3650);
-INSERT INTO PRESTUP VALUES ('1208999759118', 'Napad naslužbeno lice u vršenju službene dužnosti', '25-Jun-16', 'Zmaj Jove Jovanovića 5, 19350 Knjaževac', 'Krivična dela protiv državnih organa', 'Ko napadne ili preti da će napasti službeno lice u vršenju službene dužnosti, prilikom izvršenja dela učinilac je  službenom licu nano tešku telesnu povredu', 1095, 4380);
-INSERT INTO PRESTUP VALUES ('1305993741118', 'Nedozvoljen prelaz državne granice i krijumčarenje ljudi', '10-Sep-14', 'Vovjode Stepe 13, 32000 Čačak', 'Krivična dela protiv javnog reda i mira', ' Ko u nameri da sebi ili drugom pribavi kakvu korist, omogućava drugom nedozvoljeni prelaz granice Srbije ili nedozvoljeni boravak ili tranzit kroz Srbiju', 365, 2920);
-INSERT INTO PRESTUP VALUES ('0209997591541', 'Teške telesne povrede', '02-Mar-11', 'Knežopoljska 13, 101801 Palilula', 'Krivična dela protiv života i tela', 'Ko drugog teško telesno povredi ili mu zdravlje naruši tako teško da je usled toga doveden u opasnost život povređenog ili je uništen ili trajno i u znatnoj meri oštećen ili oslabljen neki važan deo njegovog tela ili važan organ ili je prouzrokovana trajna nesposobnost za rad povređenog ili trajno i teško narušenje njegovog zdravlja ili unakaženost, usled dela je nastupila smrt povređenog lica', 730, 4380);
-INSERT INTO PRESTUP VALUES ('1708978732323', 'Prinuda', '10-Sep-19', 'Neznanog Junaka 22, 11040 Beograd', 'Krivična dela protiv slobode i prava čoveka', 'Ko drugog silom ili pretnjom prinudi da nešto učini ili ne učini ili trpi, delo je iyvrseno odo strane kriminalne grupe', 1825, 5475);
+INSERT INTO PRESTUP VALUES (NULL, '2011956748912', 'Odavanje državne tajne', '12-Dec-18', 'Nemanjina 15, 32000 Čačak', 'Krivična dela protiv ustavnog uređenja i beybednosti republike srbije', ' Ko neovlašćeno nepozvanom licu saopšti, preda ili učini dostupnim podatke ili dokumente koji su mu povereni ili do kojih je na drugi način došao, a koji predstavljaju državnu tajnu', 365, 3650);
+INSERT INTO PRESTUP VALUES (NULL, '1208999759118', 'Napad naslužbeno lice u vršenju službene dužnosti', '25-Jun-16', 'Zmaj Jove Jovanovića 5, 19350 Knjaževac', 'Krivična dela protiv državnih organa', 'Ko napadne ili preti da će napasti službeno lice u vršenju službene dužnosti, prilikom izvršenja dela učinilac je  službenom licu nano tešku telesnu povredu', 1095, 4380);
+INSERT INTO PRESTUP VALUES (NULL, '1305993741118', 'Nedozvoljen prelaz državne granice i krijumčarenje ljudi', '10-Sep-14', 'Vovjode Stepe 13, 32000 Čačak', 'Krivična dela protiv javnog reda i mira', ' Ko u nameri da sebi ili drugom pribavi kakvu korist, omogućava drugom nedozvoljeni prelaz granice Srbije ili nedozvoljeni boravak ili tranzit kroz Srbiju', 365, 2920);
+INSERT INTO PRESTUP VALUES (NULL, '0209997591541', 'Teške telesne povrede', '02-Mar-11', 'Knežopoljska 13, 101801 Palilula', 'Krivična dela protiv života i tela', 'Ko drugog teško telesno povredi ili mu zdravlje naruši tako teško da je usled toga doveden u opasnost život povređenog ili je uništen ili trajno i u znatnoj meri oštećen ili oslabljen neki važan deo njegovog tela ili važan organ ili je prouzrokovana trajna nesposobnost za rad povređenog ili trajno i teško narušenje njegovog zdravlja ili unakaženost, usled dela je nastupila smrt povređenog lica', 730, 4380);
+INSERT INTO PRESTUP VALUES (NULL, '1708978732323', 'Prinuda', '10-Sep-19', 'Neznanog Junaka 22, 11040 Beograd', 'Krivična dela protiv slobode i prava čoveka', 'Ko drugog silom ili pretnjom prinudi da nešto učini ili ne učini ili trpi, delo je iyvrseno odo strane kriminalne grupe', 1825, 5475);
 
-INSERT INTO PRESTUP VALUES ('1607997742023', 'Zlostavljanje i mučenje', '03-May-17', 'Sterijina 15, 26000 Pančevo', 'Krivična dela protiv sloboda i prava čoveka i građanina', 'Ko zlostavlja drugog ili prema njemu postupa na način kojim se vređa ljudsko dostojanstvo', 0, 365);
-INSERT INTO PRESTUP VALUES ('2302983773221', 'Krivična dela protiv izbornih prava', '01-Apr-20', 'Vojska Jugoslavije 13, 290802 Požarevac', 'Davanje i primanje mita u vezi sa glasanjem', 'Ko drugome nudi, daje, obeća nagradu, poklon ili kakvu drugu korist da na izborima ili referendumu glasa ili ne glasa ili da glasa u korist ili protiv određenog lica odnosno predloga', 30, 1095);
-INSERT INTO PRESTUP VALUES ('1809987654126', 'Neovlašćeno otkrivanje tajne', '01-Oct-14', 'Cara Lazara 4, 31210 Požega', 'Krivična dela protiv sloboda i prava čoveka i građanina', 'Advokat, lekar ili drugo lice koje neovlašćeno otkrije tajnu koju je saznalo u vršenju svog poziva', 0, 365);
-INSERT INTO PRESTUP VALUES ('0101967554919', 'Povreda prava pri zapošljavanju i za vreme nezaposlenosti', '10-Mar-15', '7. Septembar, 19000 Zaječar', 'Krivična dela protiv prava po osnovu rada', ' Ko svesnim kršenjem propisa ili na drugi protivpravan način uskrati ili ograniči pravo građana na slobodno zapošljavanje na teritoriji Srbije pod jednakim uslovima', 30, 356);
-INSERT INTO PRESTUP VALUES ('0903966759113', 'Povreda ugleda strane države ili međunarodne organizacije', '09-Jun-16', 'Fadil Franca 15, 40000 Kosovska Mitrovica', 'KRIVIČNA DELA PROTIV ČASTI I UGLEDA', ' Ko javno izloži poruzi stranu državu, njenu zastavu, grb ili himnu', 0, 365);
+INSERT INTO PRESTUP VALUES (NULL, '1607997742023', 'Zlostavljanje i mučenje', '03-May-17', 'Sterijina 15, 26000 Pančevo', 'Krivična dela protiv sloboda i prava čoveka i građanina', 'Ko zlostavlja drugog ili prema njemu postupa na način kojim se vređa ljudsko dostojanstvo', 0, 365);
+INSERT INTO PRESTUP VALUES (NULL, '2302983773221', 'Krivična dela protiv izbornih prava', '01-Apr-20', 'Vojska Jugoslavije 13, 290802 Požarevac', 'Davanje i primanje mita u vezi sa glasanjem', 'Ko drugome nudi, daje, obeća nagradu, poklon ili kakvu drugu korist da na izborima ili referendumu glasa ili ne glasa ili da glasa u korist ili protiv određenog lica odnosno predloga', 30, 1095);
+INSERT INTO PRESTUP VALUES (NULL, '1809987654126', 'Neovlašćeno otkrivanje tajne', '01-Oct-14', 'Cara Lazara 4, 31210 Požega', 'Krivična dela protiv sloboda i prava čoveka i građanina', 'Advokat, lekar ili drugo lice koje neovlašćeno otkrije tajnu koju je saznalo u vršenju svog poziva', 0, 365);
+INSERT INTO PRESTUP VALUES (NULL, '0101967554919', 'Povreda prava pri zapošljavanju i za vreme nezaposlenosti', '10-Mar-15', '7. Septembar, 19000 Zaječar', 'Krivična dela protiv prava po osnovu rada', ' Ko svesnim kršenjem propisa ili na drugi protivpravan način uskrati ili ograniči pravo građana na slobodno zapošljavanje na teritoriji Srbije pod jednakim uslovima', 30, 356);
+INSERT INTO PRESTUP VALUES (NULL, '0903966759113', 'Povreda ugleda strane države ili međunarodne organizacije', '09-Jun-16', 'Fadil Franca 15, 40000 Kosovska Mitrovica', 'KRIVIČNA DELA PROTIV ČASTI I UGLEDA', ' Ko javno izloži poruzi stranu državu, njenu zastavu, grb ili himnu', 0, 365);
 
-INSERT INTO PRESTUP VALUES ('0203000768799', 'Falsifikovanje novca', '04-Sep-20', 'Jug Bogdanova 1, 19350 Knjaževac', 'KRIVIČNA DELA PROTIV PRIVREDE', 'Ko napravi lažan novac u nameri da ga stavi u opticaj kao pravi ili ko u istoj nameri preinači pravi novac', 365, 4380);
-INSERT INTO PRESTUP VALUES ('2406999755433', 'Posredovanje u vršenju prostitucije', '10-Mar-17', 'Četvrtog Jula 2, 19350 Knjaževac', 'KRIVIČNA DELA PROTIV POLNE SLOBODE', 'Ko navodi ili podstiče drugog na prostituciju ili učestvuje u predaji nekog lica drugome radi vršenja prostitucije ili ko putem sredstava javnog informisanja i drugih sličnih sredstava propagira ili reklamira prostituciju', 182, 1825);
-INSERT INTO PRESTUP VALUES ('0606999728012', 'Zlostavljanje i mučenje', '04-Sep-20', 'KretenVille 15, 66666 Satanarevo', 'Krivična dela protiv sloboda i prava čoveka i građanina', 'Ko zlostavlja drugog ili prema njemu postupa na način kojim se vređa ljudsko dostojanstvo', 0, 365);
-INSERT INTO PRESTUP VALUES ('0505945748024', 'Neovlašćeni pristup zaštićenom računaru, računarskoj mreži i elektronskoj obradi podataka', '10-Nov-30', 'Sedmog Jula 15, 18000 Niš', 'KRIVIČNA DELA PROTIV BEZBEDNOSTI RAČUNARSKIH PODATAKA', 'Ko se, kršeći mere zaštite, neovlašćeno uključi u računar ili računarsku mrežu, ili neovlašćeno pristupi elektronskoj obradi podataka', 0, 182);
-INSERT INTO PRESTUP VALUES ('1909999738712', 'Povreda slobode kretanja i nastanjivanja', '19-Aug-18', 'Đure Daničića 13, 16000 Leskovac', 'Krivična dela protiv sloboda i prava čoveka i građanina', 'Ko protivpravno uskrati ili ograniči građaninu Srbije slobodu kretanja ili nastanjivanja na teritoriji Srbije', 0, 365);
+INSERT INTO PRESTUP VALUES (NULL, '0203000768799', 'Falsifikovanje novca', '04-Sep-20', 'Jug Bogdanova 1, 19350 Knjaževac', 'KRIVIČNA DELA PROTIV PRIVREDE', 'Ko napravi lažan novac u nameri da ga stavi u opticaj kao pravi ili ko u istoj nameri preinači pravi novac', 365, 4380);
+INSERT INTO PRESTUP VALUES (NULL, '2406999755433', 'Posredovanje u vršenju prostitucije', '10-Mar-17', 'Četvrtog Jula 2, 19350 Knjaževac', 'KRIVIČNA DELA PROTIV POLNE SLOBODE', 'Ko navodi ili podstiče drugog na prostituciju ili učestvuje u predaji nekog lica drugome radi vršenja prostitucije ili ko putem sredstava javnog informisanja i drugih sličnih sredstava propagira ili reklamira prostituciju', 182, 1825);
+INSERT INTO PRESTUP VALUES (NULL, '0606999728012', 'Zlostavljanje i mučenje', '04-Sep-20', 'KretenVille 15, 66666 Satanarevo', 'Krivična dela protiv sloboda i prava čoveka i građanina', 'Ko zlostavlja drugog ili prema njemu postupa na način kojim se vređa ljudsko dostojanstvo', 0, 365);
+INSERT INTO PRESTUP VALUES (NULL, '0505945748024', 'Neovlašćeni pristup zaštićenom računaru, računarskoj mreži i elektronskoj obradi podataka', '10-Nov-30', 'Sedmog Jula 15, 18000 Niš', 'KRIVIČNA DELA PROTIV BEZBEDNOSTI RAČUNARSKIH PODATAKA', 'Ko se, kršeći mere zaštite, neovlašćeno uključi u računar ili računarsku mrežu, ili neovlašćeno pristupi elektronskoj obradi podataka', 0, 182);
+INSERT INTO PRESTUP VALUES (NULL, '1909999738712', 'Povreda slobode kretanja i nastanjivanja', '19-Aug-18', 'Đure Daničića 13, 16000 Leskovac', 'Krivična dela protiv sloboda i prava čoveka i građanina', 'Ko protivpravno uskrati ili ograniči građaninu Srbije slobodu kretanja ili nastanjivanja na teritoriji Srbije', 0, 365);
 
 
 
@@ -365,6 +479,7 @@ INSERT INTO RADI_U (JMBG_ZAP, SIFRA_ZJ, DATUM_POCETKA_RADA) VALUES ('28099653276
 INSERT INTO RADI_U (JMBG_ZAP, SIFRA_ZJ, DATUM_POCETKA_RADA) VALUES ('2802987679065', 'AAB21', '15-APR-18');
 INSERT INTO RADI_U (JMBG_ZAP, SIFRA_ZJ, DATUM_POCETKA_RADA) VALUES ('3001978775698', 'AAC21', '12-JAN-15');
 INSERT INTO RADI_U (JMBG_ZAP, SIFRA_ZJ, DATUM_POCETKA_RADA) VALUES ('2209999759711', 'AAD21', '19-SEP-18');
+INSERT INTO RADI_U (JMBG_ZAP, SIFRA_ZJ, DATUM_POCETKA_RADA) VALUES ('2209999759711', 'AAA21', '19-SEP-18');
 --ADMIN --KNJIGOVODSTVO
 INSERT INTO RADI_U (JMBG_ZAP, SIFRA_ZJ, DATUM_POCETKA_RADA) VALUES ('1212976313145', 'AAA21', '13-MAY-00');
 INSERT INTO RADI_U (JMBG_ZAP, SIFRA_ZJ, DATUM_POCETKA_RADA) VALUES ('2208995759711', 'AAB21', '03-DEC-12');
@@ -393,54 +508,55 @@ INSERT INTO RADI_U (JMBG_ZAP, SIFRA_ZJ, DATUM_POCETKA_RADA) VALUES ('08089784325
 
 --------------------------------------------------------------------------------------ZASTUPA--------------------------------------------------------------------------------------
 --AAA21
-INSERT INTO ZASTUPA VALUES ('0203995750023', '2109978665119', '12-MAY-18', '12-JAN-21');
-INSERT INTO ZASTUPA VALUES ('1407988752119', '2109978665119', '15-DEC-15', '15-MAR-21');
-INSERT INTO ZASTUPA VALUES ('1302000750023', '1204964525465', '12-APR-10', '25-APR-21');
-INSERT INTO ZASTUPA VALUES ('1107999759131', '1204964525465', '15-MAR-19', '13-APR-21');
+INSERT INTO ZASTUPA VALUES (NULL, '0203995750023', '2109978665119', '12-MAY-18', '12-JAN-21');
+INSERT INTO ZASTUPA VALUES (NULL, '1407988752119', '2109978665119', '15-DEC-15', '15-MAR-21');
+INSERT INTO ZASTUPA VALUES (NULL, '1302000750023', '1204964525465', '12-APR-10', '25-APR-21');
+INSERT INTO ZASTUPA VALUES (NULL, '1107999759131', '1204964525465', '15-MAR-19', '13-APR-21');
 --AAB21
-INSERT INTO ZASTUPA VALUES ('2011956748912', '3104988756441', '02-JUL-19', '14-JUN-20');
-INSERT INTO ZASTUPA VALUES ('1208999759118', '3104988756441', '05-MAY-17', '02-MAY-21');
-INSERT INTO ZASTUPA VALUES ('1305993741118', '0303989323255', '04-DEC-15', '15-APR-21');
-INSERT INTO ZASTUPA VALUES ('0209997591541', '0303989323255', '12-JUN-12', '15-FEB-21');
-INSERT INTO ZASTUPA VALUES ('1708978732323', '0303989323255', '13-SEP-13', '16-FEB-21');
+INSERT INTO ZASTUPA VALUES (NULL, '2011956748912', '3104988756441', '02-JUL-19', '14-JUN-20');
+INSERT INTO ZASTUPA VALUES (NULL, '1208999759118', '3104988756441', '05-MAY-17', '02-MAY-21');
+INSERT INTO ZASTUPA VALUES (NULL, '1305993741118', '0303989323255', '04-DEC-15', '15-APR-21');
+INSERT INTO ZASTUPA VALUES (NULL, '0209997591541', '0303989323255', '12-JUN-12', '15-FEB-21');
+INSERT INTO ZASTUPA VALUES (NULL, '1708978732323', '0303989323255', '13-SEP-13', '16-FEB-21');
 --AAC21
-INSERT INTO ZASTUPA VALUES ('1607997742023', '2103131432452', '05-MAY-17', '15-NOV-20');
-INSERT INTO ZASTUPA VALUES ('2302983773221', '2103131432452', '02-APR-20', '06-DEC-20');
-INSERT INTO ZASTUPA VALUES ('1809987654126', '2103131432452', '03-OCT-14', '22-JAN-21');
-INSERT INTO ZASTUPA VALUES ('0101967554919', '1209972431232', '15-MAY-15', '26-APR-21');
-INSERT INTO ZASTUPA VALUES ('0903966759113', '1209972431232', '12-JUN-16', '13-JAN-21');
+INSERT INTO ZASTUPA VALUES (NULL, '1607997742023', '2103131432452', '05-MAY-17', '15-NOV-20');
+INSERT INTO ZASTUPA VALUES (NULL, '2302983773221', '2103131432452', '02-APR-20', '06-DEC-20');
+INSERT INTO ZASTUPA VALUES (NULL, '1809987654126', '2103131432452', '03-OCT-14', '22-JAN-21');
+INSERT INTO ZASTUPA VALUES (NULL, '0101967554919', '1209972431232', '15-MAY-15', '26-APR-21');
+INSERT INTO ZASTUPA VALUES (NULL, '0903966759113', '1209972431232', '12-JUN-16', '13-JAN-21');
 --AAD21
-INSERT INTO ZASTUPA VALUES ('0203000768799', '0906967212124', '06-SEP-20', '10-FEB-21');
-INSERT INTO ZASTUPA VALUES ('2406999755433', '1911988765213', '12-MAR-17', '13-MAR-21');
-INSERT INTO ZASTUPA VALUES ('0606999728012', '0906967212124', '06-SEP-20', '14-MAR-21');
-INSERT INTO ZASTUPA VALUES ('0505945748024', '1911988765213', '13-NOV-13', '26-FEB-21');
-INSERT INTO ZASTUPA VALUES ('1909999738712', '0906967212124', '15-AUG-18', '16-APR-21');
+INSERT INTO ZASTUPA VALUES (NULL, '0203000768799', '0906967212124', '06-SEP-20', '10-FEB-21');
+INSERT INTO ZASTUPA VALUES (NULL, '2406999755433', '1911988765213', '12-MAR-17', '13-MAR-21');
+INSERT INTO ZASTUPA VALUES (NULL, '0606999728012', '0906967212124', '06-SEP-20', '14-MAR-21');
+INSERT INTO ZASTUPA VALUES (NULL, '0505945748024', '1911988765213', '13-NOV-13', '26-FEB-21');
+INSERT INTO ZASTUPA VALUES (NULL, '1909999738712', '0906967212124', '15-AUG-18', '16-APR-21');
 
 
 --------------------------------------------------------------------------------------POSECUJE-------------------------------------------------------------------------------------
 --AAA21
-INSERT INTO POSECUJE VALUES ('0203995750023', '2109978665119', TO_DATE('12-JAN-21 15:00', 'dd-mon-yy hh24:mi'),TO_DATE('12-JAN-21 15:45', 'dd-mon-yy hh24:mi'));
-INSERT INTO POSECUJE VALUES ('1407988752119', '2109978665119', TO_DATE('15-MAR-21 17:10', 'dd-mon-yy hh24:mi'), TO_DATE('15-MAR-21 20:20', 'dd-mon-yy hh24:mi'));
-INSERT INTO POSECUJE VALUES ('1302000750023', '1204964525465', TO_DATE('25-APR-21 18:45', 'dd-mon-yy hh24:mi'), TO_DATE('25-APR-21 19:10', 'dd-mon-yy hh24:mi'));
-INSERT INTO POSECUJE VALUES ('1107999759131', '1204964525465', TO_DATE('13-APR-21 13:10', 'dd-mon-yy hh24:mi'), TO_DATE('13-APR-21 14:20', 'dd-mon-yy hh24:mi'));
+INSERT INTO POSECUJE VALUES (NULL, '0203995750023', '2109978665119', TO_DATE('12-JAN-21 15:00', 'dd-mon-yy hh24:mi'),TO_DATE('12-JAN-21 15:45', 'dd-mon-yy hh24:mi'));
+INSERT INTO POSECUJE VALUES (NULL, '1407988752119', '2109978665119', TO_DATE('15-MAR-21 17:10', 'dd-mon-yy hh24:mi'), TO_DATE('15-MAR-21 20:20', 'dd-mon-yy hh24:mi'));
+INSERT INTO POSECUJE VALUES (NULL, '1302000750023', '1204964525465', TO_DATE('25-APR-21 18:45', 'dd-mon-yy hh24:mi'), TO_DATE('25-APR-21 19:10', 'dd-mon-yy hh24:mi'));
+INSERT INTO POSECUJE VALUES (NULL, '1107999759131', '1204964525465', TO_DATE('13-APR-21 13:10', 'dd-mon-yy hh24:mi'), TO_DATE('13-APR-21 14:20', 'dd-mon-yy hh24:mi'));
 --AAB21
-INSERT INTO POSECUJE VALUES ('2011956748912', '3104988756441', TO_DATE('14-JUN-20 11:35', 'dd-mon-yy hh24:mi'), TO_DATE('14-JUN-20 12:00', 'dd-mon-yy hh24:mi'));
-INSERT INTO POSECUJE VALUES ('1208999759118', '3104988756441', TO_DATE('02-MAY-21 18:23', 'dd-mon-yy hh24:mi'), TO_DATE('02-MAY-21 20:22', 'dd-mon-yy hh24:mi'));
-INSERT INTO POSECUJE VALUES ('1305993741118', '0303989323255', TO_DATE('15-APR-21 14:18', 'dd-mon-yy hh24:mi'), TO_DATE('15-APR-21 14:50', 'dd-mon-yy hh24:mi'));
-INSERT INTO POSECUJE VALUES ('0209997591541', '0303989323255', TO_DATE('15-FEB-21 09:10', 'dd-mon-yy hh24:mi'), TO_DATE('15-FEB-21 11:00', 'dd-mon-yy hh24:mi'));
-INSERT INTO POSECUJE VALUES ('1708978732323', '0303989323255', TO_DATE('16-FEB-21 08:00', 'dd-mon-yy hh24:mi'), TO_DATE('16-FEB-21 09:33', 'dd-mon-yy hh24:mi'));
+INSERT INTO POSECUJE VALUES (NULL, '2011956748912', '3104988756441', TO_DATE('14-JUN-20 11:35', 'dd-mon-yy hh24:mi'), TO_DATE('14-JUN-20 12:00', 'dd-mon-yy hh24:mi'));
+INSERT INTO POSECUJE VALUES (NULL, '1208999759118', '3104988756441', TO_DATE('02-MAY-21 18:23', 'dd-mon-yy hh24:mi'), TO_DATE('02-MAY-21 20:22', 'dd-mon-yy hh24:mi'));
+INSERT INTO POSECUJE VALUES (NULL, '1305993741118', '0303989323255', TO_DATE('15-APR-21 14:18', 'dd-mon-yy hh24:mi'), TO_DATE('15-APR-21 14:50', 'dd-mon-yy hh24:mi'));
+INSERT INTO POSECUJE VALUES (NULL, '0209997591541', '0303989323255', TO_DATE('15-FEB-21 09:10', 'dd-mon-yy hh24:mi'), TO_DATE('15-FEB-21 11:00', 'dd-mon-yy hh24:mi'));
+INSERT INTO POSECUJE VALUES (NULL, '1708978732323', '0303989323255', TO_DATE('16-FEB-21 08:00', 'dd-mon-yy hh24:mi'), TO_DATE('16-FEB-21 09:33', 'dd-mon-yy hh24:mi'));
 --AAC21
-INSERT INTO POSECUJE VALUES ('1607997742023', '2103131432452', TO_DATE('15-NOV-20 17:50', 'dd-mon-yy hh24:mi'), TO_DATE('15-NOV-20 18:30', 'dd-mon-yy hh24:mi'));
-INSERT INTO POSECUJE VALUES ('2302983773221', '2103131432452', TO_DATE('06-DEC-20 13:20', 'dd-mon-yy hh24:mi'), TO_DATE('06-DEC-20 14:10', 'dd-mon-yy hh24:mi'));
-INSERT INTO POSECUJE VALUES ('1809987654126', '2103131432452', TO_DATE('22-JAN-21 14:45', 'dd-mon-yy hh24:mi'), TO_DATE('22-JAN-21 16:20', 'dd-mon-yy hh24:mi'));
-INSERT INTO POSECUJE VALUES ('0101967554919', '1209972431232', TO_DATE('26-APR-21 12:11', 'dd-mon-yy hh24:mi'), TO_DATE('26-APR-21 13:50', 'dd-mon-yy hh24:mi'));
-INSERT INTO POSECUJE VALUES ('0903966759113', '1209972431232', TO_DATE('13-JAN-21 12:18', 'dd-mon-yy hh24:mi'), TO_DATE('13-JAN-21 14:11', 'dd-mon-yy hh24:mi'));
+INSERT INTO POSECUJE VALUES (NULL, '1607997742023', '2103131432452', TO_DATE('15-NOV-20 17:50', 'dd-mon-yy hh24:mi'), TO_DATE('15-NOV-20 18:30', 'dd-mon-yy hh24:mi'));
+INSERT INTO POSECUJE VALUES (NULL, '2302983773221', '2103131432452', TO_DATE('06-DEC-20 13:20', 'dd-mon-yy hh24:mi'), TO_DATE('06-DEC-20 14:10', 'dd-mon-yy hh24:mi'));
+INSERT INTO POSECUJE VALUES (NULL, '1809987654126', '2103131432452', TO_DATE('22-JAN-21 14:45', 'dd-mon-yy hh24:mi'), TO_DATE('22-JAN-21 16:20', 'dd-mon-yy hh24:mi'));
+INSERT INTO POSECUJE VALUES (NULL, '0101967554919', '1209972431232', TO_DATE('26-APR-21 12:11', 'dd-mon-yy hh24:mi'), TO_DATE('26-APR-21 13:50', 'dd-mon-yy hh24:mi'));
+INSERT INTO POSECUJE VALUES (NULL, '0903966759113', '1209972431232', TO_DATE('13-JAN-21 12:18', 'dd-mon-yy hh24:mi'), TO_DATE('13-JAN-21 14:11', 'dd-mon-yy hh24:mi'));
 --AAD21
-INSERT INTO POSECUJE VALUES ('0203000768799', '0906967212124', TO_DATE('10-FEB-21 14:20', 'dd-mon-yy hh24:mi'), TO_DATE('10-FEB-21 15:50', 'dd-mon-yy hh24:mi'));
-INSERT INTO POSECUJE VALUES ('2406999755433', '1911988765213', TO_DATE('13-MAR-21 11:45', 'dd-mon-yy hh24:mi'), TO_DATE('13-MAR-21 12:55', 'dd-mon-yy hh24:mi'));
-INSERT INTO POSECUJE VALUES ('0606999728012', '0906967212124', TO_DATE('14-MAR-21 12:34', 'dd-mon-yy hh24:mi'), TO_DATE('14-MAR-21 14:10', 'dd-mon-yy hh24:mi'));
-INSERT INTO POSECUJE VALUES ('0505945748024', '1911988765213', TO_DATE('26-FEB-21 15:40', 'dd-mon-yy hh24:mi'), TO_DATE('26-FEB-21 16:50', 'dd-mon-yy hh24:mi'));
-INSERT INTO POSECUJE VALUES ('1909999738712', '0906967212124', TO_DATE('16-APR-21 11:11', 'dd-mon-yy hh24:mi'), TO_DATE('16-APR-21 12:43', 'dd-mon-yy hh24:mi'));
+INSERT INTO POSECUJE VALUES (NULL, '0203000768799', '0906967212124', TO_DATE('10-FEB-21 14:20', 'dd-mon-yy hh24:mi'), TO_DATE('10-FEB-21 15:50', 'dd-mon-yy hh24:mi'));
+INSERT INTO POSECUJE VALUES (NULL, '2406999755433', '1911988765213', TO_DATE('13-MAR-21 11:45', 'dd-mon-yy hh24:mi'), TO_DATE('13-MAR-21 12:55', 'dd-mon-yy hh24:mi'));
+INSERT INTO POSECUJE VALUES (NULL, '0606999728012', '0906967212124', TO_DATE('14-MAR-21 12:34', 'dd-mon-yy hh24:mi'), TO_DATE('14-MAR-21 14:10', 'dd-mon-yy hh24:mi'));
+INSERT INTO POSECUJE VALUES (NULL, '0505945748024', '1911988765213', TO_DATE('26-FEB-21 15:40', 'dd-mon-yy hh24:mi'), TO_DATE('26-FEB-21 16:50', 'dd-mon-yy hh24:mi'));
+INSERT INTO POSECUJE VALUES (NULL, '1909999738712', '0906967212124', TO_DATE('16-APR-21 11:11', 'dd-mon-yy hh24:mi'), TO_DATE('16-APR-21 12:43', 'dd-mon-yy hh24:mi'));
+
 
 
 ----------------------------------------------------------------------------------MOZE_DA_ANGAZUJE---------------------------------------------------------------------------------
@@ -452,28 +568,28 @@ INSERT INTO MOZE_DA_ANGAZUJE VALUES ('109865782', 'AAB21');
 
 
 -----------------------------------------------------------------------------------TERMIN_SETNJE-----------------------------------------------------------------------------------
-INSERT INTO TERMIN_SETNJE VALUES ('AAC21', '07:00 - 08:00h');
-INSERT INTO TERMIN_SETNJE VALUES ('AAC21', '14:00 - 16:00h');
-INSERT INTO TERMIN_SETNJE VALUES ('AAC21', '18:30 - 20:30h');
+INSERT INTO TERMIN_SETNJE VALUES (NULL, 'AAC21', '07:00 - 08:00h');
+INSERT INTO TERMIN_SETNJE VALUES (NULL, 'AAC21', '14:00 - 16:00h');
+INSERT INTO TERMIN_SETNJE VALUES (NULL, 'AAC21', '18:30 - 20:30h');
 
 
 -----------------------------------------------------------------------------------TERMIN_POSETE-----------------------------------------------------------------------------------
-INSERT INTO TERMIN_POSETE VALUES ('AAC21', 'PONEDELJAK', '13:00 - 15:00h');
-INSERT INTO TERMIN_POSETE VALUES ('AAC21', 'SREDA', '15:00 - 18:00h');
-INSERT INTO TERMIN_POSETE VALUES ('AAC21', 'PETAK', '14:30 - 15:45h');
-INSERT INTO TERMIN_POSETE VALUES ('AAC21', 'NEDELJA', '12:00 - 13:00h');
+INSERT INTO TERMIN_POSETE VALUES (NULL, 'AAC21', 'PONEDELJAK', '13:00 - 15:00h');
+INSERT INTO TERMIN_POSETE VALUES (NULL, 'AAC21', 'SREDA', '15:00 - 18:00h');
+INSERT INTO TERMIN_POSETE VALUES (NULL, 'AAC21', 'PETAK', '14:30 - 15:45h');
+INSERT INTO TERMIN_POSETE VALUES (NULL, 'AAC21', 'NEDELJA', '12:00 - 13:00h');
 
 
 ----------------------------------------------------------------------------------CELIJSKI_PERIOD----------------------------------------------------------------------------------
-INSERT INTO CELIJSKI_PERIOD VALUES ('AAA21', '21:00 - 06:00h');
-INSERT INTO CELIJSKI_PERIOD VALUES ('AAA21', '12:00 - 14:00h');
-INSERT INTO CELIJSKI_PERIOD VALUES ('AAB21', '22:00 - 06:00h');
-INSERT INTO CELIJSKI_PERIOD VALUES ('AAB21', '12:30 - 13:30h');
-INSERT INTO CELIJSKI_PERIOD VALUES ('AAD21', '21:30 - 05:30h');
+INSERT INTO CELIJSKI_PERIOD VALUES (NULL, 'AAA21', '21:00 - 06:00h');
+INSERT INTO CELIJSKI_PERIOD VALUES (NULL, 'AAA21', '12:00 - 14:00h');
+INSERT INTO CELIJSKI_PERIOD VALUES (NULL, 'AAB21', '22:00 - 06:00h');
+INSERT INTO CELIJSKI_PERIOD VALUES (NULL, 'AAB21', '12:30 - 13:30h');
+INSERT INTO CELIJSKI_PERIOD VALUES (NULL, 'AAD21', '21:30 - 05:30h');
 
 
 -----------------------------------------------------------------------------------ODGOVORNO_LICE----------------------------------------------------------------------------------
-INSERT INTO ODGOVORNO_LICE VALUES ('100234131', '0712986764321', 'Petar', 'Petrović');
-INSERT INTO ODGOVORNO_LICE VALUES ('100234131', '0911978654321', 'Žizela', 'Ostojević');
-INSERT INTO ODGOVORNO_LICE VALUES ('102131525', '1212982672190', 'Dragan', 'Belogrlić');
-INSERT INTO ODGOVORNO_LICE VALUES ('109865782', '0111988675211', 'Zoran', 'Krstić');
+INSERT INTO ODGOVORNO_LICE VALUES (NULL, '100234131', '0712986764321', 'Petar', 'Petrović');
+INSERT INTO ODGOVORNO_LICE VALUES (NULL, '100234131', '0911978654321', 'Žizela', 'Ostojević');
+INSERT INTO ODGOVORNO_LICE VALUES (NULL, '102131525', '1212982672190', 'Dragan', 'Belogrlić');
+INSERT INTO ODGOVORNO_LICE VALUES (NULL, '109865782', '0111988675211', 'Zoran', 'Krstić');
