@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Zatvor.Entiteti;
+using Zatvor.Mapiranja;
 
 namespace Zatvor
 {
@@ -43,7 +43,7 @@ namespace Zatvor
 
                 return Fluently.Configure()
                     .Database(config.ShowSql()) //ShowSql ce prikazivati kako izgledaju naredbe ka bazi i lakse je za debagiranje
-                    .Mappings(m => m.FluentMappings.AddFromAssemblyOf<Zatvorska_Jedinica>())//Da pronadje sva mapiranja koja se nalaze u istom namespace-u kao i Zatvorska jedinica
+                    .Mappings(m => m.FluentMappings.AddFromAssemblyOf<ZatvorskaJedinicaMapiranja>())//Da pronadje sva mapiranja koja se nalaze u istom namespace-u kao i Zatvorska jedinica
                     .BuildSessionFactory();
             }
             catch (Exception e)

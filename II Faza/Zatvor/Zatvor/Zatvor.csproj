@@ -71,14 +71,44 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataLayer.cs" />
-    <Compile Include="Entiteti\Zatvorska_Jedinica.cs" />
+    <Compile Include="Entiteti\Administracija.cs" />
+    <Compile Include="Entiteti\Advokat.cs" />
+    <Compile Include="Entiteti\CelijskiPeriod.cs" />
+    <Compile Include="Entiteti\Firma.cs" />
+    <Compile Include="Entiteti\ImajuKontakt.cs" />
+    <Compile Include="Entiteti\OdgovornoLice.cs" />
+    <Compile Include="Entiteti\Osoba.cs" />
+    <Compile Include="Entiteti\Posecuje.cs" />
+    <Compile Include="Entiteti\Prestup.cs" />
+    <Compile Include="Entiteti\RadiU.cs" />
+    <Compile Include="Entiteti\TerminPosete.cs" />
+    <Compile Include="Entiteti\TerminSetnje.cs" />
+    <Compile Include="Entiteti\Zaposleni.cs" />
+    <Compile Include="Entiteti\Zastupa.cs" />
+    <Compile Include="Entiteti\Zatvorenik.cs" />
+    <Compile Include="Entiteti\ZatvorskaJedinica.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mapiranja\Zatvorska_Jedinica_Mapiranja.cs" />
+    <Compile Include="Mapiranja\AdministracijaMapiranja.cs" />
+    <Compile Include="Mapiranja\AdvokatMapiranja.cs" />
+    <Compile Include="Mapiranja\CelijskiPeriodMapiranja.cs" />
+    <Compile Include="Mapiranja\FirmaMapiranja.cs" />
+    <Compile Include="Mapiranja\ImajuKontaktMapiranja.cs" />
+    <Compile Include="Mapiranja\OdgovornoLiceMapiranja.cs" />
+    <Compile Include="Mapiranja\OsobaMapiranja.cs" />
+    <Compile Include="Mapiranja\PosecujeMapiranja.cs" />
+    <Compile Include="Mapiranja\PrestupMapiranja.cs" />
+    <Compile Include="Mapiranja\RadiUMapiranja.cs" />
+    <Compile Include="Mapiranja\TerminPoseteMapiranja.cs" />
+    <Compile Include="Mapiranja\TerminSetnjeMapiranja.cs" />
+    <Compile Include="Mapiranja\ZaposleniMapiranja.cs" />
+    <Compile Include="Mapiranja\ZastupaMapiranja.cs" />
+    <Compile Include="Mapiranja\ZatvorenikMapiranja.cs" />
+    <Compile Include="Mapiranja\ZatvorskaJedinicaMapiranja.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

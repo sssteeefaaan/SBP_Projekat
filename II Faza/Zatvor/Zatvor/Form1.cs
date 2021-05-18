@@ -1,6 +1,8 @@
 ﻿using NHibernate;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
+using Zatvor.Entiteti;
 
 namespace Zatvor
 {
@@ -15,6 +17,13 @@ namespace Zatvor
         {
             try {
                 ISession s = DataLayer.GetSession();
+
+                ZatvorskaJedinica zj = s.Load<ZatvorskaJedinica>("AAA21");
+                MessageBox.Show(zj.Naziv);
+                foreach (Zatvorenik z in zj.Zatvorenici)
+                {
+                    MessageBox.Show($"{z.Ime} {z.Prezime} {z.JMBG} {z.Pol} {z.StatusUslovnogOtpusta} {z.ZatvorskaJedinica.Naziv} {z.DatumInkarceracije} {z.DatumSledecegSaslusanja}");
+                }
 
                 s.Close();
             }
