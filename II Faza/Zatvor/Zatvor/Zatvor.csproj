@@ -71,11 +71,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataLayer.cs" />
-    <Compile Include="Entiteti\Administracija.cs" />
     <Compile Include="Entiteti\Advokat.cs" />
     <Compile Include="Entiteti\CelijskiPeriod.cs" />
     <Compile Include="Entiteti\Firma.cs" />
-    <Compile Include="Entiteti\ImajuKontakt.cs" />
     <Compile Include="Entiteti\OdgovornoLice.cs" />
     <Compile Include="Entiteti\Osoba.cs" />
     <Compile Include="Entiteti\Posecuje.cs" />
@@ -93,11 +91,9 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Mapiranja\AdministracijaMapiranja.cs" />
     <Compile Include="Mapiranja\AdvokatMapiranja.cs" />
     <Compile Include="Mapiranja\CelijskiPeriodMapiranja.cs" />
     <Compile Include="Mapiranja\FirmaMapiranja.cs" />
-    <Compile Include="Mapiranja\ImajuKontaktMapiranja.cs" />
     <Compile Include="Mapiranja\OdgovornoLiceMapiranja.cs" />
     <Compile Include="Mapiranja\OsobaMapiranja.cs" />
     <Compile Include="Mapiranja\PosecujeMapiranja.cs" />

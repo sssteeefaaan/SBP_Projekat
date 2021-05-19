@@ -27,8 +27,35 @@ namespace Zatvor.Entiteti
             TerminiSetnje = new List<TerminSetnje>();
             TerminiPosete = new List<TerminPosete>();
             CelijskiPeriodi = new List<CelijskiPeriod>();
-
-            //Upravnik = new Administracija();
         }
+    }
+
+    public class ZJOtvorenogTipa : ZatvorskaJedinica
+    {
+        public ZJOtvorenogTipa() { }
+    }
+    public class ZJPoluotvorenogTipa : ZatvorskaJedinica
+    {
+        public ZJPoluotvorenogTipa() { }
+    }
+    public class ZJStrogogTipa : ZatvorskaJedinica
+    {
+        public ZJStrogogTipa() { }
+    }
+    public class ZJOtvorenoPoluotvorenogTipa : ZatvorskaJedinica
+    {
+        public ZJOtvorenoPoluotvorenogTipa() { }
+    }
+    public class ZJOtvorenoStrogogTipa : ZatvorskaJedinica
+    {
+        public ZJOtvorenoStrogogTipa() { }
+    }
+    public class ZJPoluotvorenoStrogogTipa : ZatvorskaJedinica
+    {
+        public ZJPoluotvorenoStrogogTipa() { }
+    }
+    public class ZJSvakiTip: ZatvorskaJedinica
+    {
+        public ZJSvakiTip() { }
     }
 }

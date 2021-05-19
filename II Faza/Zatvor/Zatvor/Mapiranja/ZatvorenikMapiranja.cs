@@ -42,6 +42,18 @@ namespace Zatvor.Mapiranja
                 .LazyLoad()
                 .Cascade.All()
                 .Inverse();
+
+            // Veza N:M sa atributima
+            HasMany(z => z.Zastupa)
+                .KeyColumn("JMBG_ZAT")
+                .LazyLoad()
+                .Cascade.All();
+
+            // Veza N:M sa atributima
+            HasMany(z => z.Posete)
+                .KeyColumn("JMBG_ZAT")
+                .LazyLoad()
+                .Cascade.All();
         }
     }
 }

@@ -15,16 +15,27 @@ namespace Zatvor.Mapiranja
                 .GeneratedBy.Assigned();
 
             // Mapiranje atributa
-            Map(zj => zj.Naziv, "NAZIV");
-            Map(zj => zj.Adresa, "ADRESA");
-            Map(zj => zj.Kapacitet, "KAPACITET");
-            Map(zj => zj.FrezimO, "FREZIM_O");
-            Map(zj => zj.FrezimS, "FREZIM_S");
-            Map(zj => zj.FrezimPO, "FREZIM_PO");
+            Map(zj => zj.Naziv, "NAZIV").Not.Nullable();
+            Map(zj => zj.Adresa, "ADRESA").Not.Nullable();
+            Map(zj => zj.Kapacitet, "KAPACITET").Not.Nullable();
+            Map(zj => zj.FrezimO, "FREZIM_O").Not.Nullable();
+            Map(zj => zj.FrezimPO, "FREZIM_PO").Not.Nullable();
+            Map(zj => zj.FrezimS, "FREZIM_S").Not.Nullable();
+
+            DiscriminateSubClassesOnColumn("")
+                .Formula("CASE WHEN (FREZIM_O = 'TRUE' AND FREZIM_S = 'FALSE' AND FREZIM_PO = 'FALSE') THEN 'O' " +
+                             " WHEN (FREZIM_O = 'FALSE' AND FREZIM_S = 'FALSE' AND FREZIM_PO = 'TRUE') THEN 'PO' " +
+                             " WHEN (FREZIM_O = 'FALSE' AND FREZIM_S = 'TRUE' AND FREZIM_PO = 'FALSE') THEN 'S' " +
+                             " WHEN (FREZIM_O = 'TRUE' AND FREZIM_S = 'TRUE' AND FREZIM_PO = 'FALSE') THEN 'OS' " +
+                             " WHEN (FREZIM_O = 'TRUE' AND FREZIM_S = 'FALSE' AND FREZIM_PO = 'TRUE') THEN 'OPO' " +
+                             " WHEN (FREZIM_O = 'FALSE' AND FREZIM_S = 'TRUE' AND FREZIM_PO = 'TRUE') THEN 'POS' " +
+                             " WHEN (FREZIM_O = 'TRUE' AND FREZIM_S = 'TRUE' AND FREZIM_PO = 'TRUE') THEN 'OPOS' " +
+                              //"ELSE 'NEVALIDNO'" +
+                         " END");
 
             // Veza N:1
             References(zj => zj.Upravnik)
-                .Column("JMBG_UPRAVNIK")
+                .Column("JMBG_UPRAVNIKA")
                 .Not.Nullable()
                 .LazyLoad();
 
@@ -71,6 +82,56 @@ namespace Zatvor.Mapiranja
                 .LazyLoad()
                 .Cascade.All()
                 .Inverse();
+        }
+    }
+
+    public class ZJOtvorenogTipaMapiranja : SubclassMap<ZJOtvorenogTipa>
+    {
+        public ZJOtvorenogTipaMapiranja()
+        {
+            DiscriminatorValue("O");
+        }
+    }
+    public class ZJPoluotvorenogTipaMapiranja : SubclassMap<ZJPoluotvorenogTipa>
+    {
+        public ZJPoluotvorenogTipaMapiranja()
+        {
+            DiscriminatorValue("PO");
+        }
+    }
+    public class ZJStrogogTipaMapiranja : SubclassMap<ZJStrogogTipa>
+    {
+        public ZJStrogogTipaMapiranja()
+        {
+            DiscriminatorValue("S");
+        }
+    }
+    public class ZJOtvorenoPoluotvorenogTipaMapiranja : SubclassMap<ZJOtvorenoPoluotvorenogTipa>
+    {
+        public ZJOtvorenoPoluotvorenogTipaMapiranja()
+        {
+            DiscriminatorValue("OPO");
+        }
+    }
+    public class ZJOtvorenoStrogogTipaMapiranja : SubclassMap<ZJOtvorenoStrogogTipa>
+    {
+        public ZJOtvorenoStrogogTipaMapiranja()
+        {
+            DiscriminatorValue("OS");
+        }
+    }
+    public class ZJPoluotvorenoStrogogTipaMapiranja : SubclassMap<ZJPoluotvorenoStrogogTipa>
+    {
+        public ZJPoluotvorenoStrogogTipaMapiranja()
+        {
+            DiscriminatorValue("POS");
+        }
+    }
+    public class ZJSvakiTipMapiranja : SubclassMap<ZJSvakiTip>
+    {
+        public ZJSvakiTipMapiranja()
+        {
+            DiscriminatorValue("OPOS");
         }
     }
 }
