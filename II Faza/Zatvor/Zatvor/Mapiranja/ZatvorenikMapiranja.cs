@@ -40,8 +40,7 @@ namespace Zatvor.Mapiranja
             HasMany(z => z.Prestupi)
                 .KeyColumn("JMBG_ZAT")
                 .LazyLoad()
-                .Cascade.All()
-                .Inverse();
+                .Cascade.All();
 
             // Veza N:M sa atributima
             HasMany(z => z.Zastupa)

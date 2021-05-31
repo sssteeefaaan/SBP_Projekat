@@ -11,7 +11,9 @@ namespace Zatvor.Mapiranja
             Table("PRESTUP");
 
             // Mapiranje primarnog ključa
-            Id(p => p.ID).GeneratedBy.TriggerIdentity();
+            Id(p => p.ID)
+                .Column("ID")
+                .GeneratedBy.TriggerIdentity();
 
             // Mapiranje atributa
             Map(p => p.PunNaziv)
