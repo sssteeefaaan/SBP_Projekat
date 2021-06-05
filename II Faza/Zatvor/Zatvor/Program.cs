@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Zatvor.DTO;
 using Zatvor.Forms;
+using Zatvor.Forms.Dodavanja;
 
 namespace Zatvor
 {
@@ -18,7 +19,7 @@ namespace Zatvor
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new FormGlavna());
         }
     }
 }

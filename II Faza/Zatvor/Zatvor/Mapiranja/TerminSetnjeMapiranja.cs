@@ -18,7 +18,7 @@ namespace Zatvor.Mapiranja
             // Mapiranja atributa
             Map(ts => ts.Termin)
                 .Column("TERMIN")
-                .Check("NOT NULL");
+                .Not.Nullable();
 
             // Strani ključ ka zatvorskoj jedinici
             References(ts => ts.ZatvorskaJedinica)

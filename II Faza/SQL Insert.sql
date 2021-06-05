@@ -1,65 +1,65 @@
 --------------------------------------------------------------------------------ZATVORSKA JEDINICA---------------------------------------------------------------------------------
-INSERT INTO ZATVORSKA_JEDINICA VALUES ('AAA21', 'Kazneno-popravni zavod "Padinska Skela"', 'Zrenjaninski put bb, 11200 Padinska Skela', NULL, 160, 'TRUE', 'FALSE', 'FALSE');
-INSERT INTO ZATVORSKA_JEDINICA VALUES ('AAB21', 'Kazneno-popravni zavod "Zabeli"', 'Zabela bb, 12102 Požarevac', NULL, 1300, 'TRUE', 'FALSE', 'TRUE');
-INSERT INTO ZATVORSKA_JEDINICA VALUES ('AAC21', 'Okružni zatvor Novi Sad', 'Proleterska 16a, 21000 Novi Sad', NULL, 304, 'FALSE', 'TRUE', 'FALSE');
-INSERT INTO ZATVORSKA_JEDINICA VALUES ('AAD21', 'Okružni zatvor Čačak', 'Cara Dušana bb, 32000 Čačak', NULL, 110, 'FALSE', 'FALSE', 'TRUE');
+INSERT INTO ZATVORSKA_JEDINICA VALUES ('AAA21', 'Kazneno-popravni zavod "Padinska Skela"', 'Zrenjaninski put bb, 11200 Padinska Skela', NULL, 160, 1, 0, 0);
+INSERT INTO ZATVORSKA_JEDINICA VALUES ('AAB21', 'Kazneno-popravni zavod "Zabeli"', 'Zabela bb, 12102 Požarevac', NULL, 1300, 1, 1, 0);
+INSERT INTO ZATVORSKA_JEDINICA VALUES ('AAC21', 'Okružni zatvor Novi Sad', 'Proleterska 16a, 21000 Novi Sad', NULL, 304, 0, 0, 1);
+INSERT INTO ZATVORSKA_JEDINICA VALUES ('AAD21', 'Okružni zatvor Čačak', 'Cara Dušana bb, 32000 Čačak', NULL, 110, 0, 1, 0);
 
 
 -------------------------------------------------------------------------------------ZAPOSLENI-------------------------------------------------------------------------------------
 --ADMIN --UPRAVA
-INSERT INTO ZAPOSLENI (JMBG, IME, PREZIME, POL, RADNO_MESTO, DATUM_OBUKE_PPZ, RADI_U_ZJ, DATUM_POCETKA_RADA, TIP, ZANIMANJE, POZICIJA, STRUCNA_SPREMA, UPRAVNIK_ZJ)
-VALUES ('2809965327690', 'Valentina', 'Aleksić', 'Ž', 'Administracija', '12-APR-21', 'AAA21', '12-APR-20', 'ADMINISTRACIJA', 'Uprava', 'Upravnik', 'VISOKA', 'AAA21');
-INSERT INTO ZAPOSLENI (JMBG, IME, PREZIME, POL, RADNO_MESTO, DATUM_OBUKE_PPZ, RADI_U_ZJ, DATUM_POCETKA_RADA, TIP, ZANIMANJE, POZICIJA, STRUCNA_SPREMA, UPRAVNIK_ZJ)
-VALUES ('2802987679065', 'Milutin', 'Milanković', 'M', 'Administracija', '15-APR-21', 'AAB21', '15-APR-18', 'ADMINISTRACIJA', 'Uprava', 'Upravnik', 'VISOKA', 'AAB21');
-INSERT INTO ZAPOSLENI (JMBG, IME, PREZIME, POL, RADNO_MESTO, DATUM_OBUKE_PPZ, RADI_U_ZJ, DATUM_POCETKA_RADA, TIP, ZANIMANJE, POZICIJA, STRUCNA_SPREMA, UPRAVNIK_ZJ)
-VALUES ('3001978775698', 'Goran', 'Jovanović', 'M', 'Administracija', '12-JAN-21',  'AAC21', '12-JAN-15', 'ADMINISTRACIJA', 'Uprava', 'Upravnik', 'SREDNJA', 'AAC21');
-INSERT INTO ZAPOSLENI (JMBG, IME, PREZIME, POL, RADNO_MESTO, DATUM_OBUKE_PPZ, RADI_U_ZJ, DATUM_POCETKA_RADA, TIP, ZANIMANJE, POZICIJA, STRUCNA_SPREMA, UPRAVNIK_ZJ)
-VALUES ('2209999759711', 'Miljana', 'Simić', 'Ž', 'Administracija', '19-SEP-20', 'AAD21', '19-SEP-18', 'ADMINISTRACIJA', 'Uprava', 'Upravnik', 'VISOKA', 'AAD21');
+INSERT INTO ZAPOSLENI (JMBG, IME, PREZIME, POL, RADNO_MESTO, DATUM_OBUKE_PPZ, RADI_U_ZJ, DATUM_POCETKA_RADA, ZANIMANJE, POZICIJA, STRUCNA_SPREMA)
+VALUES ('2809965327690', 'Valentina', 'Aleksić', 'Ž', 'Administracija', '12-APR-21', 'AAA21', '12-APR-20', 'Uprava', 'Upravnik', 'Visoka');
+INSERT INTO ZAPOSLENI (JMBG, IME, PREZIME, POL, RADNO_MESTO, DATUM_OBUKE_PPZ, RADI_U_ZJ, DATUM_POCETKA_RADA, ZANIMANJE, POZICIJA, STRUCNA_SPREMA)
+VALUES ('2802987679065', 'Milutin', 'Milanković', 'M', 'Administracija', '15-APR-21', 'AAB21', '15-APR-18', 'Uprava', 'Upravnik', 'Visoka');
+INSERT INTO ZAPOSLENI (JMBG, IME, PREZIME, POL, RADNO_MESTO, DATUM_OBUKE_PPZ, RADI_U_ZJ, DATUM_POCETKA_RADA, ZANIMANJE, POZICIJA, STRUCNA_SPREMA)
+VALUES ('3001978775698', 'Goran', 'Jovanović', 'M', 'Administracija', '12-JAN-21',  'AAC21', '12-JAN-15', 'Uprava', 'Upravnik', 'Srednja');
+INSERT INTO ZAPOSLENI (JMBG, IME, PREZIME, POL, RADNO_MESTO, DATUM_OBUKE_PPZ, RADI_U_ZJ, DATUM_POCETKA_RADA, ZANIMANJE, POZICIJA, STRUCNA_SPREMA)
+VALUES ('2209999759711', 'Miljana', 'Simić', 'Ž', 'Administracija', '19-SEP-20', 'AAD21', '19-SEP-18', 'Uprava', 'Upravnik', 'Visoka');
 --ADMIN --KNJIGOVODSTVO
-INSERT INTO ZAPOSLENI (JMBG, IME, PREZIME, POL, RADNO_MESTO, DATUM_OBUKE_PPZ, RADI_U_ZJ, DATUM_POCETKA_RADA, TIP, ZANIMANJE, POZICIJA, STRUCNA_SPREMA, UPRAVNIK_ZJ)
-VALUES ('1212976313145', 'Nenad', 'Nenković', 'M', 'Administracija', '13-MAY-21', 'AAA21', '13-MAY-00', 'ADMINISTRACIJA', 'Knjigovodstvo', 'Knjigovođa', 'VIŠA', NULL);
-INSERT INTO ZAPOSLENI (JMBG, IME, PREZIME, POL, RADNO_MESTO, DATUM_OBUKE_PPZ, RADI_U_ZJ, DATUM_POCETKA_RADA, TIP, ZANIMANJE, POZICIJA, STRUCNA_SPREMA, UPRAVNIK_ZJ)
-VALUES ('2208995759711', 'Marijana', 'Stojić', 'Ž', 'Administracija', '03-DEC-20', 'AAB21', '03-DEC-12', 'ADMINISTRACIJA', 'Knjigovodstvo', 'Knjigovođa', 'SREDNJA', NULL);
-INSERT INTO ZAPOSLENI (JMBG, IME, PREZIME, POL, RADNO_MESTO, DATUM_OBUKE_PPZ, RADI_U_ZJ, DATUM_POCETKA_RADA, TIP, ZANIMANJE, POZICIJA, STRUCNA_SPREMA, UPRAVNIK_ZJ)
-VALUES ('0904999756138', 'Uroš', 'Pešić', 'M', 'Administracija', '03-DEC-20', 'AAC21', '03-DEC-15', 'ADMINISTRACIJA', 'Knjigovodstvo', 'Knjigovođa', 'SREDNJA', NULL);
-INSERT INTO ZAPOSLENI (JMBG, IME, PREZIME, POL, RADNO_MESTO, DATUM_OBUKE_PPZ, RADI_U_ZJ, DATUM_POCETKA_RADA, TIP, ZANIMANJE, POZICIJA, STRUCNA_SPREMA, UPRAVNIK_ZJ)
-VALUES ('1609988728807', 'Lav', 'Srećković', 'M', 'Administracija', '04-APRIL-21', 'AAD21', '04-APRIL-20', 'ADMINISTRACIJA', 'Knjigovodstvo', 'Knjigovođa', 'VIŠA', NULL);
+INSERT INTO ZAPOSLENI (JMBG, IME, PREZIME, POL, RADNO_MESTO, DATUM_OBUKE_PPZ, RADI_U_ZJ, DATUM_POCETKA_RADA, ZANIMANJE, POZICIJA, STRUCNA_SPREMA)
+VALUES ('1212976313145', 'Nenad', 'Nenković', 'M', 'Administracija', '13-MAY-21', 'AAA21', '13-MAY-00', 'Knjigovodstvo', 'Knjigovođa', 'Viša');
+INSERT INTO ZAPOSLENI (JMBG, IME, PREZIME, POL, RADNO_MESTO, DATUM_OBUKE_PPZ, RADI_U_ZJ, DATUM_POCETKA_RADA, ZANIMANJE, POZICIJA, STRUCNA_SPREMA)
+VALUES ('2208995759711', 'Marijana', 'Stojić', 'Ž', 'Administracija', '03-DEC-20', 'AAB21', '03-DEC-12', 'Knjigovodstvo', 'Knjigovođa', 'Srednja');
+INSERT INTO ZAPOSLENI (JMBG, IME, PREZIME, POL, RADNO_MESTO, DATUM_OBUKE_PPZ, RADI_U_ZJ, DATUM_POCETKA_RADA, ZANIMANJE, POZICIJA, STRUCNA_SPREMA)
+VALUES ('0904999756138', 'Uroš', 'Pešić', 'M', 'Administracija', '03-DEC-20', 'AAC21', '03-DEC-15', 'Knjigovodstvo', 'Knjigovođa', 'Srednja');
+INSERT INTO ZAPOSLENI (JMBG, IME, PREZIME, POL, RADNO_MESTO, DATUM_OBUKE_PPZ, RADI_U_ZJ, DATUM_POCETKA_RADA, ZANIMANJE, POZICIJA, STRUCNA_SPREMA)
+VALUES ('1609988728807', 'Lav', 'Srećković', 'M', 'Administracija', '04-APRIL-21', 'AAD21', '04-APRIL-20', 'Knjigovodstvo', 'Knjigovođa', 'Viša');
 --ADMIN --PRAVNA SLUŽBA
-INSERT INTO ZAPOSLENI (JMBG, IME, PREZIME, POL, RADNO_MESTO, DATUM_OBUKE_PPZ, RADI_U_ZJ, DATUM_POCETKA_RADA, TIP, ZANIMANJE, POZICIJA, STRUCNA_SPREMA, UPRAVNIK_ZJ)
-VALUES ('1505985675322', 'Pavle', 'Mijatović', 'M', 'Administracija', '13-MAY-21', 'AAA21', '13-MAY-13', 'ADMINISTRACIJA', 'Pravna služba', 'Pravnik', 'VISOKA', NULL);
-INSERT INTO ZAPOSLENI (JMBG, IME, PREZIME, POL, RADNO_MESTO, DATUM_OBUKE_PPZ, RADI_U_ZJ, DATUM_POCETKA_RADA, TIP, ZANIMANJE, POZICIJA, STRUCNA_SPREMA, UPRAVNIK_ZJ)
-VALUES ('1302988765432', 'Katarina', 'Kostić', 'Ž', 'Administracija', '03-DEC-20', 'AAB21', '03-DEC-12', 'ADMINISTRACIJA', 'Pravna služba', 'Pravnik', 'VISOKA', NULL);
-INSERT INTO ZAPOSLENI (JMBG, IME, PREZIME, POL, RADNO_MESTO, DATUM_OBUKE_PPZ, RADI_U_ZJ, DATUM_POCETKA_RADA, TIP, ZANIMANJE, POZICIJA, STRUCNA_SPREMA, UPRAVNIK_ZJ)
-VALUES ('0101997764321', 'Uroš', 'Kostadinović', 'M', 'Administracija', '03-DEC-20', 'AAC21', '03-DEC-13', 'ADMINISTRACIJA', 'Pravna služba', 'Pravnik', 'VISOKA', NULL);
-INSERT INTO ZAPOSLENI (JMBG, IME, PREZIME, POL, RADNO_MESTO, DATUM_OBUKE_PPZ, RADI_U_ZJ, DATUM_POCETKA_RADA, TIP, ZANIMANJE, POZICIJA, STRUCNA_SPREMA, UPRAVNIK_ZJ)
-VALUES ('1209977237898', 'Stojadin', 'Srećković', 'M', 'Administracija', '04-APRIL-21', 'AAD21', '04-APRIL-05', 'ADMINISTRACIJA', 'Pravna služba', 'Pravnik', 'VIŠA', NULL);
+INSERT INTO ZAPOSLENI (JMBG, IME, PREZIME, POL, RADNO_MESTO, DATUM_OBUKE_PPZ, RADI_U_ZJ, DATUM_POCETKA_RADA, ZANIMANJE, POZICIJA, STRUCNA_SPREMA)
+VALUES ('1505985675322', 'Pavle', 'Mijatović', 'M', 'Administracija', '13-MAY-21', 'AAA21', '13-MAY-13', 'Pravna služba', 'Pravnik', 'Visoka');
+INSERT INTO ZAPOSLENI (JMBG, IME, PREZIME, POL, RADNO_MESTO, DATUM_OBUKE_PPZ, RADI_U_ZJ, DATUM_POCETKA_RADA, ZANIMANJE, POZICIJA, STRUCNA_SPREMA)
+VALUES ('1302988765432', 'Katarina', 'Kostić', 'Ž', 'Administracija', '03-DEC-20', 'AAB21', '03-DEC-12', 'Pravna služba', 'Pravnik', 'Visoka');
+INSERT INTO ZAPOSLENI (JMBG, IME, PREZIME, POL, RADNO_MESTO, DATUM_OBUKE_PPZ, RADI_U_ZJ, DATUM_POCETKA_RADA, ZANIMANJE, POZICIJA, STRUCNA_SPREMA)
+VALUES ('0101997764321', 'Uroš', 'Kostadinović', 'M', 'Administracija', '03-DEC-20', 'AAC21', '03-DEC-13', 'Pravna služba', 'Pravnik', 'Visoka');
+INSERT INTO ZAPOSLENI (JMBG, IME, PREZIME, POL, RADNO_MESTO, DATUM_OBUKE_PPZ, RADI_U_ZJ, DATUM_POCETKA_RADA, ZANIMANJE, POZICIJA, STRUCNA_SPREMA)
+VALUES ('1209977237898', 'Stojadin', 'Srećković', 'M', 'Administracija', '04-APRIL-21', 'AAD21', '04-APRIL-05', 'Pravna služba', 'Pravnik', 'Viša');
 
 --PSIHOLOZI
-INSERT INTO ZAPOSLENI (JMBG, IME, PREZIME, POL, RADNO_MESTO, DATUM_OBUKE_PPZ, RADI_U_ZJ, DATUM_POCETKA_RADA, TIP, LP_LEKAR, LP_DATUM, LP_NAZIV_USTANOVE, LP_ADRESA_USTANOVE, S_SPECIJALIZACIJA, S_NAZIV_USTANOVE) 
-VALUES ('0509997654312', 'Jelica', 'Janić', 'Ž', 'Psiholog', '03-MAR-21', 'AAA21', '03-MAR-04', 'PSIHOLOG', 'Marijana Novaković', '12-FEB-21', 'Vojnomedicinska akademija', 'Crnotravska 17, 11000 Beograd', 'Adolescentna psihijatrija', 'Univerzitet u Beogradu Medicinski fakultet');
-INSERT INTO ZAPOSLENI (JMBG, IME, PREZIME, POL, RADNO_MESTO, DATUM_OBUKE_PPZ, RADI_U_ZJ, DATUM_POCETKA_RADA, TIP, LP_LEKAR, LP_DATUM, LP_NAZIV_USTANOVE, LP_ADRESA_USTANOVE, S_SPECIJALIZACIJA, S_NAZIV_USTANOVE)
-VALUES ('0708983834772', 'Svetozar', 'Vučković', 'M', 'Psiholog', '29-SEP-20', 'AAB21', '29-SEP-12', 'PSIHOLOG', 'Filip Sretenović', '15-MAR-21', 'Dom zdravlja "Dr. Mladen Stojanović"', 'Kralja Petra I 26/a, 21400 Bačka Palanka', 'Forenzička psihijatrija', 'Medicinski fakultet Univerzitet u Nišu');
-INSERT INTO ZAPOSLENI (JMBG, IME, PREZIME, POL, RADNO_MESTO, DATUM_OBUKE_PPZ, RADI_U_ZJ, DATUM_POCETKA_RADA, TIP, LP_LEKAR, LP_DATUM, LP_NAZIV_USTANOVE, LP_ADRESA_USTANOVE, S_SPECIJALIZACIJA, S_NAZIV_USTANOVE)
-VALUES ('1509874334210', 'Danica', 'Đorđević', 'Ž', 'Psiholog', '10-AUG-21', 'AAC21', '10-AUG-18', 'PSIHOLOG', 'Kristina Prvulović', '22-APR-21', 'Zavod za javno zdravlje', 'Dr Emila Gavrila 15, 23101 Zrenjanin', 'Medicinska psihijatrija', 'Univerzitet u Beogradu Medicinski fakultet');
-INSERT INTO ZAPOSLENI (JMBG, IME, PREZIME, POL, RADNO_MESTO, DATUM_OBUKE_PPZ, RADI_U_ZJ, DATUM_POCETKA_RADA, TIP, LP_LEKAR, LP_DATUM, LP_NAZIV_USTANOVE, LP_ADRESA_USTANOVE, S_SPECIJALIZACIJA, S_NAZIV_USTANOVE)
-VALUES ('0107985432341', 'Eleonora', 'Pantić', 'Ž', 'Psiholog', '27-FEB-21', 'AAD21', '27-FEB-08', 'PSIHOLOG', 'Miodrag Petrović', '25-JAN-21', 'Poliklinika DCM', 'Radanska bb, 16000 Leskovac', 'Psihijatrija u gerijatriji', 'Medicinski fakultet Univerzitet u Nišu');
+INSERT INTO ZAPOSLENI (JMBG, IME, PREZIME, POL, RADNO_MESTO, DATUM_OBUKE_PPZ, RADI_U_ZJ, DATUM_POCETKA_RADA, LP_LEKAR, LP_DATUM, LP_NAZIV_USTANOVE, LP_ADRESA_USTANOVE, S_SPECIJALIZACIJA, S_NAZIV_USTANOVE) 
+VALUES ('0509997654312', 'Jelica', 'Janić', 'Ž', 'Psiholog', '03-MAR-21', 'AAA21', '03-MAR-04', 'Marijana Novaković', '12-FEB-21', 'Vojnomedicinska akademija', 'Crnotravska 17, 11000 Beograd', 'Adolescentna psihijatrija', 'Univerzitet u Beogradu Medicinski fakultet');
+INSERT INTO ZAPOSLENI (JMBG, IME, PREZIME, POL, RADNO_MESTO, DATUM_OBUKE_PPZ, RADI_U_ZJ, DATUM_POCETKA_RADA, LP_LEKAR, LP_DATUM, LP_NAZIV_USTANOVE, LP_ADRESA_USTANOVE, S_SPECIJALIZACIJA, S_NAZIV_USTANOVE)
+VALUES ('0708983834772', 'Svetozar', 'Vučković', 'M', 'Psiholog', '29-SEP-20', 'AAB21', '29-SEP-12', 'Filip Sretenović', '15-MAR-21', 'Dom zdravlja "Dr. Mladen Stojanović"', 'Kralja Petra I 26/a, 21400 Bačka Palanka', 'Forenzička psihijatrija', 'Medicinski fakultet Univerzitet u Nišu');
+INSERT INTO ZAPOSLENI (JMBG, IME, PREZIME, POL, RADNO_MESTO, DATUM_OBUKE_PPZ, RADI_U_ZJ, DATUM_POCETKA_RADA, LP_LEKAR, LP_DATUM, LP_NAZIV_USTANOVE, LP_ADRESA_USTANOVE, S_SPECIJALIZACIJA, S_NAZIV_USTANOVE)
+VALUES ('1509874334210', 'Danica', 'Đorđević', 'Ž', 'Psiholog', '10-AUG-21', 'AAC21', '10-AUG-18', 'Kristina Prvulović', '22-APR-21', 'Zavod za javno zdravlje', 'Dr Emila Gavrila 15, 23101 Zrenjanin', 'Medicinska psihijatrija', 'Univerzitet u Beogradu Medicinski fakultet');
+INSERT INTO ZAPOSLENI (JMBG, IME, PREZIME, POL, RADNO_MESTO, DATUM_OBUKE_PPZ, RADI_U_ZJ, DATUM_POCETKA_RADA, LP_LEKAR, LP_DATUM, LP_NAZIV_USTANOVE, LP_ADRESA_USTANOVE, S_SPECIJALIZACIJA, S_NAZIV_USTANOVE)
+VALUES ('0107985432341', 'Eleonora', 'Pantić', 'Ž', 'Psiholog', '27-FEB-21', 'AAD21', '27-FEB-08', 'Miodrag Petrović', '25-JAN-21', 'Poliklinika DCM', 'Radanska bb, 16000 Leskovac', 'Psihijatrija u gerijatriji', 'Medicinski fakultet Univerzitet u Nišu');
 --OBEZBEĐENJE
-INSERT INTO ZAPOSLENI (JMBG, IME, PREZIME, POL, RADNO_MESTO, DATUM_OBUKE_PPZ, RADI_U_ZJ, DATUM_POCETKA_RADA, TIP, LP_LEKAR, LP_DATUM, LP_NAZIV_USTANOVE, LP_ADRESA_USTANOVE, DORVO_SIFRA, DORVO_POLICIJSKA_UPRAVA, DORVO_DATUM_IZDAVANJA)
-VALUES ('0609974432621', 'Nikola', 'Anđelić', 'M', 'Obezbeđenje', '19-JUL-21', 'AAA21', '19-JUL-12', 'RADNIK OBEZBEĐENJA', 'Marijana Novaković', '12-FEB-21', 'Vojnomedicinska akademija', 'Crnotravska 17, 11000 Beograd', '34HGB789JJ', 'Policijska Stanica Savski Venac', '19-JUL-21');
-INSERT INTO ZAPOSLENI (JMBG, IME, PREZIME, POL, RADNO_MESTO, DATUM_OBUKE_PPZ, RADI_U_ZJ, DATUM_POCETKA_RADA, TIP, LP_LEKAR, LP_DATUM, LP_NAZIV_USTANOVE, LP_ADRESA_USTANOVE, DORVO_SIFRA, DORVO_POLICIJSKA_UPRAVA, DORVO_DATUM_IZDAVANJA)
-VALUES ('2607982273190', 'Branko', 'Ranković', 'M', 'Obezbeđenje', '13-JAN-21', 'AAA21', '13-JAN-13', 'RADNIK OBEZBEĐENJA', 'Marijana Novaković', '12-FEB-21', 'Vojnomedicinska akademija', 'Crnotravska 17, 11000 Beograd', '54SDF231GD', 'Policijska uprava Niš', '13-JAN-21');
-INSERT INTO ZAPOSLENI (JMBG, IME, PREZIME, POL, RADNO_MESTO, DATUM_OBUKE_PPZ, RADI_U_ZJ, DATUM_POCETKA_RADA, TIP, LP_LEKAR, LP_DATUM, LP_NAZIV_USTANOVE, LP_ADRESA_USTANOVE, DORVO_SIFRA, DORVO_POLICIJSKA_UPRAVA, DORVO_DATUM_IZDAVANJA)
-VALUES ('2807978458721', 'Dušica', 'Aleksić', 'Ž', 'Obezbeđenje', '28-OCT-20', 'AAB21', '28-OCT-14', 'RADNIK OBEZBEĐENJA', 'Filip Sretenović', '15-MAR-21', 'Dom zdravlja "Dr. Mladen Stojanović"', 'Kralja Petra I 26/a, 21400 Bačka Palanka', '637FV37383', 'Policijska uprava Novi Sad', '28-OCT-20');
-INSERT INTO ZAPOSLENI (JMBG, IME, PREZIME, POL, RADNO_MESTO, DATUM_OBUKE_PPZ, RADI_U_ZJ, DATUM_POCETKA_RADA, TIP, LP_LEKAR, LP_DATUM, LP_NAZIV_USTANOVE, LP_ADRESA_USTANOVE, DORVO_SIFRA, DORVO_POLICIJSKA_UPRAVA, DORVO_DATUM_IZDAVANJA)
-VALUES ('2906974739042', 'Njegoš', 'Harambaša', 'M', 'Obezbeđenje', '09-OCT-20', 'AAB21', '09-OCT-15', 'RADNIK OBEZBEĐENJA', 'Filip Sretenović', '15-MAR-21', 'Dom zdravlja "Dr. Mladen Stojanović"', 'Kralja Petra I 26/a, 21400 Bačka Palanka', '27F37F3GV2', 'Policijska stanica Bor', '09-OCT-20');
-INSERT INTO ZAPOSLENI (JMBG, IME, PREZIME, POL, RADNO_MESTO, DATUM_OBUKE_PPZ, RADI_U_ZJ, DATUM_POCETKA_RADA, TIP, LP_LEKAR, LP_DATUM, LP_NAZIV_USTANOVE, LP_ADRESA_USTANOVE, DORVO_SIFRA, DORVO_POLICIJSKA_UPRAVA, DORVO_DATUM_IZDAVANJA)
-VALUES ('1312989432832', 'Pavle', 'Stojkovič', 'M', 'Obezbeđenje', '28-OCT-20', 'AAC21', '28-OCT-12', 'RADNIK OBEZBEĐENJA', 'Kristina Prvulović', '22-APR-21', 'Zavod za javno zdravlje', 'Dr Emila Gavrila 15, 23101 Zrenjanin', '762FDG73D2', 'Policijska stanica Bor', '28-OCT-20');
-INSERT INTO ZAPOSLENI (JMBG, IME, PREZIME, POL, RADNO_MESTO, DATUM_OBUKE_PPZ, RADI_U_ZJ, DATUM_POCETKA_RADA, TIP, LP_LEKAR, LP_DATUM, LP_NAZIV_USTANOVE, LP_ADRESA_USTANOVE, DORVO_SIFRA, DORVO_POLICIJSKA_UPRAVA, DORVO_DATUM_IZDAVANJA)
-VALUES ('1310967623160', 'Kristijan', 'Nedeljković', 'M', 'Obezbeđenje', '13-SEP-20', 'AAC21', '13-SEP-13', 'RADNIK OBEZBEĐENJA', 'Kristina Prvulović', '22-APR-21', 'Zavod za javno zdravlje', 'Dr Emila Gavrila 15, 23101 Zrenjanin', '9H82D2F23F', 'Policijska uprava Niš', '13-SEP-20');
-INSERT INTO ZAPOSLENI (JMBG, IME, PREZIME, POL, RADNO_MESTO, DATUM_OBUKE_PPZ, RADI_U_ZJ, DATUM_POCETKA_RADA, TIP, LP_LEKAR, LP_DATUM, LP_NAZIV_USTANOVE, LP_ADRESA_USTANOVE, DORVO_SIFRA, DORVO_POLICIJSKA_UPRAVA, DORVO_DATUM_IZDAVANJA)
-VALUES ('2712991342432', 'Pavle', 'Stojkovič', 'M', 'Obezbeđenje', '12-AUG-20', 'AAD21', '12-AUG-15', 'RADNIK OBEZBEĐENJA', 'Miodrag Petrović', '25-JAN-21', 'Poliklinika DCM', 'Radanska bb, 16000 Leskovac', '27TFZ723GF', 'Policijska Stanica Savski Venac', '12-AUG-20');
-INSERT INTO ZAPOSLENI (JMBG, IME, PREZIME, POL, RADNO_MESTO, DATUM_OBUKE_PPZ, RADI_U_ZJ, DATUM_POCETKA_RADA, TIP, LP_LEKAR, LP_DATUM, LP_NAZIV_USTANOVE, LP_ADRESA_USTANOVE, DORVO_SIFRA, DORVO_POLICIJSKA_UPRAVA, DORVO_DATUM_IZDAVANJA)
-VALUES ('0808978432562', 'Robert', 'Stojković', 'M', 'Obezbeđenje', '01-FEB-21', 'AAD21', '01-FEB-17', 'RADNIK OBEZBEĐENJA', 'Miodrag Petrović', '25-JAN-21', 'Poliklinika DCM', 'Radanska bb, 16000 Leskovac', '8912UD82H1', 'Policijska uprava Novi Sad', '01-FEB-21');
+INSERT INTO ZAPOSLENI (JMBG, IME, PREZIME, POL, RADNO_MESTO, DATUM_OBUKE_PPZ, RADI_U_ZJ, DATUM_POCETKA_RADA, LP_LEKAR, LP_DATUM, LP_NAZIV_USTANOVE, LP_ADRESA_USTANOVE, DORVO_SIFRA, DORVO_POLICIJSKA_UPRAVA, DORVO_DATUM_IZDAVANJA)
+VALUES ('0609974432621', 'Nikola', 'Anđelić', 'M', 'Radnik obezbeđenja', '19-JUL-21', 'AAA21', '19-JUL-12', 'Marijana Novaković', '12-FEB-21', 'Vojnomedicinska akademija', 'Crnotravska 17, 11000 Beograd', '34HGB789JJ', 'Policijska Stanica Savski Venac', '19-JUL-21');
+INSERT INTO ZAPOSLENI (JMBG, IME, PREZIME, POL, RADNO_MESTO, DATUM_OBUKE_PPZ, RADI_U_ZJ, DATUM_POCETKA_RADA, LP_LEKAR, LP_DATUM, LP_NAZIV_USTANOVE, LP_ADRESA_USTANOVE, DORVO_SIFRA, DORVO_POLICIJSKA_UPRAVA, DORVO_DATUM_IZDAVANJA)
+VALUES ('2607982273190', 'Branko', 'Ranković', 'M', 'Radnik obezbeđenja', '13-JAN-21', 'AAA21', '13-JAN-13', 'Marijana Novaković', '12-FEB-21', 'Vojnomedicinska akademija', 'Crnotravska 17, 11000 Beograd', '54SDF231GD', 'Policijska uprava Niš', '13-JAN-21');
+INSERT INTO ZAPOSLENI (JMBG, IME, PREZIME, POL, RADNO_MESTO, DATUM_OBUKE_PPZ, RADI_U_ZJ, DATUM_POCETKA_RADA, LP_LEKAR, LP_DATUM, LP_NAZIV_USTANOVE, LP_ADRESA_USTANOVE, DORVO_SIFRA, DORVO_POLICIJSKA_UPRAVA, DORVO_DATUM_IZDAVANJA)
+VALUES ('2807978458721', 'Dušica', 'Aleksić', 'Ž', 'Radnik obezbeđenja', '28-OCT-20', 'AAB21', '28-OCT-14', 'Filip Sretenović', '15-MAR-21', 'Dom zdravlja "Dr. Mladen Stojanović"', 'Kralja Petra I 26/a, 21400 Bačka Palanka', '637FV37383', 'Policijska uprava Novi Sad', '28-OCT-20');
+INSERT INTO ZAPOSLENI (JMBG, IME, PREZIME, POL, RADNO_MESTO, DATUM_OBUKE_PPZ, RADI_U_ZJ, DATUM_POCETKA_RADA, LP_LEKAR, LP_DATUM, LP_NAZIV_USTANOVE, LP_ADRESA_USTANOVE, DORVO_SIFRA, DORVO_POLICIJSKA_UPRAVA, DORVO_DATUM_IZDAVANJA)
+VALUES ('2906974739042', 'Njegoš', 'Harambaša', 'M', 'Radnik obezbeđenja', '09-OCT-20', 'AAB21', '09-OCT-15', 'Filip Sretenović', '15-MAR-21', 'Dom zdravlja "Dr. Mladen Stojanović"', 'Kralja Petra I 26/a, 21400 Bačka Palanka', '27F37F3GV2', 'Policijska stanica Bor', '09-OCT-20');
+INSERT INTO ZAPOSLENI (JMBG, IME, PREZIME, POL, RADNO_MESTO, DATUM_OBUKE_PPZ, RADI_U_ZJ, DATUM_POCETKA_RADA, LP_LEKAR, LP_DATUM, LP_NAZIV_USTANOVE, LP_ADRESA_USTANOVE, DORVO_SIFRA, DORVO_POLICIJSKA_UPRAVA, DORVO_DATUM_IZDAVANJA)
+VALUES ('1312989432832', 'Pavle', 'Stojkovič', 'M', 'Radnik obezbeđenja', '28-OCT-20', 'AAC21', '28-OCT-12', 'Kristina Prvulović', '22-APR-21', 'Zavod za javno zdravlje', 'Dr Emila Gavrila 15, 23101 Zrenjanin', '762FDG73D2', 'Policijska stanica Bor', '28-OCT-20');
+INSERT INTO ZAPOSLENI (JMBG, IME, PREZIME, POL, RADNO_MESTO, DATUM_OBUKE_PPZ, RADI_U_ZJ, DATUM_POCETKA_RADA, LP_LEKAR, LP_DATUM, LP_NAZIV_USTANOVE, LP_ADRESA_USTANOVE, DORVO_SIFRA, DORVO_POLICIJSKA_UPRAVA, DORVO_DATUM_IZDAVANJA)
+VALUES ('1310967623160', 'Kristijan', 'Nedeljković', 'M', 'Radnik obezbeđenja', '13-SEP-20', 'AAC21', '13-SEP-13', 'Kristina Prvulović', '22-APR-21', 'Zavod za javno zdravlje', 'Dr Emila Gavrila 15, 23101 Zrenjanin', '9H82D2F23F', 'Policijska uprava Niš', '13-SEP-20');
+INSERT INTO ZAPOSLENI (JMBG, IME, PREZIME, POL, RADNO_MESTO, DATUM_OBUKE_PPZ, RADI_U_ZJ, DATUM_POCETKA_RADA, LP_LEKAR, LP_DATUM, LP_NAZIV_USTANOVE, LP_ADRESA_USTANOVE, DORVO_SIFRA, DORVO_POLICIJSKA_UPRAVA, DORVO_DATUM_IZDAVANJA)
+VALUES ('2712991342432', 'Pavle', 'Stojkovič', 'M', 'Radnik obezbeđenja', '12-AUG-20', 'AAD21', '12-AUG-15', 'Miodrag Petrović', '25-JAN-21', 'Poliklinika DCM', 'Radanska bb, 16000 Leskovac', '27TFZ723GF', 'Policijska Stanica Savski Venac', '12-AUG-20');
+INSERT INTO ZAPOSLENI (JMBG, IME, PREZIME, POL, RADNO_MESTO, DATUM_OBUKE_PPZ, RADI_U_ZJ, DATUM_POCETKA_RADA, LP_LEKAR, LP_DATUM, LP_NAZIV_USTANOVE, LP_ADRESA_USTANOVE, DORVO_SIFRA, DORVO_POLICIJSKA_UPRAVA, DORVO_DATUM_IZDAVANJA)
+VALUES ('0808978432562', 'Robert', 'Stojković', 'M', 'Radnik obezbeđenja', '01-FEB-21', 'AAD21', '01-FEB-17', 'Miodrag Petrović', '25-JAN-21', 'Poliklinika DCM', 'Radanska bb, 16000 Leskovac', '8912UD82H1', 'Policijska uprava Novi Sad', '01-FEB-21');
 
 
 
@@ -71,28 +71,28 @@ UPDATE ZATVORSKA_JEDINICA SET JMBG_UPRAVNIKA='2209999759711' WHERE SIFRA='AAD21'
 
 -------------------------------------------------------------------------------------ZATVORENIK------------------------------------------------------------------------------------
 --AAA21
-INSERT INTO ZATVORENIK VALUES ('0203995750023', 'Stojan', 'Džehverović', 'M', 'Skadarska 40c1, 11000 Beograd', '16989', '12-MAY-20', 'RAZMATRA SE', '06-JUN-21', 'AAA21');
-INSERT INTO ZATVORENIK VALUES ('1407988752119', 'Sloba', 'Radanović', 'M', 'Ulica Narodne omladine, Zrenjanin, 11000 Beograd', '15989', '15-DEC-19', 'RAZMATRA SE', '12-FEB-22', 'AAA21');
-INSERT INTO ZATVORENIK VALUES ('1302000750023', 'Vuk', 'Bibić', 'M', 'Nikole Pašića 13, 18000 Niš', '17015', '12-APR-19', 'RAZMATRA SE', '06-JUN-21', 'AAA21');
-INSERT INTO ZATVORENIK VALUES ('1107999759131', 'Strahinja', 'Stamenković', 'M', 'Gavrila Principa 31, 16210 Vlasotince', '17413', '15-MAR-21', 'PRIHVAĆEN', '16-JUN-21', 'AAA21');
+INSERT INTO ZATVORENIK VALUES ('0203995750023', 'Stojan', 'Džehverović', 'M', 'Skadarska 40c1, 11000 Beograd', '16989', '12-MAY-20', 'Razmatra se', '06-JUN-21', 'AAA21');
+INSERT INTO ZATVORENIK VALUES ('1407988752119', 'Sloba', 'Radanović', 'M', 'Ulica Narodne omladine, Zrenjanin, 11000 Beograd', '15989', '15-DEC-19', 'Razmatra se', '12-FEB-22', 'AAA21');
+INSERT INTO ZATVORENIK VALUES ('1302000750023', 'Vuk', 'Bibić', 'M', 'Nikole Pašića 13, 18000 Niš', '17015', '12-APR-19', 'Razmatra se', '06-JUN-21', 'AAA21');
+INSERT INTO ZATVORENIK VALUES ('1107999759131', 'Strahinja', 'Stamenković', 'M', 'Gavrila Principa 31, 16210 Vlasotince', '17413', '15-MAR-21', 'Prihvaćen', '16-JUN-21', 'AAA21');
 --AAB21
-INSERT INTO ZATVORENIK VALUES ('2011956748912', 'Aneta', 'Simić', 'Ž', 'Besna kobila bb, 17500 Vranje', 'UZ789', '02-JUL-19', 'RAZMATRA SE', '15-DEC-25', 'AAB21');
-INSERT INTO ZATVORENIK VALUES ('1208999759118', 'Kristina', 'Stanojević', 'Ž', 'Džervinska 36, 19350 Knjaževac', 'A37HZ', '05-MAY-17', 'RAZMATRA SE', '12-AUG-21', 'AAB21');
-INSERT INTO ZATVORENIK VALUES ('1305993741118', 'Petra', 'Marković', 'Ž', 'Vizantijski bulevar 5, 18000 Niš', 'JT9Z2', '04-DEC-15', 'ODBIJEN', '13-MAR-23', 'AAB21');
-INSERT INTO ZATVORENIK VALUES ('0209997591541', 'Sofija', 'Stojanović', 'Ž', 'Karađorđeva 109, 17510 Vladičin Han',  'I38MZ', '12-JUN-12','RAZMATRA SE', '10-OCT-21', 'AAB21');
-INSERT INTO ZATVORENIK VALUES ('1708978732323', 'Jelena', 'Karleuša', 'Ž', 'Oračka - Zemun, 11000 Beograd',  'JK8JK', '13-SEP-13','ODBIJEN', '17-DEC-24', 'AAB21');
+INSERT INTO ZATVORENIK VALUES ('2011956748912', 'Aneta', 'Simić', 'Ž', 'Besna kobila bb, 17500 Vranje', 'UZ789', '02-JUL-19', 'Razmatra se', '15-DEC-25', 'AAB21');
+INSERT INTO ZATVORENIK VALUES ('1208999759118', 'Kristina', 'Stanojević', 'Ž', 'Džervinska 36, 19350 Knjaževac', 'A37HZ', '05-MAY-17', 'Razmatra se', '12-AUG-21', 'AAB21');
+INSERT INTO ZATVORENIK VALUES ('1305993741118', 'Petra', 'Marković', 'Ž', 'Vizantijski bulevar 5, 18000 Niš', 'JT9Z2', '04-DEC-15', 'Odbijen', '13-MAR-23', 'AAB21');
+INSERT INTO ZATVORENIK VALUES ('0209997591541', 'Sofija', 'Stojanović', 'Ž', 'Karađorđeva 109, 17510 Vladičin Han',  'I38MZ', '12-JUN-12','Razmatra se', '10-OCT-21', 'AAB21');
+INSERT INTO ZATVORENIK VALUES ('1708978732323', 'Jelena', 'Karleuša', 'Ž', 'Oračka - Zemun, 11000 Beograd',  'JK8JK', '13-SEP-13','Odbijen', '17-DEC-24', 'AAB21');
 --AAC21
-INSERT INTO ZATVORENIK VALUES ('1607997742023', 'Darko', 'Stošić', 'M', 'Rasadnik 2/5, 18000 Niš', 'T1NA3', '05-MAY-20', 'PRIHVAĆEN', '23-JAN-21', 'AAC21');
-INSERT INTO ZATVORENIK VALUES ('2302983773221', 'Milan', 'Ranković', 'M', 'Miroslava Antića, 24000 Subotica', 'K01H2', '02-APR-21', 'RAZMATRA SE', '18-SEP-22', 'AAC21');
-INSERT INTO ZATVORENIK VALUES ('1809987654126', 'Dušan', 'Nikolić', 'M', 'Anke Frank - Palilula, 11000 Beograd',  'TH98L', '03-OCT-20', 'PRIHVAĆEN', '01-JUN-23', 'AAC21');
-INSERT INTO ZATVORENIK VALUES ('0101967554919', 'Osman', 'Agić', 'M', NULL,  'OA20G', '15-MAY-20', 'ODBIJEN', NULL, 'AAC21');
-INSERT INTO ZATVORENIK VALUES ('0903966759113', 'Jovan', 'Popović', 'M', 'Nikole Tesle 9, 26000 Pančevo', 'TP27L', '12-JUN-20','RAZMATRA SE', '09-AUG-23', 'AAC21');
+INSERT INTO ZATVORENIK VALUES ('1607997742023', 'Darko', 'Stošić', 'M', 'Rasadnik 2/5, 18000 Niš', 'T1NA3', '05-MAY-20', 'Prihvaćen', '23-JAN-21', 'AAC21');
+INSERT INTO ZATVORENIK VALUES ('2302983773221', 'Milan', 'Ranković', 'M', 'Miroslava Antića, 24000 Subotica', 'K01H2', '02-APR-21', 'Razmatra se', '18-SEP-22', 'AAC21');
+INSERT INTO ZATVORENIK VALUES ('1809987654126', 'Dušan', 'Nikolić', 'M', 'Anke Frank - Palilula, 11000 Beograd',  'TH98L', '03-OCT-20', 'Prihvaćen', '01-JUN-23', 'AAC21');
+INSERT INTO ZATVORENIK VALUES ('0101967554919', 'Osman', 'Agić', 'M', NULL,  'OA20G', '15-MAY-20', 'Odbijen', NULL, 'AAC21');
+INSERT INTO ZATVORENIK VALUES ('0903966759113', 'Jovan', 'Popović', 'M', 'Nikole Tesle 9, 26000 Pančevo', 'TP27L', '12-JUN-20','Razmatra se', '09-AUG-23', 'AAC21');
 --AAD21
-INSERT INTO ZATVORENIK VALUES ('0203000768799', 'Stefan', 'Aleksić', 'M', 'Gornje Zuniče bb, 19350 Knjaževac', '16995', '06-SEP-20', 'PRIHVAĆEN', '02-MAR-22', 'AAD21');
-INSERT INTO ZATVORENIK VALUES ('2406999755433', 'Kosta', 'Rakić', 'M', '9. Avgust 12, 19350 Knjaževac', '18666', '12-MAR-21', 'ODBIJEN', '24-JUN-21', 'AAD21'); 
-INSERT INTO ZATVORENIK VALUES ('0606999728012', 'Luka', 'Obradović', 'M', 'Romanijska 23, 18000 Niš', '95669', '06-SEP-20', 'ODBIJEN', '06-JUN-21', 'AAD21'); 
-INSERT INTO ZATVORENIK VALUES ('0505945748024', 'Dobrivoje', 'Pasulj', 'M', 'Kromanjonska 14, 11000 Beograd', '76432', '13-NOV-20','RAZMATRA SE', '22-OCT-21', 'AAD21'); 
-INSERT INTO ZATVORENIK VALUES ('1909999738712', 'Nikola', 'Petrović', 'M', 'Grdelica bb, 16220 Leskovac', '17344', '15-AUG-20', 'PRIHVAĆEN', '05-SEP-21', 'AAD21');
+INSERT INTO ZATVORENIK VALUES ('0203000768799', 'Stefan', 'Aleksić', 'M', 'Gornje Zuniče bb, 19350 Knjaževac', '16995', '06-SEP-20', 'Prihvaćen', '02-MAR-22', 'AAD21');
+INSERT INTO ZATVORENIK VALUES ('2406999755433', 'Kosta', 'Rakić', 'M', '9. Avgust 12, 19350 Knjaževac', '18666', '12-MAR-21', 'Odbijen', '24-JUN-21', 'AAD21'); 
+INSERT INTO ZATVORENIK VALUES ('0606999728012', 'Luka', 'Obradović', 'M', 'Romanijska 23, 18000 Niš', '95669', '06-SEP-20', 'Odbijen', '06-JUN-21', 'AAD21'); 
+INSERT INTO ZATVORENIK VALUES ('0505945748024', 'Dobrivoje', 'Pasulj', 'M', 'Kromanjonska 14, 11000 Beograd', '76432', '13-NOV-20','Razmatra se', '22-OCT-21', 'AAD21'); 
+INSERT INTO ZATVORENIK VALUES ('1909999738712', 'Nikola', 'Petrović', 'M', 'Grdelica bb, 16220 Leskovac', '17344', '15-AUG-20', 'Prihvaćen', '05-SEP-21', 'AAD21');
 
 
 ---------------------------------------------------------------------------------------FIRME---------------------------------------------------------------------------------------
@@ -203,10 +203,10 @@ INSERT INTO TERMIN_SETNJE VALUES (NULL, 'AAC21', '18:30 - 20:30h');
 
 
 -----------------------------------------------------------------------------------TERMIN_POSETE-----------------------------------------------------------------------------------
-INSERT INTO TERMIN_POSETE VALUES (NULL, 'AAC21', 'PONEDELJAK', '13:00 - 15:00h');
-INSERT INTO TERMIN_POSETE VALUES (NULL, 'AAC21', 'SREDA', '15:00 - 18:00h');
-INSERT INTO TERMIN_POSETE VALUES (NULL, 'AAC21', 'PETAK', '14:30 - 15:45h');
-INSERT INTO TERMIN_POSETE VALUES (NULL, 'AAC21', 'NEDELJA', '12:00 - 13:00h');
+INSERT INTO TERMIN_POSETE VALUES (NULL, 'AAC21', 'Ponedeljak', '13:00 - 15:00h');
+INSERT INTO TERMIN_POSETE VALUES (NULL, 'AAC21', 'Sreda', '15:00 - 18:00h');
+INSERT INTO TERMIN_POSETE VALUES (NULL, 'AAC21', 'Petak', '14:30 - 15:45h');
+INSERT INTO TERMIN_POSETE VALUES (NULL, 'AAC21', 'Nedelja', '12:00 - 13:00h');
 
 
 ----------------------------------------------------------------------------------CELIJSKI_PERIOD----------------------------------------------------------------------------------

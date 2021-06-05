@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Zatvor.DTO.Basic
 {
-    public class ZaposleniBasic
+    public class ZaposleniBasic : IEquatable<ZaposleniBasic>
     {
         public virtual string JMBG { get; set; }
         public virtual string Ime { get; set; }
@@ -16,11 +16,9 @@ namespace Zatvor.DTO.Basic
         public virtual DateTime DatumObukePPZ { get; set; }
         public virtual ZatvorskaJedinicaBasic RadiU { get; set; }
         public virtual DateTime DatumPocetkaRada { get; set; }
-        public virtual string Tip { get; set; }
         public virtual string Zanimanje { get; set; }
         public virtual string Pozicija { get; set; }
         public virtual string StrucnaSprema { get; set; }
-        public virtual ZatvorskaJedinicaBasic JeUpravnik { get; set; }
         public virtual string LPLekar { get; set; }
         public virtual DateTime? LPDatum { get; set; }
         public virtual string LPNazivUstanove { get; set; }
@@ -34,7 +32,7 @@ namespace Zatvor.DTO.Basic
         public ZaposleniBasic()
         {
         }
-        public ZaposleniBasic(string jMBG, string ime, string prezime, string pol, string radnoMesto, DateTime datumObukePPZ, ZatvorskaJedinicaBasic radiU, DateTime datumPocetkaRada, string tip, string zanimanje, string pozicija, string strucnaSprema, ZatvorskaJedinicaBasic jeUpravnik, string lPLekar, DateTime? lPDatum, string lPNazivUstanove, string lPAdresaUstanove, string sSpecijalizacija, string sNazivUstanove, string dORVOSifra, string dORVOPolicijskaUprava, DateTime? dORVODatumIzdavanja)
+        public ZaposleniBasic(string jMBG, string ime, string prezime, string pol, string radnoMesto, DateTime datumObukePPZ, ZatvorskaJedinicaBasic radiU, DateTime datumPocetkaRada, string zanimanje, string pozicija, string strucnaSprema, string lPLekar, DateTime? lPDatum, string lPNazivUstanove, string lPAdresaUstanove, string sSpecijalizacija, string sNazivUstanove, string dORVOSifra, string dORVOPolicijskaUprava, DateTime? dORVODatumIzdavanja)
         {
             JMBG = jMBG;
             Ime = ime;
@@ -44,11 +42,9 @@ namespace Zatvor.DTO.Basic
             DatumObukePPZ = datumObukePPZ;
             RadiU = radiU;
             DatumPocetkaRada = datumPocetkaRada;
-            Tip = tip;
             Zanimanje = zanimanje;
             Pozicija = pozicija;
             StrucnaSprema = strucnaSprema;
-            JeUpravnik = jeUpravnik;
             LPLekar = lPLekar;
             LPDatum = lPDatum;
             LPNazivUstanove = lPNazivUstanove;
@@ -58,6 +54,17 @@ namespace Zatvor.DTO.Basic
             DORVOSifra = dORVOSifra;
             DORVOPolicijskaUprava = dORVOPolicijskaUprava;
             DORVODatumIzdavanja = dORVODatumIzdavanja;
+        }
+
+        public override bool Equals(object obj)
+        {
+            return Equals(obj as ZaposleniBasic);
+        }
+
+        public bool Equals(ZaposleniBasic other)
+        {
+            return other != null &&
+                   JMBG == other.JMBG;
         }
     }
 }

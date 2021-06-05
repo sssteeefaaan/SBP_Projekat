@@ -1,0 +1,142 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Zatvor.DTO;
+using Zatvor.DTO.Basic;
+
+namespace Zatvor.Forms.Dodavanja
+{
+    public partial class FormTerminSetnje : Form
+    {
+        public TerminSetnjeBasic TerminSetnje { get; set; }
+        private string _tip;
+        public FormTerminSetnje(ZatvorskaJedinicaBasic zj)
+        {
+            TerminSetnje = new TerminSetnjeBasic();
+            TerminSetnje.ZatvorskaJedinica = zj;
+            _tip = "Dodaj";
+            InitializeComponent();
+        }
+        public FormTerminSetnje(TerminSetnjeBasic ts)
+        {
+            TerminSetnje = ts;
+            _tip = "Izmeni";
+            InitializeComponent();
+        }
+        private void buttonZatvori_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+            Close();
+        }
+
+        private void buttonDodaj_Click(object sender, EventArgs e)
+        {
+
+            if (comboBoxOdSati.SelectedIndex < 0 || comboBoxDoSati.SelectedIndex < 0)
+            {
+                MessageBox.Show(this,
+                    "Niste izabrali sate!",
+                    "Greška",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+
+                return;
+            }
+            if (comboBoxOdMinuti.SelectedIndex < 0 || comboBoxDoMinuti.SelectedIndex < 0)
+            {
+                MessageBox.Show(this,
+                    "Niste uneli minute!",
+                    "Greška",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+
+                return;
+            }
+            if (int.Parse(comboBoxOdSati.Text) > int.Parse(comboBoxDoSati.Text) ||
+                (int.Parse(comboBoxOdSati.Text) == int.Parse(comboBoxDoSati.Text) &&
+                int.Parse(comboBoxOdMinuti.Text) > int.Parse(comboBoxDoMinuti.Text)))
+            {
+                MessageBox.Show(this,
+                    "Vreme od je manje od vremena do!",
+                    "Greška",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+
+                return;
+            }
+            if (int.Parse(comboBoxOdSati.Text) == int.Parse(comboBoxDoSati.Text) &&
+                int.Parse(comboBoxOdMinuti.Text) == int.Parse(comboBoxDoMinuti.Text))
+            {
+                MessageBox.Show(this,
+                    "Vremena su ista!",
+                    "Greška",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+
+                return;
+            }
+
+            TerminSetnje.Termin = comboBoxOdSati.Text + ":" +
+                comboBoxOdMinuti.Text + " - " +
+                comboBoxDoSati.Text + ":" +
+                comboBoxDoMinuti.Text + "h";
+
+            if (_tip == "Dodaj")
+                DTOManager.CreateTerminSetnje(TerminSetnje);
+            else
+                DTOManager.UpdateTerminSetnje(TerminSetnje);
+
+            DialogResult = DialogResult.OK;
+            Close();
+        }
+
+        private void FormDodajTerminSetnje_Load(object sender, EventArgs e)
+        {
+            comboBoxOdSati.MaxDropDownItems =
+                comboBoxDoSati.MaxDropDownItems = 24;
+            comboBoxOdMinuti.MaxDropDownItems =
+                comboBoxDoMinuti.MaxDropDownItems = 12;
+
+            string s, m;
+            for (int i = 0; i < 24; i++)
+            {
+                s = i.ToString();
+
+                if (i < 10)
+                    s = "0" + s;
+
+                comboBoxOdSati.Items.Add(s);
+                comboBoxDoSati.Items.Add(s);
+                if (i < 12)
+                {
+                    m = (i * 5).ToString();
+                    if (i < 2)
+                        m = "0" + m;
+                    comboBoxOdMinuti.Items.Add(m);
+                    comboBoxDoMinuti.Items.Add(m);
+                }
+            }
+
+            comboBoxOdSati.SelectedIndex =
+            comboBoxOdMinuti.SelectedIndex =
+            comboBoxDoMinuti.SelectedIndex =
+            comboBoxDoSati.SelectedIndex = 0;
+
+            buttonDodaj.Text = _tip + " termin";
+
+            if (_tip == "Izmeni")
+            {
+                comboBoxOdSati.SelectedItem = TerminSetnje.Termin.Substring(0, 2);
+                comboBoxOdMinuti.SelectedItem = TerminSetnje.Termin.Substring(3, 2);
+                comboBoxDoSati.SelectedItem = TerminSetnje.Termin.Substring(8, 2);
+                comboBoxDoMinuti.SelectedItem = TerminSetnje.Termin.Substring(11, 2);
+            }
+        }
+    }
+}

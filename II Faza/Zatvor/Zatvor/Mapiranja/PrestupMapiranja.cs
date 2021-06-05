@@ -41,6 +41,7 @@ namespace Zatvor.Mapiranja
             // Veza N:1
             References(p => p.Zatvorenik)
                 .Column("JMBG_ZAT")
+                .Cascade.All()
                 .LazyLoad(); // LazyLoad je po defaultu ukljucen
         }
     }

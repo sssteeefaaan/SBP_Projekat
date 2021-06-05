@@ -12,11 +12,13 @@ namespace Zatvor.DTO.Basic
         public virtual string Naziv { get; set; }
         public virtual string Adresa { get; set; }
         public virtual string KontaktTelefon { get; set; }
-        public virtual IList<OdgovornoLiceBasic> OdgovornaLica { get; set; }
+        public virtual List<OdgovornoLiceBasic> OdgovornaLica { get; set; }
+        public virtual List<ZatvorskaJedinicaBasic> ZatvorskeJedinice { get; set; }
 
         public FirmaBasic()
         {
             OdgovornaLica = new List<OdgovornoLiceBasic>();
+            ZatvorskeJedinice = new List<ZatvorskaJedinicaBasic>();
         }
         public FirmaBasic(string PIB, string Naziv, string Adresa, string KontaktTelefon)
         {

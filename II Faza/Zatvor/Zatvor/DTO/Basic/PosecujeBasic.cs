@@ -43,8 +43,8 @@ namespace Zatvor.DTO.Basic
             return other != null &&
                    (ID == other.ID) ||
                    (DTPocetka == other.DTPocetka &&
-                   EqualityComparer<ZatvorenikBasic>.Default.Equals(Zatvorenik, other.Zatvorenik) &&
-                   EqualityComparer<AdvokatBasic>.Default.Equals(Advokat, other.Advokat));
+                   Zatvorenik.JMBG == other.Zatvorenik.JMBG &&
+                   Advokat.JMBG == other.Advokat.JMBG);
         }
     }
 }

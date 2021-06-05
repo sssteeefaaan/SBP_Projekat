@@ -11,19 +11,16 @@ namespace Zatvor.Entiteti
         public virtual string Pol { get; set; }
 
         // Specifikacija Zaposleni
+        // Kolona za diskriminaciju
         public virtual string RadnoMesto { get; set; }
         public virtual System.DateTime DatumObukePPZ { get; set; }
         public virtual ZatvorskaJedinica RadiU { get; set; }
         public virtual System.DateTime DatumPocetkaRada { get; set; }
 
-        // Kolona za diskriminaciju
-        public virtual string Tip { get; set; }
-
         // Specifikacija Administracija
         public virtual string Zanimanje { get; set; }
         public virtual string Pozicija { get; set; }
         public virtual string StrucnaSprema { get; set; }
-        public virtual ZatvorskaJedinica JeUpravnik { get; set; }
 
         // Specifikacija ImajuKontakt
         public virtual string LPLekar { get; set; }

@@ -10,9 +10,9 @@ namespace Zatvor.DTO.Basic
         public virtual DateTime DatumInkarceracije { get; set; }
         public virtual DateTime? DatumSledecegSaslusanja { get; set; }
         public virtual string StatusUslovnogOtpusta { get; set; }
-        public virtual IList<PrestupBasic> Prestupi { get; set; }
-        public virtual IList<ZastupaBasic> Zastupa { get; set; }
-        public virtual IList<PosecujeBasic> Posete { get; set; }
+        public virtual List<PrestupBasic> Prestupi { get; set; }
+        public virtual List<ZastupaBasic> Zastupa { get; set; }
+        public virtual List<PosecujeBasic> Posete { get; set; }
         public virtual ZatvorskaJedinicaBasic ZatvorskaJedinica { get; set; }
 
         public ZatvorenikBasic()

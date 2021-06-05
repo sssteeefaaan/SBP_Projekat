@@ -11,15 +11,17 @@ namespace Zatvor.DTO.Basic
         public virtual string Sifra { get; set; }
         public virtual string Naziv { get; set; }
         public virtual string Adresa { get; set; }
-        public virtual AdministracijaBasic Upravnik { get; set; }
+        public virtual ZaposleniBasic Upravnik { get; set; }
         public virtual int Kapacitet { get; set; }
-
-        public virtual IList<ZatvorenikBasic> Zatvorenici { get; set; }
-        public virtual IList<RadiUBasic> RadiU { get; set; }
-        public virtual IList<TerminSetnjeBasic> TerminiSetnje { get; set; }
-        public virtual IList<TerminPoseteBasic> TerminiPosete { get; set; }
-        public virtual IList<CelijskiPeriodBasic> CelijskiPeriodi { get; set; }
-        public virtual IList<FirmaBasic> Firme { get; set; }
+        public virtual bool ORezim { get; set; }
+        public virtual bool PORezim { get; set; }
+        public virtual bool SRezim { get; set; }
+        public virtual List<ZatvorenikBasic> Zatvorenici { get; set; }
+        public virtual List<ZaposleniBasic> Zaposleni { get; set; }
+        public virtual List<TerminSetnjeBasic> TerminiSetnje { get; set; }
+        public virtual List<TerminPoseteBasic> TerminiPosete { get; set; }
+        public virtual List<CelijskiPeriodBasic> CelijskiPeriodi { get; set; }
+        public virtual List<FirmaBasic> Firme { get; set; }
 
 
         public ZatvorskaJedinicaBasic(string Sifra, string Naziv, string Adresa, int Kapacitet)
@@ -33,7 +35,7 @@ namespace Zatvor.DTO.Basic
         public ZatvorskaJedinicaBasic()
         {
             Zatvorenici = new List<ZatvorenikBasic>();
-            RadiU = new List<RadiUBasic>();
+            Zaposleni = new List<ZaposleniBasic>();
             TerminiSetnje = new List<TerminSetnjeBasic>();
             TerminiPosete = new List<TerminPoseteBasic>();
             CelijskiPeriodi = new List<CelijskiPeriodBasic>();

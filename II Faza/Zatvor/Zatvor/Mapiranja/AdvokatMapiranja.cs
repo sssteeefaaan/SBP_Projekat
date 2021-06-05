@@ -17,12 +17,14 @@ namespace Zatvor.Mapiranja
             HasMany(a => a.Zastupa)
                 .KeyColumn("JMBG_ADV")
                 .LazyLoad()
+                .Inverse()
                 .Cascade.All();
 
             // Veza N:M sa atributima
             HasMany(a => a.Posecuje)
                 .KeyColumn("JMBG_ADV")
                 .LazyLoad()
+                .Inverse()
                 .Cascade.All();
         }
     }

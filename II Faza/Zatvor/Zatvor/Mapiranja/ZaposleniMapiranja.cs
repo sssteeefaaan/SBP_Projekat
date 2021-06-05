@@ -18,9 +18,9 @@ namespace Zatvor.Mapiranja
             // Type-Per-Hierarchy (C-tip) nasleđivanja
             // Kolona po kojoj se prepoznaju
             DiscriminateSubClassesOnColumn("")
-                .Formula("CASE WHEN (TIP = 'ADMINISTRACIJA') THEN 'A' " +
-                              "WHEN (TIP = 'PSIHOLOG') THEN 'P' " +
-                              "WHEN (TIP = 'RADNIK OBEZBEĐENJA') THEN 'RO' " +
+                .Formula("CASE WHEN (RADNO_MESTO = 'Administracija') THEN 'A' " +
+                              "WHEN (RADNO_MESTO = 'Psiholog') THEN 'P' " +
+                              "WHEN (RADNO_MESTO = 'Radnik obezbeđenja') THEN 'RO' " +
                          "END");
 
             // Mapiranje atributa
@@ -37,19 +37,20 @@ namespace Zatvor.Mapiranja
 
             // Mapiranje atributa za specifikaciju zaposlenog
             Map(z => z.RadnoMesto)
-                .Column("RADNO_MESTO")
+                 .Column("RADNO_MESTO")
+                .Check("RADNO_MESTO IN ('Administracija', 'Psiholog', 'Radnik obezbeđenja')")
                 .Not.Nullable();
             Map(z => z.DatumObukePPZ)
                 .Column("DATUM_OBUKE_PPZ")
                 .Not.Nullable();
-            References(z => z.RadiU)
-                .Column("RADI_U_ZJ")
-                .Not.Nullable()
-                .LazyLoad();
             Map(z => z.DatumPocetkaRada)
                 .Column("DATUM_POCETKA_RADA")
                 .Not.Nullable();
 
+            References(z => z.RadiU)
+                .Column("RADI_U_ZJ")
+                .Not.Nullable()
+                .LazyLoad();
 
             // Administracija specijalizacija
             Map(a => a.Pozicija)
@@ -58,11 +59,7 @@ namespace Zatvor.Mapiranja
                 .Column("ZANIMANJE");
             Map(a => a.StrucnaSprema)
                 .Column("STRUCNA_SPREMA")
-                .Check("STRUCNA_SPREMA IN ('SREDNJA', 'VIŠA', 'VISOKA')");
-            References(a => a.JeUpravnik)
-                .Column("UPRAVNIK_ZJ")
-                .Nullable()
-                .LazyLoad();
+                .Check("STRUCNA_SPREMA IN ('Srednja', 'Viša', 'Visoka')");
 
             // ImajuKontakt specijalizacija
             Map(ik => ik.LPLekar)

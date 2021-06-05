@@ -83,7 +83,6 @@
     <Compile Include="DTO\Basic\PosecujeBasic.cs" />
     <Compile Include="DTO\Basic\PrestupBasic.cs" />
     <Compile Include="DTO\Basic\PsihologBasic.cs" />
-    <Compile Include="DTO\Basic\RadiUBasic.cs" />
     <Compile Include="DTO\Basic\RadnikObezbedjenjaBasic.cs" />
     <Compile Include="DTO\Basic\TerminPoseteBasic.cs" />
     <Compile Include="DTO\Basic\TerminSetnjeBasic.cs" />
@@ -113,23 +112,88 @@
     <Compile Include="Entiteti\Osoba.cs" />
     <Compile Include="Entiteti\Posecuje.cs" />
     <Compile Include="Entiteti\Prestup.cs" />
-    <Compile Include="Entiteti\RadiU.cs" />
     <Compile Include="Entiteti\TerminPosete.cs" />
     <Compile Include="Entiteti\TerminSetnje.cs" />
     <Compile Include="Entiteti\Zaposleni.cs" />
     <Compile Include="Entiteti\Zastupa.cs" />
     <Compile Include="Entiteti\Zatvorenik.cs" />
     <Compile Include="Entiteti\ZatvorskaJedinica.cs" />
-    <Compile Include="Forms\FormDodajAdvokata.cs">
+    <Compile Include="Forms\Dodaj Izmeni\FormAdvokat.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormDodajAdvokata.Designer.cs">
-      <DependentUpon>FormDodajAdvokata.cs</DependentUpon>
+    <Compile Include="Forms\Dodaj Izmeni\FormAdvokat.Designer.cs">
+      <DependentUpon>FormAdvokat.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormPregledPoseta.cs">
+    <Compile Include="Forms\Dodaj Izmeni\FormCelijskiPeriod.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormPregledPoseta.Designer.cs">
+    <Compile Include="Forms\Dodaj Izmeni\FormCelijskiPeriod.Designer.cs">
+      <DependentUpon>FormCelijskiPeriod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dodaj Izmeni\FormFirma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dodaj Izmeni\FormFirma.Designer.cs">
+      <DependentUpon>FormFirma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dodaj Izmeni\FormOdgovornoLice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dodaj Izmeni\FormOdgovornoLice.Designer.cs">
+      <DependentUpon>FormOdgovornoLice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pregledi\FormPregledFirmi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pregledi\FormPregledFirmi.Designer.cs">
+      <DependentUpon>FormPregledFirmi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pregledi\FormPregledLica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pregledi\FormPregledLica.Designer.cs">
+      <DependentUpon>FormPregledLica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pregledi\FormPregledZatvorenika.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pregledi\FormPregledZatvorenika.Designer.cs">
+      <DependentUpon>FormPregledZatvorenika.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dodaj Izmeni\FormTerminPosete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dodaj Izmeni\FormTerminPosete.Designer.cs">
+      <DependentUpon>FormTerminPosete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dodaj Izmeni\FormTerminSetnje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dodaj Izmeni\FormTerminSetnje.Designer.cs">
+      <DependentUpon>FormTerminSetnje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dodaj Izmeni\FormZaposleni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dodaj Izmeni\FormZaposleni.Designer.cs">
+      <DependentUpon>FormZaposleni.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dodaj Izmeni\FormZatvorskaJedinica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dodaj Izmeni\FormZatvorskaJedinica.Designer.cs">
+      <DependentUpon>FormZatvorskaJedinica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pregledi\FormPregledAdvokata.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pregledi\FormPregledAdvokata.Designer.cs">
+      <DependentUpon>FormPregledAdvokata.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pregledi\FormPregledPoseta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pregledi\FormPregledPoseta.Designer.cs">
       <DependentUpon>FormPregledPoseta.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormGlavna.cs">
@@ -138,23 +202,35 @@
     <Compile Include="Forms\FormGlavna.Designer.cs">
       <DependentUpon>FormGlavna.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormIzmeniZatvorenika.cs">
+    <Compile Include="Forms\Pregledi\FormPregledZaposlenih.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormIzmeniZatvorenika.Designer.cs">
-      <DependentUpon>FormIzmeniZatvorenika.cs</DependentUpon>
+    <Compile Include="Forms\Pregledi\FormPregledZaposlenih.Designer.cs">
+      <DependentUpon>FormPregledZaposlenih.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormZatvorenici.cs">
+    <Compile Include="Forms\Pregledi\FormPregledZatvorskeJedinice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormZatvorenici.Designer.cs">
-      <DependentUpon>FormZatvorenici.cs</DependentUpon>
+    <Compile Include="Forms\Pregledi\FormPregledZatvorskeJedinice.Designer.cs">
+      <DependentUpon>FormPregledZatvorskeJedinice.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormDodajZatvorenika.cs">
+    <Compile Include="Forms\Pregledi\FormPregledZatvorskihJedinica.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormDodajZatvorenika.Designer.cs">
-      <DependentUpon>FormDodajZatvorenika.cs</DependentUpon>
+    <Compile Include="Forms\Pregledi\FormPregledZatvorskihJedinica.Designer.cs">
+      <DependentUpon>FormPregledZatvorskihJedinica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Pregledi\FormPregledSvihZatvorenika.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Pregledi\FormPregledSvihZatvorenika.Designer.cs">
+      <DependentUpon>FormPregledSvihZatvorenika.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dodaj Izmeni\FormZatvorenik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Dodaj Izmeni\FormZatvorenik.Designer.cs">
+      <DependentUpon>FormZatvorenik.cs</DependentUpon>
     </Compile>
     <Compile Include="Mapiranja\AdvokatMapiranja.cs" />
     <Compile Include="Mapiranja\CelijskiPeriodMapiranja.cs" />
@@ -163,7 +239,6 @@
     <Compile Include="Mapiranja\OsobaMapiranja.cs" />
     <Compile Include="Mapiranja\PosecujeMapiranja.cs" />
     <Compile Include="Mapiranja\PrestupMapiranja.cs" />
-    <Compile Include="Mapiranja\RadiUMapiranja.cs" />
     <Compile Include="Mapiranja\TerminPoseteMapiranja.cs" />
     <Compile Include="Mapiranja\TerminSetnjeMapiranja.cs" />
     <Compile Include="Mapiranja\ZaposleniMapiranja.cs" />
@@ -172,29 +247,62 @@
     <Compile Include="Mapiranja\ZatvorskaJedinicaMapiranja.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Forms\ZatvorskaJedinicaForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ZatvorskaJedinicaForm.Designer.cs">
-      <DependentUpon>ZatvorskaJedinicaForm.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="Forms\FormDodajAdvokata.resx">
-      <DependentUpon>FormDodajAdvokata.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Dodaj Izmeni\FormAdvokat.resx">
+      <DependentUpon>FormAdvokat.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormPregledPoseta.resx">
+    <EmbeddedResource Include="Forms\Dodaj Izmeni\FormCelijskiPeriod.resx">
+      <DependentUpon>FormCelijskiPeriod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dodaj Izmeni\FormFirma.resx">
+      <DependentUpon>FormFirma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dodaj Izmeni\FormOdgovornoLice.resx">
+      <DependentUpon>FormOdgovornoLice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pregledi\FormPregledFirmi.resx">
+      <DependentUpon>FormPregledFirmi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pregledi\FormPregledLica.resx">
+      <DependentUpon>FormPregledLica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pregledi\FormPregledZatvorenika.resx">
+      <DependentUpon>FormPregledZatvorenika.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dodaj Izmeni\FormTerminPosete.resx">
+      <DependentUpon>FormTerminPosete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dodaj Izmeni\FormTerminSetnje.resx">
+      <DependentUpon>FormTerminSetnje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dodaj Izmeni\FormZaposleni.resx">
+      <DependentUpon>FormZaposleni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dodaj Izmeni\FormZatvorskaJedinica.resx">
+      <DependentUpon>FormZatvorskaJedinica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pregledi\FormPregledAdvokata.resx">
+      <DependentUpon>FormPregledAdvokata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pregledi\FormPregledPoseta.resx">
       <DependentUpon>FormPregledPoseta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormGlavna.resx">
       <DependentUpon>FormGlavna.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormIzmeniZatvorenika.resx">
-      <DependentUpon>FormIzmeniZatvorenika.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Pregledi\FormPregledZaposlenih.resx">
+      <DependentUpon>FormPregledZaposlenih.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormZatvorenici.resx">
-      <DependentUpon>FormZatvorenici.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Pregledi\FormPregledSvihZatvorenika.resx">
+      <DependentUpon>FormPregledSvihZatvorenika.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormDodajZatvorenika.resx">
-      <DependentUpon>FormDodajZatvorenika.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Dodaj Izmeni\FormZatvorenik.resx">
+      <DependentUpon>FormZatvorenik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pregledi\FormPregledZatvorskeJedinice.resx">
+      <DependentUpon>FormPregledZatvorskeJedinice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Pregledi\FormPregledZatvorskihJedinica.resx">
+      <DependentUpon>FormPregledZatvorskihJedinica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -205,12 +313,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\ZatvorskaJedinicaForm.resx">
-      <DependentUpon>ZatvorskaJedinicaForm.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\Zatvor.DTO.Basic.AdvokatBasic.datasource" />
-    <None Include="Properties\DataSources\Zatvor.DTO.View.ZatvorenikView.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

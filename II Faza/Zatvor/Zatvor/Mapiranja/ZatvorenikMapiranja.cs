@@ -28,7 +28,7 @@ namespace Zatvor.Mapiranja
                 .Column("DATUM_SLEDECEG_SASLUSANJA");
             Map(z => z.StatusUslovnogOtpusta)
                 .Column("STATUS_USLOVNOG_OTPUSTA")
-                .Check("STATUS_USLOVNOG_OTPUSTA IN('PRIHVAĆEN', 'ODBIJEN', 'RAZMATRA SE')");
+                .Check("STATUS_USLOVNOG_OTPUSTA IN ('Prihvaćen', 'Odbijen', 'Razmatra se')");
 
             // Veza N:1
             References(z => z.ZatvorskaJedinica)
@@ -40,18 +40,21 @@ namespace Zatvor.Mapiranja
             HasMany(z => z.Prestupi)
                 .KeyColumn("JMBG_ZAT")
                 .LazyLoad()
+                .Inverse()
                 .Cascade.All();
 
             // Veza N:M sa atributima
             HasMany(z => z.Zastupa)
                 .KeyColumn("JMBG_ZAT")
                 .LazyLoad()
+                .Inverse()
                 .Cascade.All();
 
             // Veza N:M sa atributima
             HasMany(z => z.Posete)
                 .KeyColumn("JMBG_ZAT")
                 .LazyLoad()
+                .Inverse()
                 .Cascade.All();
         }
     }

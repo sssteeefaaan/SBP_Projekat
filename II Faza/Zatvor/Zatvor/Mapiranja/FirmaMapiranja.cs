@@ -39,8 +39,7 @@ namespace Zatvor.Mapiranja
             .Table("MOZE_DA_ANGAZUJE")
             .ParentKeyColumn("PIB_FIRME")
             .ChildKeyColumn("SIFRA_ZJ")
-            .LazyLoad()
-            .Cascade.All();
+            .LazyLoad();
         }
     }
 }
