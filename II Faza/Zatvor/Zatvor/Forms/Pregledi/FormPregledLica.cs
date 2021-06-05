@@ -23,6 +23,7 @@ namespace Zatvor.Forms.Pregledi
         }
         private void FormPregledLica_Load(object sender, EventArgs e)
         {
+            Text = "Pregled odgovornih lica firme '" + Firma.Naziv + "'";
             buttonIzmeni.Enabled =
                 buttonObrisi.Enabled = false;
 
