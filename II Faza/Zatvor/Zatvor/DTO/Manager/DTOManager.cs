@@ -3071,7 +3071,7 @@ namespace Zatvor.DTO
                         retSingle.Adresa = p.Adresa;
                         retSingle.KontaktTelefon = p.KontaktTelefon;
                         retSingle.OdgovornaLica = ReadAllOdgovornoLiceFor(retSingle);
-                        //retSingle.ZatvorskeJedinice = ReadAllZatvorskaJedinicaFor(retSingle);
+                        // retSingle.ZatvorskeJedinice = ReadAllZatvorskaJedinicaFor(retSingle);
 
                         ret.Add(retSingle);
                     }

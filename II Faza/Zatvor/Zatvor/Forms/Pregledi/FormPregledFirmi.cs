@@ -71,12 +71,12 @@ namespace Zatvor.Forms.Pregledi
                 "Naziv",
                 "Adresa",
                 "Kontakt telefon",
-                "Broj odgovornih lica",
-                "Broj zatvorskih jedinica"
+                "Broj odgovornih lica"
             };
+
             int[] vals =
             {
-                0, 100, 200, 300, 200, 200, 200
+                0, 100, 200, 300, 200, 200
             };
 
             for (int i = 0; i < columns.Length; i++)
@@ -86,21 +86,34 @@ namespace Zatvor.Forms.Pregledi
                     TextAlign = HorizontalAlignment.Center,
                     Width = vals[i]
                 });
+
+            if (ZatvorskaJedinica == null)
+                listViewFirme.Columns.Add(new ColumnHeader(columns.Length)
+                {
+                    Text = "Broj zatvorskih jedinica",
+                    TextAlign = HorizontalAlignment.Center,
+                    Width = 200
+                });
         }
         private void RefreshData()
         {
             listViewFirme.Items.Clear();
 
-            Firme.ForEach(f => listViewFirme.Items.Add(new ListViewItem(new string[]
+            Firme.ForEach(f =>
             {
+                listViewFirme.Items.Add(new ListViewItem(new string[]
+               {
                 f.PIB,
                 f.PIB,
                 f.Naziv,
                 f.Adresa,
                 f.KontaktTelefon,
-                f.OdgovornaLica.Count.ToString(),
-                f.ZatvorskeJedinice.Count.ToString()
-            })));
+                f.OdgovornaLica.Count.ToString()
+               }));
+
+                if (ZatvorskaJedinica == null)
+                    listViewFirme.Items[listViewFirme.Items.Count - 1].SubItems.Add(f.ZatvorskeJedinice.Count.ToString());
+            });
         }
 
         private void listViewFirme_SelectedIndexChanged(object sender, EventArgs e)
