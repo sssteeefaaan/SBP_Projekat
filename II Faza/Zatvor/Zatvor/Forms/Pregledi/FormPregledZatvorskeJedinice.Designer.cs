@@ -115,7 +115,7 @@ namespace Zatvor.Forms.Pregledi
             this.groupBoxCelijskiPeriod.Controls.Add(this.listViewCelijskiPeriodi);
             this.groupBoxCelijskiPeriod.Location = new System.Drawing.Point(51, 1084);
             this.groupBoxCelijskiPeriod.Name = "groupBoxCelijskiPeriod";
-            this.groupBoxCelijskiPeriod.Size = new System.Drawing.Size(714, 304);
+            this.groupBoxCelijskiPeriod.Size = new System.Drawing.Size(822, 304);
             this.groupBoxCelijskiPeriod.TabIndex = 6;
             this.groupBoxCelijskiPeriod.TabStop = false;
             this.groupBoxCelijskiPeriod.Text = "Ćelijski period";
@@ -128,7 +128,7 @@ namespace Zatvor.Forms.Pregledi
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Controls.Add(this.buttonObrisiTP, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.buttonIzmeniCP, 0, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(508, 25);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(616, 25);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -185,7 +185,7 @@ namespace Zatvor.Forms.Pregledi
             this.listViewCelijskiPeriodi.HideSelection = false;
             this.listViewCelijskiPeriodi.Location = new System.Drawing.Point(3, 74);
             this.listViewCelijskiPeriodi.Name = "listViewCelijskiPeriodi";
-            this.listViewCelijskiPeriodi.Size = new System.Drawing.Size(708, 227);
+            this.listViewCelijskiPeriodi.Size = new System.Drawing.Size(816, 227);
             this.listViewCelijskiPeriodi.TabIndex = 1;
             this.listViewCelijskiPeriodi.UseCompatibleStateImageBehavior = false;
             this.listViewCelijskiPeriodi.SelectedIndexChanged += new System.EventHandler(this.listViewCelijskiPeriodi_SelectedIndexChanged);
@@ -210,7 +210,7 @@ namespace Zatvor.Forms.Pregledi
             this.groupBoxFirme.Controls.Add(this.listViewFirme);
             this.groupBoxFirme.Location = new System.Drawing.Point(51, 774);
             this.groupBoxFirme.Name = "groupBoxFirme";
-            this.groupBoxFirme.Size = new System.Drawing.Size(714, 304);
+            this.groupBoxFirme.Size = new System.Drawing.Size(822, 304);
             this.groupBoxFirme.TabIndex = 5;
             this.groupBoxFirme.TabStop = false;
             this.groupBoxFirme.Text = "Firme";
@@ -246,7 +246,7 @@ namespace Zatvor.Forms.Pregledi
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.Controls.Add(this.buttonIzmeniFirmu, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.buttonObrisiFirmu, 1, 0);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(511, 22);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(619, 22);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -281,7 +281,7 @@ namespace Zatvor.Forms.Pregledi
             this.listViewFirme.HideSelection = false;
             this.listViewFirme.Location = new System.Drawing.Point(3, 74);
             this.listViewFirme.Name = "listViewFirme";
-            this.listViewFirme.Size = new System.Drawing.Size(708, 227);
+            this.listViewFirme.Size = new System.Drawing.Size(816, 227);
             this.listViewFirme.TabIndex = 3;
             this.listViewFirme.UseCompatibleStateImageBehavior = false;
             this.listViewFirme.SelectedIndexChanged += new System.EventHandler(this.listViewFirme_SelectedIndexChanged);
@@ -296,7 +296,7 @@ namespace Zatvor.Forms.Pregledi
             this.groupBoxTerminiPosete.Controls.Add(this.listViewTerminiPosete);
             this.groupBoxTerminiPosete.Location = new System.Drawing.Point(51, 1704);
             this.groupBoxTerminiPosete.Name = "groupBoxTerminiPosete";
-            this.groupBoxTerminiPosete.Size = new System.Drawing.Size(714, 304);
+            this.groupBoxTerminiPosete.Size = new System.Drawing.Size(822, 304);
             this.groupBoxTerminiPosete.TabIndex = 8;
             this.groupBoxTerminiPosete.TabStop = false;
             this.groupBoxTerminiPosete.Text = "Termini dozvole posete";
@@ -309,7 +309,7 @@ namespace Zatvor.Forms.Pregledi
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel8.Controls.Add(this.buttonIzmeniTP, 0, 0);
             this.tableLayoutPanel8.Controls.Add(this.buttonObrisiCP, 1, 0);
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(511, 25);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(619, 25);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -356,7 +356,7 @@ namespace Zatvor.Forms.Pregledi
             this.listViewTerminiPosete.HideSelection = false;
             this.listViewTerminiPosete.Location = new System.Drawing.Point(3, 74);
             this.listViewTerminiPosete.Name = "listViewTerminiPosete";
-            this.listViewTerminiPosete.Size = new System.Drawing.Size(708, 227);
+            this.listViewTerminiPosete.Size = new System.Drawing.Size(816, 227);
             this.listViewTerminiPosete.TabIndex = 3;
             this.listViewTerminiPosete.UseCompatibleStateImageBehavior = false;
             this.listViewTerminiPosete.SelectedIndexChanged += new System.EventHandler(this.listViewTerminiPosete_SelectedIndexChanged);
@@ -370,7 +370,7 @@ namespace Zatvor.Forms.Pregledi
             this.groupBoxTerminiSetnje.Controls.Add(this.listViewTerminiSetnje);
             this.groupBoxTerminiSetnje.Location = new System.Drawing.Point(51, 1394);
             this.groupBoxTerminiSetnje.Name = "groupBoxTerminiSetnje";
-            this.groupBoxTerminiSetnje.Size = new System.Drawing.Size(714, 304);
+            this.groupBoxTerminiSetnje.Size = new System.Drawing.Size(822, 304);
             this.groupBoxTerminiSetnje.TabIndex = 7;
             this.groupBoxTerminiSetnje.TabStop = false;
             this.groupBoxTerminiSetnje.Text = "Termini dozvole šetnje";
@@ -406,7 +406,7 @@ namespace Zatvor.Forms.Pregledi
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.buttonIzmeniTS, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.buttonObrisiTS, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(508, 22);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(616, 22);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -442,7 +442,7 @@ namespace Zatvor.Forms.Pregledi
             this.listViewTerminiSetnje.HideSelection = false;
             this.listViewTerminiSetnje.Location = new System.Drawing.Point(3, 74);
             this.listViewTerminiSetnje.Name = "listViewTerminiSetnje";
-            this.listViewTerminiSetnje.Size = new System.Drawing.Size(708, 227);
+            this.listViewTerminiSetnje.Size = new System.Drawing.Size(816, 227);
             this.listViewTerminiSetnje.TabIndex = 1;
             this.listViewTerminiSetnje.UseCompatibleStateImageBehavior = false;
             this.listViewTerminiSetnje.SelectedIndexChanged += new System.EventHandler(this.listViewTerminiSetnje_SelectedIndexChanged);
@@ -454,7 +454,7 @@ namespace Zatvor.Forms.Pregledi
             this.groupBoxRezim.Controls.Add(this.tableLayoutPanel14);
             this.groupBoxRezim.Location = new System.Drawing.Point(48, 677);
             this.groupBoxRezim.Name = "groupBoxRezim";
-            this.groupBoxRezim.Size = new System.Drawing.Size(717, 91);
+            this.groupBoxRezim.Size = new System.Drawing.Size(825, 91);
             this.groupBoxRezim.TabIndex = 4;
             this.groupBoxRezim.TabStop = false;
             this.groupBoxRezim.Text = "Režim rada";
@@ -474,7 +474,7 @@ namespace Zatvor.Forms.Pregledi
             this.tableLayoutPanel14.Name = "tableLayoutPanel14";
             this.tableLayoutPanel14.RowCount = 1;
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(425, 50);
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(533, 50);
             this.tableLayoutPanel14.TabIndex = 3;
             // 
             // checkBoxOtvoren
@@ -484,7 +484,7 @@ namespace Zatvor.Forms.Pregledi
             this.checkBoxOtvoren.Dock = System.Windows.Forms.DockStyle.Fill;
             this.checkBoxOtvoren.Location = new System.Drawing.Point(3, 3);
             this.checkBoxOtvoren.Name = "checkBoxOtvoren";
-            this.checkBoxOtvoren.Size = new System.Drawing.Size(135, 44);
+            this.checkBoxOtvoren.Size = new System.Drawing.Size(171, 44);
             this.checkBoxOtvoren.TabIndex = 0;
             this.checkBoxOtvoren.Text = "Otvoren režim";
             this.checkBoxOtvoren.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -497,9 +497,9 @@ namespace Zatvor.Forms.Pregledi
             this.checkBoxStrogi.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
             this.checkBoxStrogi.Dock = System.Windows.Forms.DockStyle.Fill;
             this.checkBoxStrogi.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.checkBoxStrogi.Location = new System.Drawing.Point(285, 3);
+            this.checkBoxStrogi.Location = new System.Drawing.Point(357, 3);
             this.checkBoxStrogi.Name = "checkBoxStrogi";
-            this.checkBoxStrogi.Size = new System.Drawing.Size(137, 44);
+            this.checkBoxStrogi.Size = new System.Drawing.Size(173, 44);
             this.checkBoxStrogi.TabIndex = 2;
             this.checkBoxStrogi.Text = "Strogi režim";
             this.checkBoxStrogi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -511,9 +511,9 @@ namespace Zatvor.Forms.Pregledi
             this.checkBoxPoluotvoren.AutoSize = true;
             this.checkBoxPoluotvoren.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
             this.checkBoxPoluotvoren.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBoxPoluotvoren.Location = new System.Drawing.Point(144, 3);
+            this.checkBoxPoluotvoren.Location = new System.Drawing.Point(180, 3);
             this.checkBoxPoluotvoren.Name = "checkBoxPoluotvoren";
-            this.checkBoxPoluotvoren.Size = new System.Drawing.Size(135, 44);
+            this.checkBoxPoluotvoren.Size = new System.Drawing.Size(171, 44);
             this.checkBoxPoluotvoren.TabIndex = 1;
             this.checkBoxPoluotvoren.Text = "Poluotvoren režim";
             this.checkBoxPoluotvoren.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -528,7 +528,7 @@ namespace Zatvor.Forms.Pregledi
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(305, 327);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(304, 27);
+            this.comboBox1.Size = new System.Drawing.Size(412, 27);
             this.comboBox1.TabIndex = 2;
             // 
             // groupBoxZatvorenici
@@ -540,7 +540,7 @@ namespace Zatvor.Forms.Pregledi
             this.groupBoxZatvorenici.Controls.Add(this.listViewZatvorenici);
             this.groupBoxZatvorenici.Location = new System.Drawing.Point(48, 367);
             this.groupBoxZatvorenici.Name = "groupBoxZatvorenici";
-            this.groupBoxZatvorenici.Size = new System.Drawing.Size(717, 304);
+            this.groupBoxZatvorenici.Size = new System.Drawing.Size(825, 304);
             this.groupBoxZatvorenici.TabIndex = 3;
             this.groupBoxZatvorenici.TabStop = false;
             this.groupBoxZatvorenici.Text = "Zatvorenici";
@@ -553,7 +553,7 @@ namespace Zatvor.Forms.Pregledi
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel10.Controls.Add(this.buttonIzmeniZatvorenika, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.buttonObrisiZatvorenika, 1, 0);
-            this.tableLayoutPanel10.Location = new System.Drawing.Point(511, 25);
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(619, 25);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 1;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -611,7 +611,7 @@ namespace Zatvor.Forms.Pregledi
             this.listViewZatvorenici.HideSelection = false;
             this.listViewZatvorenici.Location = new System.Drawing.Point(3, 74);
             this.listViewZatvorenici.Name = "listViewZatvorenici";
-            this.listViewZatvorenici.Size = new System.Drawing.Size(711, 227);
+            this.listViewZatvorenici.Size = new System.Drawing.Size(819, 227);
             this.listViewZatvorenici.TabIndex = 3;
             this.listViewZatvorenici.UseCompatibleStateImageBehavior = false;
             this.listViewZatvorenici.SelectedIndexChanged += new System.EventHandler(this.listViewZatvorenici_SelectedIndexChanged);
@@ -627,7 +627,7 @@ namespace Zatvor.Forms.Pregledi
             this.groupBoxZaposleni.Controls.Add(this.listViewZaposleni);
             this.groupBoxZaposleni.Location = new System.Drawing.Point(48, 12);
             this.groupBoxZaposleni.Name = "groupBoxZaposleni";
-            this.groupBoxZaposleni.Size = new System.Drawing.Size(717, 304);
+            this.groupBoxZaposleni.Size = new System.Drawing.Size(825, 304);
             this.groupBoxZaposleni.TabIndex = 0;
             this.groupBoxZaposleni.TabStop = false;
             this.groupBoxZaposleni.Text = "Zaposleni";
@@ -649,7 +649,7 @@ namespace Zatvor.Forms.Pregledi
             this.tableLayoutPanel13.Name = "tableLayoutPanel13";
             this.tableLayoutPanel13.RowCount = 1;
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(322, 46);
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(430, 46);
             this.tableLayoutPanel13.TabIndex = 10;
             // 
             // radioButtonSvi
@@ -659,7 +659,7 @@ namespace Zatvor.Forms.Pregledi
             this.radioButtonSvi.Dock = System.Windows.Forms.DockStyle.Fill;
             this.radioButtonSvi.Location = new System.Drawing.Point(3, 3);
             this.radioButtonSvi.Name = "radioButtonSvi";
-            this.radioButtonSvi.Size = new System.Drawing.Size(74, 40);
+            this.radioButtonSvi.Size = new System.Drawing.Size(101, 40);
             this.radioButtonSvi.TabIndex = 1;
             this.radioButtonSvi.TabStop = true;
             this.radioButtonSvi.Text = "Svi";
@@ -672,9 +672,9 @@ namespace Zatvor.Forms.Pregledi
             this.radioButtonAdministracija.AutoSize = true;
             this.radioButtonAdministracija.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
             this.radioButtonAdministracija.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radioButtonAdministracija.Location = new System.Drawing.Point(83, 3);
+            this.radioButtonAdministracija.Location = new System.Drawing.Point(110, 3);
             this.radioButtonAdministracija.Name = "radioButtonAdministracija";
-            this.radioButtonAdministracija.Size = new System.Drawing.Size(74, 40);
+            this.radioButtonAdministracija.Size = new System.Drawing.Size(101, 40);
             this.radioButtonAdministracija.TabIndex = 2;
             this.radioButtonAdministracija.TabStop = true;
             this.radioButtonAdministracija.Text = "Administracija";
@@ -687,9 +687,9 @@ namespace Zatvor.Forms.Pregledi
             this.radioButtonPsiholozi.AutoSize = true;
             this.radioButtonPsiholozi.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
             this.radioButtonPsiholozi.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radioButtonPsiholozi.Location = new System.Drawing.Point(163, 3);
+            this.radioButtonPsiholozi.Location = new System.Drawing.Point(217, 3);
             this.radioButtonPsiholozi.Name = "radioButtonPsiholozi";
-            this.radioButtonPsiholozi.Size = new System.Drawing.Size(74, 40);
+            this.radioButtonPsiholozi.Size = new System.Drawing.Size(101, 40);
             this.radioButtonPsiholozi.TabIndex = 3;
             this.radioButtonPsiholozi.TabStop = true;
             this.radioButtonPsiholozi.Text = "Psiholozi";
@@ -702,9 +702,9 @@ namespace Zatvor.Forms.Pregledi
             this.radioButtonObezbedjenje.AutoSize = true;
             this.radioButtonObezbedjenje.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
             this.radioButtonObezbedjenje.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radioButtonObezbedjenje.Location = new System.Drawing.Point(243, 3);
+            this.radioButtonObezbedjenje.Location = new System.Drawing.Point(324, 3);
             this.radioButtonObezbedjenje.Name = "radioButtonObezbedjenje";
-            this.radioButtonObezbedjenje.Size = new System.Drawing.Size(76, 40);
+            this.radioButtonObezbedjenje.Size = new System.Drawing.Size(103, 40);
             this.radioButtonObezbedjenje.TabIndex = 4;
             this.radioButtonObezbedjenje.TabStop = true;
             this.radioButtonObezbedjenje.Text = "Obezbeđenje";
@@ -720,7 +720,7 @@ namespace Zatvor.Forms.Pregledi
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel12.Controls.Add(this.buttonIzmeniZaposlenog, 0, 0);
             this.tableLayoutPanel12.Controls.Add(this.buttonObrisiZaposlenog, 1, 0);
-            this.tableLayoutPanel12.Location = new System.Drawing.Point(514, 22);
+            this.tableLayoutPanel12.Location = new System.Drawing.Point(622, 22);
             this.tableLayoutPanel12.Name = "tableLayoutPanel12";
             this.tableLayoutPanel12.RowCount = 1;
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -778,7 +778,7 @@ namespace Zatvor.Forms.Pregledi
             this.listViewZaposleni.HideSelection = false;
             this.listViewZaposleni.Location = new System.Drawing.Point(3, 74);
             this.listViewZaposleni.Name = "listViewZaposleni";
-            this.listViewZaposleni.Size = new System.Drawing.Size(711, 227);
+            this.listViewZaposleni.Size = new System.Drawing.Size(819, 227);
             this.listViewZaposleni.TabIndex = 7;
             this.listViewZaposleni.UseCompatibleStateImageBehavior = false;
             this.listViewZaposleni.SelectedIndexChanged += new System.EventHandler(this.listViewZaposleni_SelectedIndexChanged);
@@ -799,7 +799,7 @@ namespace Zatvor.Forms.Pregledi
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(854, 621);
+            this.ClientSize = new System.Drawing.Size(979, 687);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBoxZaposleni);
             this.Controls.Add(this.groupBoxTerminiPosete);
@@ -812,6 +812,7 @@ namespace Zatvor.Forms.Pregledi
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(995, 726);
             this.Name = "FormPregledZatvorskeJedinice";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Pregled zatvorske jedinice";

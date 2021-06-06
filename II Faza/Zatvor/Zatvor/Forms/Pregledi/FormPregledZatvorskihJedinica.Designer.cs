@@ -58,7 +58,7 @@ namespace Zatvor.Forms
             this.groupBoxZatvorskeJedinice.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxZatvorskeJedinice.Name = "groupBoxZatvorskeJedinice";
             this.groupBoxZatvorskeJedinice.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBoxZatvorskeJedinice.Size = new System.Drawing.Size(1174, 440);
+            this.groupBoxZatvorskeJedinice.Size = new System.Drawing.Size(1117, 440);
             this.groupBoxZatvorskeJedinice.TabIndex = 8;
             this.groupBoxZatvorskeJedinice.TabStop = false;
             this.groupBoxZatvorskeJedinice.Text = "Zatvorske jedinice";
@@ -72,7 +72,7 @@ namespace Zatvor.Forms
             this.listViewZatvorskeJedinice.Location = new System.Drawing.Point(4, 23);
             this.listViewZatvorskeJedinice.Name = "listViewZatvorskeJedinice";
             this.listViewZatvorskeJedinice.ShowItemToolTips = true;
-            this.listViewZatvorskeJedinice.Size = new System.Drawing.Size(1166, 413);
+            this.listViewZatvorskeJedinice.Size = new System.Drawing.Size(1109, 413);
             this.listViewZatvorskeJedinice.TabIndex = 0;
             this.listViewZatvorskeJedinice.UseCompatibleStateImageBehavior = false;
             this.listViewZatvorskeJedinice.View = System.Windows.Forms.View.Details;
@@ -133,7 +133,7 @@ namespace Zatvor.Forms
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(445, 61);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(388, 61);
             this.tableLayoutPanel2.TabIndex = 11;
             // 
             // checkBoxOtvoren
@@ -143,7 +143,7 @@ namespace Zatvor.Forms
             this.checkBoxOtvoren.Dock = System.Windows.Forms.DockStyle.Fill;
             this.checkBoxOtvoren.Location = new System.Drawing.Point(3, 3);
             this.checkBoxOtvoren.Name = "checkBoxOtvoren";
-            this.checkBoxOtvoren.Size = new System.Drawing.Size(142, 55);
+            this.checkBoxOtvoren.Size = new System.Drawing.Size(123, 55);
             this.checkBoxOtvoren.TabIndex = 0;
             this.checkBoxOtvoren.Text = "Otvoren režim";
             this.checkBoxOtvoren.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -155,9 +155,9 @@ namespace Zatvor.Forms
             this.checkBoxPoluotvoren.AutoSize = true;
             this.checkBoxPoluotvoren.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
             this.checkBoxPoluotvoren.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBoxPoluotvoren.Location = new System.Drawing.Point(151, 3);
+            this.checkBoxPoluotvoren.Location = new System.Drawing.Point(132, 3);
             this.checkBoxPoluotvoren.Name = "checkBoxPoluotvoren";
-            this.checkBoxPoluotvoren.Size = new System.Drawing.Size(142, 55);
+            this.checkBoxPoluotvoren.Size = new System.Drawing.Size(123, 55);
             this.checkBoxPoluotvoren.TabIndex = 1;
             this.checkBoxPoluotvoren.Text = "Poluotvoren režim";
             this.checkBoxPoluotvoren.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -169,9 +169,9 @@ namespace Zatvor.Forms
             this.checkBoxStrogi.AutoSize = true;
             this.checkBoxStrogi.CheckAlign = System.Drawing.ContentAlignment.TopCenter;
             this.checkBoxStrogi.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBoxStrogi.Location = new System.Drawing.Point(299, 3);
+            this.checkBoxStrogi.Location = new System.Drawing.Point(261, 3);
             this.checkBoxStrogi.Name = "checkBoxStrogi";
-            this.checkBoxStrogi.Size = new System.Drawing.Size(143, 55);
+            this.checkBoxStrogi.Size = new System.Drawing.Size(124, 55);
             this.checkBoxStrogi.TabIndex = 2;
             this.checkBoxStrogi.Text = "Strogi režim";
             this.checkBoxStrogi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -186,7 +186,7 @@ namespace Zatvor.Forms
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.buttonIzmeni, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.buttonObrisi, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(929, 12);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(872, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -197,13 +197,14 @@ namespace Zatvor.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 530);
+            this.ClientSize = new System.Drawing.Size(1143, 530);
             this.Controls.Add(this.groupBoxZatvorskeJedinice);
             this.Controls.Add(this.buttonDodaj);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(1159, 569);
             this.Name = "FormPregledZatvorskihJedinica";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Pregled zatvorskih jedinica";

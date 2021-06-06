@@ -58,5 +58,9 @@ namespace Zatvor
             Advokati = DTOManager.ReadAllAdvokat();
         }
 
+        private void FormGlavna_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

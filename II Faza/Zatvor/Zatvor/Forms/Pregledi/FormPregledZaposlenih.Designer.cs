@@ -59,7 +59,7 @@ namespace Zatvor.Forms
             this.groupBoxZaposleni.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxZaposleni.Name = "groupBoxZaposleni";
             this.groupBoxZaposleni.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBoxZaposleni.Size = new System.Drawing.Size(1174, 400);
+            this.groupBoxZaposleni.Size = new System.Drawing.Size(1145, 400);
             this.groupBoxZaposleni.TabIndex = 4;
             this.groupBoxZaposleni.TabStop = false;
             this.groupBoxZaposleni.Text = "Zaposleni";
@@ -70,7 +70,7 @@ namespace Zatvor.Forms
             this.listViewZaposleni.HideSelection = false;
             this.listViewZaposleni.Location = new System.Drawing.Point(4, 23);
             this.listViewZaposleni.Name = "listViewZaposleni";
-            this.listViewZaposleni.Size = new System.Drawing.Size(1166, 373);
+            this.listViewZaposleni.Size = new System.Drawing.Size(1137, 373);
             this.listViewZaposleni.TabIndex = 0;
             this.listViewZaposleni.UseCompatibleStateImageBehavior = false;
             this.listViewZaposleni.SelectedIndexChanged += new System.EventHandler(this.listViewZaposleni_SelectedIndexChanged);
@@ -121,7 +121,7 @@ namespace Zatvor.Forms
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.buttonIzmeniZaposlenog, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.buttonObrisi, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(929, 11);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(900, 11);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -145,17 +145,17 @@ namespace Zatvor.Forms
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(473, 61);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(444, 61);
             this.tableLayoutPanel2.TabIndex = 7;
             // 
             // buttonPrikaziObezbedjenje
             // 
             this.buttonPrikaziObezbedjenje.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.buttonPrikaziObezbedjenje.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonPrikaziObezbedjenje.Location = new System.Drawing.Point(358, 4);
+            this.buttonPrikaziObezbedjenje.Location = new System.Drawing.Point(337, 4);
             this.buttonPrikaziObezbedjenje.Margin = new System.Windows.Forms.Padding(4);
             this.buttonPrikaziObezbedjenje.Name = "buttonPrikaziObezbedjenje";
-            this.buttonPrikaziObezbedjenje.Size = new System.Drawing.Size(111, 53);
+            this.buttonPrikaziObezbedjenje.Size = new System.Drawing.Size(103, 53);
             this.buttonPrikaziObezbedjenje.TabIndex = 11;
             this.buttonPrikaziObezbedjenje.Text = "Obezbeđenje";
             this.buttonPrikaziObezbedjenje.UseVisualStyleBackColor = true;
@@ -165,10 +165,10 @@ namespace Zatvor.Forms
             // 
             this.buttonPrikaziPsihologe.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.buttonPrikaziPsihologe.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonPrikaziPsihologe.Location = new System.Drawing.Point(240, 4);
+            this.buttonPrikaziPsihologe.Location = new System.Drawing.Point(226, 4);
             this.buttonPrikaziPsihologe.Margin = new System.Windows.Forms.Padding(4);
             this.buttonPrikaziPsihologe.Name = "buttonPrikaziPsihologe";
-            this.buttonPrikaziPsihologe.Size = new System.Drawing.Size(110, 53);
+            this.buttonPrikaziPsihologe.Size = new System.Drawing.Size(103, 53);
             this.buttonPrikaziPsihologe.TabIndex = 10;
             this.buttonPrikaziPsihologe.Text = "Psiholozi";
             this.buttonPrikaziPsihologe.UseVisualStyleBackColor = true;
@@ -178,10 +178,10 @@ namespace Zatvor.Forms
             // 
             this.buttonPrikaziAdministraciju.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.buttonPrikaziAdministraciju.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonPrikaziAdministraciju.Location = new System.Drawing.Point(122, 4);
+            this.buttonPrikaziAdministraciju.Location = new System.Drawing.Point(115, 4);
             this.buttonPrikaziAdministraciju.Margin = new System.Windows.Forms.Padding(4);
             this.buttonPrikaziAdministraciju.Name = "buttonPrikaziAdministraciju";
-            this.buttonPrikaziAdministraciju.Size = new System.Drawing.Size(110, 53);
+            this.buttonPrikaziAdministraciju.Size = new System.Drawing.Size(103, 53);
             this.buttonPrikaziAdministraciju.TabIndex = 9;
             this.buttonPrikaziAdministraciju.Text = "Administracija";
             this.buttonPrikaziAdministraciju.UseVisualStyleBackColor = true;
@@ -194,7 +194,7 @@ namespace Zatvor.Forms
             this.buttonPrikaziSve.Location = new System.Drawing.Point(4, 4);
             this.buttonPrikaziSve.Margin = new System.Windows.Forms.Padding(4);
             this.buttonPrikaziSve.Name = "buttonPrikaziSve";
-            this.buttonPrikaziSve.Size = new System.Drawing.Size(110, 53);
+            this.buttonPrikaziSve.Size = new System.Drawing.Size(103, 53);
             this.buttonPrikaziSve.TabIndex = 8;
             this.buttonPrikaziSve.Text = "Svi";
             this.buttonPrikaziSve.UseVisualStyleBackColor = true;
@@ -204,14 +204,14 @@ namespace Zatvor.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 489);
+            this.ClientSize = new System.Drawing.Size(1171, 489);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.groupBoxZaposleni);
             this.Controls.Add(this.buttonDodajZaposlenog);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.MinimumSize = new System.Drawing.Size(1216, 528);
+            this.MinimumSize = new System.Drawing.Size(1187, 528);
             this.Name = "FormPregledZaposlenih";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Zaposleni";

@@ -126,6 +126,7 @@ namespace Zatvor
             this.Name = "FormGlavna";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Baza Podataka \'Zatvor\'";
+            this.Load += new System.EventHandler(this.FormGlavna_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

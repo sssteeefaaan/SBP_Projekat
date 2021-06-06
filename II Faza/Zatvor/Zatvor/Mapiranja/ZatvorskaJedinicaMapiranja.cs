@@ -19,6 +19,7 @@ namespace Zatvor.Mapiranja
             Map(zj => zj.Naziv, "NAZIV").Not.Nullable();
             Map(zj => zj.Adresa, "ADRESA").Not.Nullable();
             Map(zj => zj.Kapacitet, "KAPACITET").Not.Nullable();
+
             Map(zj => zj.ORezim, "O_REZIM").Not.Nullable();
             Map(zj => zj.PORezim, "PO_REZIM").Not.Nullable();
             Map(zj => zj.SRezim, "S_REZIM").Not.Nullable();

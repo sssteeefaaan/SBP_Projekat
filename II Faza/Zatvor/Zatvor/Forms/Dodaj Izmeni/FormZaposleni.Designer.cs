@@ -458,6 +458,7 @@ namespace Zatvor.Forms.Dodavanja
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(826, 772);
+            this.MinimumSize = new System.Drawing.Size(826, 543);
             this.Name = "FormZaposleni";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Zaposleni";

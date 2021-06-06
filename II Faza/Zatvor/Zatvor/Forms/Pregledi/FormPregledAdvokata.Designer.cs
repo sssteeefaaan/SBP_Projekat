@@ -69,7 +69,7 @@ namespace Zatvor.Forms.Pregledi
             this.listViewAdvokati.HideSelection = false;
             this.listViewAdvokati.Location = new System.Drawing.Point(12, 76);
             this.listViewAdvokati.Name = "listViewAdvokati";
-            this.listViewAdvokati.Size = new System.Drawing.Size(784, 368);
+            this.listViewAdvokati.Size = new System.Drawing.Size(593, 368);
             this.listViewAdvokati.TabIndex = 0;
             this.listViewAdvokati.UseCompatibleStateImageBehavior = false;
             this.listViewAdvokati.SelectedIndexChanged += new System.EventHandler(this.listViewAdvokati_SelectedIndexChanged);
@@ -93,7 +93,7 @@ namespace Zatvor.Forms.Pregledi
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.buttonObrisi, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.buttonIzmeni, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(596, 9);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(405, 9);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -116,12 +116,13 @@ namespace Zatvor.Forms.Pregledi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(808, 456);
+            this.ClientSize = new System.Drawing.Size(617, 456);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.listViewAdvokati);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MinimumSize = new System.Drawing.Size(633, 495);
             this.Name = "FormPregledAdvokata";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Pregled advokata";

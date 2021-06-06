@@ -107,11 +107,11 @@ namespace Zatvor.Forms.Pregledi
             this.groupBox3.Controls.Add(this.tableLayoutPanel1);
             this.groupBox3.Controls.Add(this.groupBox6);
             this.groupBox3.Controls.Add(this.groupBox5);
-            this.groupBox3.Location = new System.Drawing.Point(29, 20);
+            this.groupBox3.Location = new System.Drawing.Point(51, 21);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(0);
-            this.groupBox3.Size = new System.Drawing.Size(1005, 583);
+            this.groupBox3.Size = new System.Drawing.Size(884, 607);
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Prestupi";
@@ -144,7 +144,7 @@ namespace Zatvor.Forms.Pregledi
             this.tableLayoutPanel7.RowCount = 2;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(990, 71);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(869, 71);
             this.tableLayoutPanel7.TabIndex = 28;
             // 
             // label11
@@ -154,32 +154,33 @@ namespace Zatvor.Forms.Pregledi
             this.label11.Location = new System.Drawing.Point(4, 0);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(95, 35);
+            this.label11.Size = new System.Drawing.Size(82, 35);
             this.label11.TabIndex = 0;
             this.label11.Text = "Pun\r\nnaziv:";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBoxPunNaziv
             // 
             this.textBoxPunNaziv.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxPunNaziv.Location = new System.Drawing.Point(107, 4);
+            this.textBoxPunNaziv.Location = new System.Drawing.Point(94, 4);
             this.textBoxPunNaziv.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPunNaziv.Name = "textBoxPunNaziv";
-            this.textBoxPunNaziv.Size = new System.Drawing.Size(218, 26);
+            this.textBoxPunNaziv.Size = new System.Drawing.Size(191, 26);
             this.textBoxPunNaziv.TabIndex = 1;
             // 
             // textBoxMestoPrestupa
             // 
             this.textBoxMestoPrestupa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxMestoPrestupa.Location = new System.Drawing.Point(436, 4);
+            this.textBoxMestoPrestupa.Location = new System.Drawing.Point(383, 4);
             this.textBoxMestoPrestupa.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxMestoPrestupa.Name = "textBoxMestoPrestupa";
-            this.textBoxMestoPrestupa.Size = new System.Drawing.Size(218, 26);
+            this.textBoxMestoPrestupa.Size = new System.Drawing.Size(191, 26);
             this.textBoxMestoPrestupa.TabIndex = 5;
             // 
             // numericUpDownMinKazna
             // 
             this.numericUpDownMinKazna.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numericUpDownMinKazna.Location = new System.Drawing.Point(765, 4);
+            this.numericUpDownMinKazna.Location = new System.Drawing.Point(672, 4);
             this.numericUpDownMinKazna.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDownMinKazna.Maximum = new decimal(new int[] {
             99999,
@@ -187,13 +188,13 @@ namespace Zatvor.Forms.Pregledi
             0,
             0});
             this.numericUpDownMinKazna.Name = "numericUpDownMinKazna";
-            this.numericUpDownMinKazna.Size = new System.Drawing.Size(221, 26);
+            this.numericUpDownMinKazna.Size = new System.Drawing.Size(193, 26);
             this.numericUpDownMinKazna.TabIndex = 9;
             // 
             // numericUpDownMaxKazna
             // 
             this.numericUpDownMaxKazna.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numericUpDownMaxKazna.Location = new System.Drawing.Point(765, 39);
+            this.numericUpDownMaxKazna.Location = new System.Drawing.Point(672, 39);
             this.numericUpDownMaxKazna.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDownMaxKazna.Maximum = new decimal(new int[] {
             99999,
@@ -201,7 +202,7 @@ namespace Zatvor.Forms.Pregledi
             0,
             0});
             this.numericUpDownMaxKazna.Name = "numericUpDownMaxKazna";
-            this.numericUpDownMaxKazna.Size = new System.Drawing.Size(221, 26);
+            this.numericUpDownMaxKazna.Size = new System.Drawing.Size(193, 26);
             this.numericUpDownMaxKazna.TabIndex = 11;
             // 
             // label12
@@ -211,70 +212,75 @@ namespace Zatvor.Forms.Pregledi
             this.label12.Location = new System.Drawing.Point(4, 35);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(95, 36);
+            this.label12.Size = new System.Drawing.Size(82, 36);
             this.label12.TabIndex = 2;
             this.label12.Text = "Kategorija:";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label14.Location = new System.Drawing.Point(333, 35);
+            this.label14.Location = new System.Drawing.Point(293, 35);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(95, 36);
+            this.label14.Size = new System.Drawing.Size(82, 36);
             this.label14.TabIndex = 6;
             this.label14.Text = "Datum\r\nprestupa:";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBoxKategorija
             // 
             this.textBoxKategorija.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxKategorija.Location = new System.Drawing.Point(107, 39);
+            this.textBoxKategorija.Location = new System.Drawing.Point(94, 39);
             this.textBoxKategorija.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxKategorija.Name = "textBoxKategorija";
-            this.textBoxKategorija.Size = new System.Drawing.Size(218, 26);
+            this.textBoxKategorija.Size = new System.Drawing.Size(191, 26);
             this.textBoxKategorija.TabIndex = 3;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label16.Location = new System.Drawing.Point(662, 35);
+            this.label16.Location = new System.Drawing.Point(582, 35);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(95, 36);
+            this.label16.Size = new System.Drawing.Size(82, 36);
             this.label16.TabIndex = 10;
             this.label16.Text = "Maksimalna\r\nkazna:";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label13.Location = new System.Drawing.Point(333, 0);
+            this.label13.Location = new System.Drawing.Point(293, 0);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(95, 35);
+            this.label13.Size = new System.Drawing.Size(82, 35);
             this.label13.TabIndex = 4;
             this.label13.Text = "Mesto\r\nprestupa:";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label15.Location = new System.Drawing.Point(662, 0);
+            this.label15.Location = new System.Drawing.Point(582, 0);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(95, 35);
+            this.label15.Size = new System.Drawing.Size(82, 35);
             this.label15.TabIndex = 8;
             this.label15.Text = "Minimalna\r\nkazna:";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dateTimePickerDatumPrestupa
             // 
             this.dateTimePickerDatumPrestupa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dateTimePickerDatumPrestupa.Location = new System.Drawing.Point(436, 39);
+            this.dateTimePickerDatumPrestupa.Location = new System.Drawing.Point(383, 39);
             this.dateTimePickerDatumPrestupa.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePickerDatumPrestupa.Name = "dateTimePickerDatumPrestupa";
-            this.dateTimePickerDatumPrestupa.Size = new System.Drawing.Size(218, 26);
+            this.dateTimePickerDatumPrestupa.Size = new System.Drawing.Size(191, 26);
             this.dateTimePickerDatumPrestupa.TabIndex = 7;
             // 
             // tableLayoutPanel2
@@ -309,7 +315,7 @@ namespace Zatvor.Forms.Pregledi
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.buttonIzmeniPrestup, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.buttonUkloniPrestup, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(755, 280);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(634, 280);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -345,11 +351,11 @@ namespace Zatvor.Forms.Pregledi
             this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox6.Controls.Add(this.listViewPrestupi);
-            this.groupBox6.Location = new System.Drawing.Point(14, 327);
+            this.groupBox6.Location = new System.Drawing.Point(15, 337);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox6.Size = new System.Drawing.Size(984, 251);
+            this.groupBox6.Size = new System.Drawing.Size(863, 251);
             this.groupBox6.TabIndex = 3;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Lista prestupa";
@@ -370,7 +376,7 @@ namespace Zatvor.Forms.Pregledi
             this.listViewPrestupi.Location = new System.Drawing.Point(4, 23);
             this.listViewPrestupi.Margin = new System.Windows.Forms.Padding(4);
             this.listViewPrestupi.Name = "listViewPrestupi";
-            this.listViewPrestupi.Size = new System.Drawing.Size(976, 224);
+            this.listViewPrestupi.Size = new System.Drawing.Size(855, 224);
             this.listViewPrestupi.TabIndex = 0;
             this.listViewPrestupi.UseCompatibleStateImageBehavior = false;
             this.listViewPrestupi.View = System.Windows.Forms.View.Details;
@@ -420,7 +426,7 @@ namespace Zatvor.Forms.Pregledi
             this.groupBox5.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox5.Size = new System.Drawing.Size(990, 169);
+            this.groupBox5.Size = new System.Drawing.Size(869, 169);
             this.groupBox5.TabIndex = 0;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Opis prestupa";
@@ -431,7 +437,7 @@ namespace Zatvor.Forms.Pregledi
             this.richTextBoxOpis.Location = new System.Drawing.Point(4, 23);
             this.richTextBoxOpis.Margin = new System.Windows.Forms.Padding(4);
             this.richTextBoxOpis.Name = "richTextBoxOpis";
-            this.richTextBoxOpis.Size = new System.Drawing.Size(982, 142);
+            this.richTextBoxOpis.Size = new System.Drawing.Size(861, 142);
             this.richTextBoxOpis.TabIndex = 0;
             this.richTextBoxOpis.Text = "";
             // 
@@ -445,7 +451,7 @@ namespace Zatvor.Forms.Pregledi
             this.groupBox7.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox7.Size = new System.Drawing.Size(988, 260);
+            this.groupBox7.Size = new System.Drawing.Size(867, 260);
             this.groupBox7.TabIndex = 3;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Lista advokata";
@@ -466,7 +472,7 @@ namespace Zatvor.Forms.Pregledi
             this.listViewAdvokati.Location = new System.Drawing.Point(4, 23);
             this.listViewAdvokati.Margin = new System.Windows.Forms.Padding(4);
             this.listViewAdvokati.Name = "listViewAdvokati";
-            this.listViewAdvokati.Size = new System.Drawing.Size(980, 233);
+            this.listViewAdvokati.Size = new System.Drawing.Size(859, 233);
             this.listViewAdvokati.TabIndex = 0;
             this.listViewAdvokati.UseCompatibleStateImageBehavior = false;
             this.listViewAdvokati.View = System.Windows.Forms.View.Details;
@@ -518,7 +524,7 @@ namespace Zatvor.Forms.Pregledi
             this.tableLayoutPanel3.Controls.Add(this.buttonPregledPoseta, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.buttonIzmeniAdvokata, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.buttonUkloniAdvokata, 2, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(630, 155);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(509, 155);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -591,7 +597,7 @@ namespace Zatvor.Forms.Pregledi
             this.tableLayoutPanel5.ColumnCount = 1;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.Controls.Add(this.buttonEvidentirajAdvokata, 0, 0);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(871, 25);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(750, 25);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -629,7 +635,7 @@ namespace Zatvor.Forms.Pregledi
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(564, 97);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(443, 97);
             this.tableLayoutPanel6.TabIndex = 29;
             // 
             // comboBoxAdvokati
@@ -637,25 +643,25 @@ namespace Zatvor.Forms.Pregledi
             this.comboBoxAdvokati.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboBoxAdvokati.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAdvokati.FormattingEnabled = true;
-            this.comboBoxAdvokati.Location = new System.Drawing.Point(198, 3);
+            this.comboBoxAdvokati.Location = new System.Drawing.Point(156, 3);
             this.comboBoxAdvokati.Name = "comboBoxAdvokati";
-            this.comboBoxAdvokati.Size = new System.Drawing.Size(363, 27);
+            this.comboBoxAdvokati.Size = new System.Drawing.Size(284, 27);
             this.comboBoxAdvokati.TabIndex = 1;
             // 
             // dateTimePickerDatumPocetkaSaradnje
             // 
             this.dateTimePickerDatumPocetkaSaradnje.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dateTimePickerDatumPocetkaSaradnje.Location = new System.Drawing.Point(198, 35);
+            this.dateTimePickerDatumPocetkaSaradnje.Location = new System.Drawing.Point(156, 35);
             this.dateTimePickerDatumPocetkaSaradnje.Name = "dateTimePickerDatumPocetkaSaradnje";
-            this.dateTimePickerDatumPocetkaSaradnje.Size = new System.Drawing.Size(363, 26);
+            this.dateTimePickerDatumPocetkaSaradnje.Size = new System.Drawing.Size(284, 26);
             this.dateTimePickerDatumPocetkaSaradnje.TabIndex = 3;
             // 
             // dateTimePickerDatumPoslednjegKontakta
             // 
             this.dateTimePickerDatumPoslednjegKontakta.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dateTimePickerDatumPoslednjegKontakta.Location = new System.Drawing.Point(198, 67);
+            this.dateTimePickerDatumPoslednjegKontakta.Location = new System.Drawing.Point(156, 67);
             this.dateTimePickerDatumPoslednjegKontakta.Name = "dateTimePickerDatumPoslednjegKontakta";
-            this.dateTimePickerDatumPoslednjegKontakta.Size = new System.Drawing.Size(363, 26);
+            this.dateTimePickerDatumPoslednjegKontakta.Size = new System.Drawing.Size(284, 26);
             this.dateTimePickerDatumPoslednjegKontakta.TabIndex = 5;
             // 
             // label19
@@ -664,7 +670,7 @@ namespace Zatvor.Forms.Pregledi
             this.label19.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label19.Location = new System.Drawing.Point(3, 64);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(189, 33);
+            this.label19.Size = new System.Drawing.Size(147, 33);
             this.label19.TabIndex = 4;
             this.label19.Text = "Datum poslednjeg kontakta:";
             // 
@@ -674,7 +680,7 @@ namespace Zatvor.Forms.Pregledi
             this.label17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label17.Location = new System.Drawing.Point(3, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(189, 32);
+            this.label17.Size = new System.Drawing.Size(147, 32);
             this.label17.TabIndex = 0;
             this.label17.Text = "Advokat:";
             // 
@@ -684,7 +690,7 @@ namespace Zatvor.Forms.Pregledi
             this.label18.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label18.Location = new System.Drawing.Point(3, 32);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(189, 32);
+            this.label18.Size = new System.Drawing.Size(147, 32);
             this.label18.TabIndex = 2;
             this.label18.Text = "Datum početka saradnje:";
             // 
@@ -697,10 +703,9 @@ namespace Zatvor.Forms.Pregledi
             this.groupBox1.Controls.Add(this.tableLayoutPanel6);
             this.groupBox1.Controls.Add(this.tableLayoutPanel4);
             this.groupBox1.Controls.Add(this.groupBox7);
-            this.groupBox1.Location = new System.Drawing.Point(29, 617);
-            this.groupBox1.MinimumSize = new System.Drawing.Size(1005, 487);
+            this.groupBox1.Location = new System.Drawing.Point(51, 631);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1005, 487);
+            this.groupBox1.Size = new System.Drawing.Size(884, 487);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Advokati";
@@ -710,12 +715,12 @@ namespace Zatvor.Forms.Pregledi
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1094, 643);
+            this.ClientSize = new System.Drawing.Size(1007, 603);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(1023, 642);
             this.Name = "FormPregledZatvorenika";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Pregled zatvorenika";

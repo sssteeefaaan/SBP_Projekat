@@ -53,7 +53,7 @@ namespace Zatvor.Forms
             this.groupBoxZatvorenici.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxZatvorenici.Name = "groupBoxZatvorenici";
             this.groupBoxZatvorenici.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBoxZatvorenici.Size = new System.Drawing.Size(1174, 399);
+            this.groupBoxZatvorenici.Size = new System.Drawing.Size(875, 399);
             this.groupBoxZatvorenici.TabIndex = 0;
             this.groupBoxZatvorenici.TabStop = false;
             this.groupBoxZatvorenici.Text = "Zatvorenici";
@@ -64,7 +64,7 @@ namespace Zatvor.Forms
             this.listViewZatvorenici.HideSelection = false;
             this.listViewZatvorenici.Location = new System.Drawing.Point(4, 23);
             this.listViewZatvorenici.Name = "listViewZatvorenici";
-            this.listViewZatvorenici.Size = new System.Drawing.Size(1166, 372);
+            this.listViewZatvorenici.Size = new System.Drawing.Size(867, 372);
             this.listViewZatvorenici.TabIndex = 0;
             this.listViewZatvorenici.UseCompatibleStateImageBehavior = false;
             this.listViewZatvorenici.SelectedIndexChanged += new System.EventHandler(this.listViewZatvorenici_SelectedIndexChanged);
@@ -116,7 +116,7 @@ namespace Zatvor.Forms
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.buttonIzmeniZatvorenika, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.buttonObrisi, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(929, 12);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(630, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -127,13 +127,13 @@ namespace Zatvor.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 481);
+            this.ClientSize = new System.Drawing.Size(901, 481);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.buttonDodajZatvorenika);
             this.Controls.Add(this.groupBoxZatvorenici);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.MinimumSize = new System.Drawing.Size(1216, 520);
+            this.MinimumSize = new System.Drawing.Size(917, 520);
             this.Name = "FormPregledSvihZatvorenika";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Zatvorenici";

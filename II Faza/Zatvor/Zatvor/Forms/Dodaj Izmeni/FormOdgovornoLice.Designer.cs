@@ -44,21 +44,21 @@ namespace Zatvor.Forms.Dodaj_Izmeni
             this.textBoxJMBG.Location = new System.Drawing.Point(114, 29);
             this.textBoxJMBG.MaxLength = 13;
             this.textBoxJMBG.Name = "textBoxJMBG";
-            this.textBoxJMBG.Size = new System.Drawing.Size(207, 26);
+            this.textBoxJMBG.Size = new System.Drawing.Size(240, 26);
             this.textBoxJMBG.TabIndex = 0;
             // 
             // textBoxIme
             // 
             this.textBoxIme.Location = new System.Drawing.Point(114, 61);
             this.textBoxIme.Name = "textBoxIme";
-            this.textBoxIme.Size = new System.Drawing.Size(207, 26);
+            this.textBoxIme.Size = new System.Drawing.Size(240, 26);
             this.textBoxIme.TabIndex = 1;
             // 
             // textBoxPrezime
             // 
             this.textBoxPrezime.Location = new System.Drawing.Point(114, 93);
             this.textBoxPrezime.Name = "textBoxPrezime";
-            this.textBoxPrezime.Size = new System.Drawing.Size(207, 26);
+            this.textBoxPrezime.Size = new System.Drawing.Size(240, 26);
             this.textBoxPrezime.TabIndex = 2;
             // 
             // label1
@@ -90,7 +90,7 @@ namespace Zatvor.Forms.Dodaj_Izmeni
             // 
             // buttonDodaj
             // 
-            this.buttonDodaj.Location = new System.Drawing.Point(221, 140);
+            this.buttonDodaj.Location = new System.Drawing.Point(199, 140);
             this.buttonDodaj.Name = "buttonDodaj";
             this.buttonDodaj.Size = new System.Drawing.Size(100, 40);
             this.buttonDodaj.TabIndex = 6;
@@ -100,7 +100,7 @@ namespace Zatvor.Forms.Dodaj_Izmeni
             // 
             // buttonClose
             // 
-            this.buttonClose.Location = new System.Drawing.Point(327, 140);
+            this.buttonClose.Location = new System.Drawing.Point(305, 140);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(100, 40);
             this.buttonClose.TabIndex = 7;
@@ -112,7 +112,7 @@ namespace Zatvor.Forms.Dodaj_Izmeni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(439, 192);
+            this.ClientSize = new System.Drawing.Size(427, 192);
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.buttonDodaj);
             this.Controls.Add(this.label3);
@@ -122,7 +122,10 @@ namespace Zatvor.Forms.Dodaj_Izmeni
             this.Controls.Add(this.textBoxIme);
             this.Controls.Add(this.textBoxJMBG);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(443, 231);
+            this.MinimumSize = new System.Drawing.Size(443, 231);
             this.Name = "FormOdgovornoLice";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Dodaj odgovorno lice";
