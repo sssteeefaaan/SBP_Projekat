@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "fe3a2964-3e44-4a48-b0e3-0a98a6cb18ac",
+		"name": "Termin Posete",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Termine Posete",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44307/TerminPosete/PreuzmiTerminePosete",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44307",
+					"path": [
+						"TerminPosete",
+						"PreuzmiTerminePosete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Termin Posete",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44307/TerminPosete/PreuzmiTerminPosete/4",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44307",
+					"path": [
+						"TerminPosete",
+						"PreuzmiTerminPosete",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Termin Posete",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"zatvorskaJedinica\":{\r\n        \"sifra\":\"AAA21\"\r\n    },\r\n    \"dan\": \"Ponedeljak\",\r\n    \"period\": \"13:00 - 15:15h\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44307/TerminPosete/DodajTerminPosete",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44307",
+					"path": [
+						"TerminPosete",
+						"DodajTerminPosete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Termin Posete",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dan\": \"Utorak\",\r\n    \"period\": \"15:00 - 16:00h\",\r\n    \"id\": 41\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44307/TerminPosete/IzmeniTerminPosete",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44307",
+					"path": [
+						"TerminPosete",
+						"IzmeniTerminPosete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Termin Posete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44307/TerminPosete/ObrisiTerminPosete/41",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44307",
+					"path": [
+						"TerminPosete",
+						"ObrisiTerminPosete",
+						"41"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

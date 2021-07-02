@@ -1,0 +1,117 @@
+{
+	"info": {
+		"_postman_id": "1eaf56fd-9ef2-46b4-bef8-d619142d794a",
+		"name": "Zatvorenik",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Read Zatvorenici",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44307/Zatvorenik/PreuzmiZatvorenike",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44307",
+					"path": [
+						"Zatvorenik",
+						"PreuzmiZatvorenike"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read Zatvorenik",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44307/Zatvorenik/PreuzmiZatvorenika/0203995750023",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44307",
+					"path": [
+						"Zatvorenik",
+						"PreuzmiZatvorenika",
+						"0203995750023"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Zatvorenik",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"jmbg\": \"437786543123\",\r\n    \"ime\": \"Doja\",\r\n    \"prezime\": \"Cat\",\r\n    \"pol\": \"Ž\",\r\n    \"adresa\": \"Been like this\",\r\n    \"broj\": \"zu874\",\r\n    \"datumInkarceracije\": \"2020-03-05\",\r\n    \"statusUslovnogOtpusta\": \"Odbijen\",\r\n    \"zatvorskaJedinica\": {\r\n        \"sifra\": \"AAB21\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44307/Zatvorenik/DodajZatvorenika",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44307",
+					"path": [
+						"Zatvorenik",
+						"DodajZatvorenika"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Zatvorenik",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"jmbg\": \"437786543123\",\r\n    \"datumSledecegSaslusanja\": \"2021-05-01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44307/Zatvorenik/IzmeniZatvorenika",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44307",
+					"path": [
+						"Zatvorenik",
+						"IzmeniZatvorenika"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Zatvorenik",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		}
+	]
+}

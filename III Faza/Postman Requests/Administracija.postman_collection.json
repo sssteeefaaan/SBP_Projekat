@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "e9e3f474-4299-4198-856f-c1937f63583c",
+		"name": "Administracija",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Administracije",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44307/Administracija/PreuzmiAdministracije",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44307",
+					"path": [
+						"Administracija",
+						"PreuzmiAdministracije"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Administracija",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44307/Administracija/PreuzmiAdministraciju/2809965327690",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44307",
+					"path": [
+						"Administracija",
+						"PreuzmiAdministraciju",
+						"2809965327690"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Administracija",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"jmbg\": \"2345667453253\",\r\n    \"ime\": \"Petar\",\r\n    \"prezime\": \"Kovačević\",\r\n    \"pol\": \"M\",\r\n    \"radnoMesto\": \"Administracija\",\r\n    \"datumObukePPZ\": \"2021-04-12T00:00:00\",\r\n    \"radiU\": {\r\n        \"sifra\": \"AAA21\"\r\n    },\r\n    \"datumPocetkaRada\": \"2020-04-12T00:00:00\",\r\n    \"zanimanje\": \"Uprava\",\r\n    \"pozicija\": \"Upravnik\",\r\n    \"strucnaSprema\": \"Visoka\",\r\n    \"lpLekar\": null,\r\n    \"lpDatum\": null,\r\n    \"lpNazivUstanove\": null,\r\n    \"lpAdresaUstanove\": null,\r\n    \"sSpecijalizacija\": null,\r\n    \"sNazivUstanove\": null,\r\n    \"dorvoSifra\": null,\r\n    \"dorvoPolicijskaUprava\": null,\r\n    \"dorvoDatumIzdavanja\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44307/Administracija/DodajAdministraciju",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44307",
+					"path": [
+						"Administracija",
+						"DodajAdministraciju"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Administracija",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"jmbg\": \"2345667453253\",\r\n    \"strucnaSprema\": \"Srednja\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44307/Administracija/IzmeniAdministraciju",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44307",
+					"path": [
+						"Administracija",
+						"IzmeniAdministraciju"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Administracija",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44307/Administracija/ObrisiAdministraciju/2345667453253",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44307",
+					"path": [
+						"Administracija",
+						"ObrisiAdministraciju",
+						"2345667453253"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "81bf5b89-e021-45ee-9e79-6ea9e6f9187b",
+		"name": "Odgovorno Lice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Read Odgovorna Lica",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44307/OdgovornoLice/PreuzmiOdgovornaLica",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44307",
+					"path": [
+						"OdgovornoLice",
+						"PreuzmiOdgovornaLica"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read Odgovorno Lice",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44307/OdgovornoLice/PreuzmiOdgovornoLice/0712986764321",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44307",
+					"path": [
+						"OdgovornoLice",
+						"PreuzmiOdgovornoLice",
+						"0712986764321"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Odgovorno Lice",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"jmbg\": \"6753453451232\",\r\n    \"ime\": \"Predrag\",\r\n    \"prezime\":\"Miletić\",\r\n    \"firma\":{\r\n        \"pib\": \"100234131\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44307/OdgovornoLice/DodajOdgovornoLice",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44307",
+					"path": [
+						"OdgovornoLice",
+						"DodajOdgovornoLice"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Odgovorno Lice",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"41\",\r\n    \"ime\": \"Svetozar\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44307/OdgovornoLice/IzmeniOdgovornoLice",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44307",
+					"path": [
+						"OdgovornoLice",
+						"IzmeniOdgovornoLice"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Odgovorno Lice",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44307/OdgovornoLice/ObrisiOdgovornoLice/41",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44307",
+					"path": [
+						"OdgovornoLice",
+						"ObrisiOdgovornoLice",
+						"41"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "a27f9f4f-0211-4b12-82c2-88d40bb2f976",
+		"name": "Advokat",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Read Advokati",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44307/Advokat/PreuzmiAdvokate",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44307",
+					"path": [
+						"Advokat",
+						"PreuzmiAdvokate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read Advokat",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44307/Advokat/PreuzmiAdvokata/0303989323255",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44307",
+					"path": [
+						"Advokat",
+						"PreuzmiAdvokata",
+						"0303989323255"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Advokat",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"jmbg\": \"0203777564452\",\r\n    \"ime\": \"Petar\",\r\n    \"prezime\": \"Petrović\",\r\n    \"pol\": \"M\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44307/Advokat/DodajAdvokata",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44307",
+					"path": [
+						"Advokat",
+						"DodajAdvokata"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Advokat",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"jmbg\": \"0203777564452\",\r\n    \"ime\": \"Petar\",\r\n    \"prezime\": \"Kovačević\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44307/Advokat/IzmeniAdvokata",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44307",
+					"path": [
+						"Advokat",
+						"IzmeniAdvokata"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Advokat",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44307/Advokat/ObrisiAdvokata/0203777564452",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44307",
+					"path": [
+						"Advokat",
+						"ObrisiAdvokata",
+						"0203777564452"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

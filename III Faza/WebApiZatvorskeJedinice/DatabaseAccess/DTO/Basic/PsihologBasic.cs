@@ -1,0 +1,20 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Zatvor.DTO.Basic
+{
+    public class PsihologBasic : ZaposleniBasic
+    {
+        public PsihologBasic()
+        {
+        }
+
+        public PsihologBasic(string jMBG, string ime, string prezime, string pol, string radnoMesto, DateTime datumObukePPZ, ZatvorskaJedinicaBasic radiU, DateTime datumPocetkaRada, string zanimanje, string pozicija, string strucnaSprema, ZatvorskaJedinicaBasic jeUpravnik, string lPLekar, DateTime? lPDatum, string lPNazivUstanove, string lPAdresaUstanove, string sSpecijalizacija, string sNazivUstanove, string dORVOSifra, string dORVOPolicijskaUprava, DateTime? dORVODatumIzdavanja)
+            : base(jMBG, ime, prezime, pol, radnoMesto, datumObukePPZ, radiU, datumPocetkaRada, zanimanje, pozicija, strucnaSprema, lPLekar, lPDatum, lPNazivUstanove, lPAdresaUstanove, sSpecijalizacija, sNazivUstanove, dORVOSifra, dORVOPolicijskaUprava, dORVODatumIzdavanja)
+        {
+        }
+    }
+}

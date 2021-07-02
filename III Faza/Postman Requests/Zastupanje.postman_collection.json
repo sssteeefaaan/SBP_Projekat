@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "27ef19f3-3198-47da-ac16-d66db6d4f8f8",
+		"name": "Zastupanje",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Read Zaposleni",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44307/Zaposleni/PreuzmiZaposlene",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44307",
+					"path": [
+						"Zaposleni",
+						"PreuzmiZaposlene"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read Zaposlenog",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44307/Zaposleni/PreuzmiZaposlenog/2802987679065",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44307",
+					"path": [
+						"Zaposleni",
+						"PreuzmiZaposlenog",
+						"2802987679065"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Zaposleni",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"jmbg\": \"2807687679065\",\r\n    \"ime\": \"Marijana\",\r\n    \"prezime\": \"Novaković\",\r\n    \"pol\": \"Ž\",\r\n    \"radnoMesto\": \"Administracija\",\r\n    \"datumObukePPZ\": \"2021-04-15T00:00:00\",\r\n    \"radiU\": {\r\n        \"sifra\": \"AAB21\"\r\n    },\r\n    \"datumPocetkaRada\": \"2018-04-15T00:00:00\",\r\n    \"zanimanje\": \"Uprava\",\r\n    \"pozicija\": \"Upravnik\",\r\n    \"strucnaSprema\": \"Visoka\",\r\n    \"lpLekar\": null,\r\n    \"lpDatum\": null,\r\n    \"lpNazivUstanove\": null,\r\n    \"lpAdresaUstanove\": null,\r\n    \"sSpecijalizacija\": null,\r\n    \"sNazivUstanove\": null,\r\n    \"dorvoSifra\": null,\r\n    \"dorvoPolicijskaUprava\": null,\r\n    \"dorvoDatumIzdavanja\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44307/Zaposleni/DodajZaposlenog",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44307",
+					"path": [
+						"Zaposleni",
+						"DodajZaposlenog"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Zaposleni",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"jmbg\": \"2807687679065\",\r\n    \"datumObukePPZ\": \"2021-04-15T00:00:00\",\r\n    \"datumPocetkaRada\": \"2019-04-15T00:00:00\",\r\n    \"strucnaSprema\": \"Viša\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44307/Zaposleni/IzmeniZaposlenog",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44307",
+					"path": [
+						"Zaposleni",
+						"IzmeniZaposlenog"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Zaposlenog",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44307/Zaposleni/ObrisiZaposlenog/2807687679065",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44307",
+					"path": [
+						"Zaposleni",
+						"ObrisiZaposlenog",
+						"2807687679065"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

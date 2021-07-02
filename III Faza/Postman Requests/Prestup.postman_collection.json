@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "e2b1cf2c-a6ec-48eb-b165-a08ee4e71efe",
+		"name": "Prestup",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Prestupi",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44307/Prestup/PreuzmiPrestupe",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44307",
+					"path": [
+						"Prestup",
+						"PreuzmiPrestupe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Prestup",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44307/Prestup/PreuzmiPrestup/40",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44307",
+					"path": [
+						"Prestup",
+						"PreuzmiPrestup",
+						"40"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Prestup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"zatvorenik\":{\r\n        \"jmbg\": \"0203995750023\"\r\n        },\r\n    \"punNaziv\": \"Nehatno lišenje života\",\r\n    \"datumPrestupa\": \"2020-05-04\",\r\n    \"mestoPrestupa\": \"Nikole Vujačića 15, 214422 Lazarevac\",\r\n    \"kategorija\": \"Krivična dela protiv života i tela\",\r\n    \"opis\": \"Ko drugog liši života iz nehata\",\r\n    \"minKazna\": 154,\r\n    \"maxKazna\": 1425\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44307/Prestup/DodajPrestup",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44307",
+					"path": [
+						"Prestup",
+						"DodajPrestup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Prestup",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"datumPrestupa\": \"2020-06-06\",\r\n    \"minKazna\": 155,\r\n    \"maxKazna\": 1555,\r\n    \"id\": 63\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44307/Prestup/IzmeniPrestup",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44307",
+					"path": [
+						"Prestup",
+						"IzmeniPrestup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Prestup",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44307/Prestup/ObrisiPrestup/63",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44307",
+					"path": [
+						"Prestup",
+						"ObrisiPrestup",
+						"63"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

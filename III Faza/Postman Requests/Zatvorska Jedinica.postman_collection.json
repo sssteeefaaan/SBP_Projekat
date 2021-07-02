@@ -1,0 +1,214 @@
+{
+	"info": {
+		"_postman_id": "f3b6890a-2ba0-401c-8a93-aa74065f7388",
+		"name": "Zatvorska Jedinica",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Preuzmi Zatvorske Jedinice FULL",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44307/ZatvorskaJedinica/PreuzmiZatvorskeJediniceFULL",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44307",
+					"path": [
+						"ZatvorskaJedinica",
+						"PreuzmiZatvorskeJediniceFULL"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Preuzmi Zatvorske Jedinice",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44307/ZatvorskaJedinica/PreuzmiZatvorskeJedinice",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44307",
+					"path": [
+						"ZatvorskaJedinica",
+						"PreuzmiZatvorskeJedinice"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Preuzmi Zatvorsku Jedinicu FULL [AAA21]",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44307/ZatvorskaJedinica/PreuzmiZatvorskuJedinicuFULL/AAA21",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44307",
+					"path": [
+						"ZatvorskaJedinica",
+						"PreuzmiZatvorskuJedinicuFULL",
+						"AAA21"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Preuzmi Zatvorsku Jedinicu [AAA21]",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44307/ZatvorskaJedinica/PreuzmiZatvorskuJedinicu/AAA21",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44307",
+					"path": [
+						"ZatvorskaJedinica",
+						"PreuzmiZatvorskuJedinicu",
+						"AAA21"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Dodaj Zatvorsku Jedinicu",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sifra\": \"AAE21\",\r\n    \"kapacitet\": \"200\",\r\n    \"naziv\": \"Kazneno popravni dom 'Knjaževac'\",\r\n    \"adresa\": \"Njegoševa 13, 19350 Knjaževac\",\r\n    \"orezim\": true,\r\n    \"sRezim\": true,\r\n    \"pORezim\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44307/ZatvorskaJedinica/DodajZatvorskuJedinicu",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44307",
+					"path": [
+						"ZatvorskaJedinica",
+						"DodajZatvorskuJedinicu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Izmeni Zatvorsku Jedinicu [AAE21]",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Sifra\": \"AAE21\",\r\n    \"orezim\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44307/ZatvorskaJedinica/IzmeniZatvorskuJedinicu",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44307",
+					"path": [
+						"ZatvorskaJedinica",
+						"IzmeniZatvorskuJedinicu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obriši Zatvorsku Jedinicu [AAE21]",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44307/ZatvorskaJedinica/ObrisiZatvorskuJedinicu/AAE21",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44307",
+					"path": [
+						"ZatvorskaJedinica",
+						"ObrisiZatvorskuJedinicu",
+						"AAE21"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Dodaj Može Da Angažuje",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44307/ZatvorskaJedinica/DodajRadSaFirmom/AAA21/100234131",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44307",
+					"path": [
+						"ZatvorskaJedinica",
+						"DodajRadSaFirmom",
+						"AAA21",
+						"100234131"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obriši Može Da Angažuje",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44307/ZatvorskaJedinica/RaskiniRadSaFirmom/AAA21/100234131",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44307",
+					"path": [
+						"ZatvorskaJedinica",
+						"RaskiniRadSaFirmom",
+						"AAA21",
+						"100234131"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
